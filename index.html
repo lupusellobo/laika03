@@ -1,0 +1,3372 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LAIKA 03 — CAMINO 2 V122 · TEXTOS FINALES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#030303;
+  --bone:#f4f0e6;
+  --gold:#b77b27;
+  --acid:#c8ff00;
+  --cyan:#00d9d2;
+  --mag:#ff006b;
+  --rust:#8c4d16;
+}
+*{box-sizing:border-box}
+html{background:var(--ink);scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:"IBM Plex Mono",monospace;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block}
+section{position:relative}
+.screen{
+  min-height:100svh;
+  overflow:hidden;
+  background:#030303;
+  border-bottom:1px solid rgba(244,240,230,.25);
+}
+.inner{
+  position:relative;
+  z-index:8;
+  width:min(1520px,96vw);
+  min-height:100svh;
+  margin:auto;
+  padding:70px 24px 38px;
+}
+.wordmark{font:400 22px/1 Michroma,sans-serif;letter-spacing:.06em}
+.wordmark sup{font:700 8px "IBM Plex Mono";vertical-align:top;margin-left:2px}
+.mono{font:500 10px/1.3 "IBM Plex Mono";letter-spacing:.06em;text-transform:uppercase}
+.screen-wordmark{
+  position:absolute!important;
+  z-index:90!important;
+  top:22px!important;
+  left:24px!important;
+  font:400 22px/1 Michroma,sans-serif!important;
+  letter-spacing:.06em!important;
+  margin:0!important;
+}
+.screen-wordmark sup{
+  font:700 8px "IBM Plex Mono"!important;
+  vertical-align:top!important;
+  margin-left:2px!important;
+}
+.screen-number{
+  position:absolute!important;
+  z-index:90!important;
+  top:22px!important;
+  right:24px!important;
+  font:600 12px/1 "IBM Plex Mono"!important;
+  letter-spacing:.075em!important;
+  text-transform:uppercase!important;
+  margin:0!important;
+}
+.body{font:400 14px/1.58 "IBM Plex Mono";max-width:620px;color:#efeae1}
+.master-title{display:block;width:auto;height:auto;max-width:100%;position:relative;z-index:10}
+.gold{
+  position:absolute;
+  pointer-events:none;
+  z-index:5;
+  filter:sepia(.10) saturate(1.08) contrast(1.14) brightness(.92)
+         drop-shadow(0 20px 32px rgba(0,0,0,.86));
+}
+
+/* ---------- MASTER TEXTURE / SIGNAL LANGUAGE ---------- */
+.artbed,.texture,.grain,.scan,.glitch-lines,.glitch-blocks{position:absolute;inset:0;pointer-events:none}
+.artbed{
+  z-index:0;
+  background-image:url("assets/signal_bed.jpg");
+  background-size:cover;
+  background-position:center;
+  opacity:.18;
+  filter:contrast(1.38) brightness(.5);
+}
+.texture{
+  z-index:1;
+  background-image:var(--tex);
+  background-size:cover;
+  background-position:center;
+  opacity:.46;
+  mix-blend-mode:screen;
+  filter:contrast(1.4) brightness(.38) saturate(.85);
+}
+.grain{
+  z-index:20;
+  opacity:.14;
+  background-image:radial-gradient(rgba(255,255,255,.38) .42px,transparent .52px);
+  background-size:3px 3px;
+  mix-blend-mode:soft-light;
+}
+.scan{
+  z-index:21;
+  opacity:.16;
+  background:repeating-linear-gradient(0deg,
+    transparent 0 3px,
+    rgba(255,255,255,.018) 4px,
+    rgba(0,217,210,.022) 5px,
+    transparent 6px 9px);
+  mix-blend-mode:screen;
+}
+.glitch-lines{
+  z-index:3;
+  background:
+    linear-gradient(90deg,transparent 0 3%,rgba(183,123,39,.26) 3.1% 5.5%,transparent 5.7% 21%,
+    rgba(0,217,210,.22) 21.2% 21.8%,transparent 22% 48%,rgba(255,0,107,.17) 48.2% 49.1%,transparent 49.3% 77%,
+    rgba(183,123,39,.22) 77.2% 79.1%,transparent 79.4%) 0 21%/100% 8px no-repeat,
+    linear-gradient(90deg,transparent 0 16%,rgba(0,217,210,.19) 16.2% 21%,transparent 21.4% 42%,
+    rgba(255,0,107,.18) 42.2% 50%,transparent 50.5% 88%,rgba(183,123,39,.22) 88.2% 90%,transparent 90.4%) 0 78%/100% 5px no-repeat,
+    linear-gradient(90deg,transparent 0 9%,rgba(183,123,39,.22) 9.1% 10%,transparent 10.2% 64%,
+    rgba(0,217,210,.18) 64.1% 66%,transparent 66.2%) 0 44%/100% 2px no-repeat;
+}
+.glitch-blocks{
+  z-index:2;
+  opacity:.7;
+  background:
+    linear-gradient(90deg,rgba(197,137,41,.2),rgba(197,137,41,.2)) 9% 14%/7% 2% no-repeat,
+    linear-gradient(90deg,rgba(0,217,210,.16),rgba(0,217,210,.16)) 71% 24%/9% 1.3% no-repeat,
+    linear-gradient(90deg,rgba(255,0,107,.15),rgba(255,0,107,.15)) 54% 87%/5% 1.6% no-repeat,
+    linear-gradient(90deg,rgba(197,137,41,.18),rgba(197,137,41,.18)) 32% 63%/8% 1.2% no-repeat;
+}
+.signal-tear{
+  position:absolute;
+  left:-5%;right:-5%;
+  height:13px;
+  z-index:15;
+  pointer-events:none;
+  opacity:.24;
+  top:var(--y,54%);
+  background:
+    linear-gradient(90deg,transparent 0 8%,var(--cyan) 8.1% 21%,transparent 21.1% 33%,var(--mag) 33.1% 35%,transparent 35.1% 64%,#ad721e 64.1% 76%,transparent 76.2%);
+  filter:blur(.35px);
+  animation:tear 8s steps(1,end) infinite;
+}
+@keyframes tear{
+  0%,84%,100%{transform:translateX(0) scaleY(1);opacity:.17}
+  86%{transform:translateX(12px) scaleY(2.2);opacity:.31}
+  88%{transform:translateX(-5px) scaleY(.7);opacity:.22}
+}
+.chrome-shift{
+  filter:drop-shadow(1px 0 rgba(0,217,210,.27)) drop-shadow(-1px 0 rgba(255,0,107,.20));
+}
+
+/* ---------- NAV ---------- */
+.topnav{
+  position:absolute;z-index:40;top:18px;left:24px;right:24px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.navlinks{display:flex;align-items:center;gap:28px;font:500 9px "IBM Plex Mono";text-transform:uppercase}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--acid);transition:.2s}
+.navlinks a:hover:after{right:0}
+
+/* ---------- BUTTONS ---------- */
+.circle{
+  width:38px;height:38px;border:1px solid rgba(244,240,230,.92);
+  border-radius:50%;display:grid;place-items:center;
+  background:rgba(3,3,3,.55);color:var(--bone);transition:.18s;
+}
+.action{display:flex;gap:10px;align-items:center;font:500 9px "IBM Plex Mono";text-transform:uppercase;cursor:pointer;width:max-content}
+.action:hover .circle{background:var(--bone);color:#030303;transform:translateX(2px)}
+
+/* ====================== 01 HERO ====================== */
+.hero{--tex:url("assets/tex_hero.jpg")}
+.hero .inner{display:grid;grid-template-columns:51% 49%;align-items:center}
+.hero-copy{position:relative;z-index:12;padding-top:26px}
+.hero-kicker{font:500 10px/1.08 "IBM Plex Mono";text-transform:uppercase;width:100px}
+.hero-title{width:min(710px,47vw);margin:31px 0 14px}
+.hero-services{font:500 9px/1.4 "IBM Plex Mono";text-transform:uppercase;white-space:nowrap}
+.hero-explore{margin-top:18px}
+.hero-photo{
+  position:absolute;z-index:4;right:0;top:0;width:55.5%;height:100%;
+  overflow:hidden;clip-path:polygon(7% 0,100% 0,100% 100%,0 100%);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:52% 49%;filter:saturate(.70) contrast(1.12) brightness(.76)}
+.hero-photo:after{content:"";position:absolute;inset:0;background:
+  linear-gradient(90deg,#030303 0%,rgba(3,3,3,.74) 10%,rgba(3,3,3,.06) 38%,transparent 61%),
+  linear-gradient(0deg,#030303c5 0%,transparent 23%,transparent 81%,#0303035f 100%)}
+.hero-photo:before{content:"";position:absolute;z-index:3;inset:0;background:
+  linear-gradient(0deg,transparent 0 31%,rgba(0,217,210,.08) 31.2% 32%,transparent 32.2% 61%,rgba(255,0,107,.06) 61.1% 62%,transparent 62.2%),
+  repeating-linear-gradient(0deg,transparent 0 29px,rgba(255,255,255,.02) 30px,transparent 31px 68px);
+  mix-blend-mode:screen}
+
+/* ====================== 02 NEWS ====================== */
+.news{--tex:url("assets/tex_news.jpg")}
+.news .inner{display:grid;grid-template-columns:38% 62%;align-items:center}
+.news-copy{position:relative;z-index:10;padding-left:8px}
+.news-title{width:min(320px,26vw);margin:15px 0 12px}
+.news-copy .body{max-width:360px;font-size:12px;text-transform:uppercase}
+.news-stage{height:78vh;position:relative}
+.news-stage .lobster{width:29%;left:10%;top:7%;transform:rotate(-14deg)}
+.news-stage .cassette{width:25%;left:30%;top:21%;transform:rotate(13deg)}
+.news-stage .headphones{width:31%;left:28%;top:35%;transform:rotate(-7deg)}
+.news-stage .capsule{width:11%;left:55%;top:58%;transform:rotate(25deg)}
+.news-video{position:absolute;overflow:hidden;border:1px solid rgba(244,240,230,.38);box-shadow:0 20px 45px #000d;background:#060606}
+.news-video video{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.14) brightness(.86)}
+.news-video.a{right:0;top:2%;width:48%;height:35%}
+.news-video.b{right:0;top:45%;width:33%;height:28%}
+.news-video.c{right:37%;top:45%;width:21%;height:24%}
+.news-video:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 22px,rgba(0,217,210,.07) 23px,transparent 24px 54px);mix-blend-mode:screen}
+.news-tag{position:absolute;left:3%;bottom:2%;font:600 8px "IBM Plex Mono";text-transform:uppercase;color:#030303;background:var(--acid);padding:8px 12px;transform:rotate(-.8deg);box-shadow:8px 5px 0 #030303}
+
+/* ====================== 03 BRANDS ====================== */
+.brands{--tex:url("assets/tex_brands.jpg")}
+.brands .inner{display:grid;grid-template-columns:35% 65%;align-items:center}
+.brand-art{height:76vh;position:relative}
+.brand-art .headphones{width:73%;left:-5%;top:20%;transform:rotate(-7deg)}
+.brand-art .capsule{width:25%;right:8%;top:16%;transform:rotate(21deg)}
+.brand-art .ring{width:30%;left:21%;top:0;transform:rotate(7deg)}
+.brand-art .tv{width:46%;left:3%;bottom:0;transform:rotate(-2deg)}
+.brands-right{padding-left:12px}
+.brands-title{width:min(495px,40vw);margin-bottom:24px}
+.logo-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:27px 20px;align-items:center}
+.logo{font:800 clamp(13px,1.25vw,21px) Arial,sans-serif;text-align:center;color:#f4f0e6}
+.logo.small{font-size:clamp(10px,1vw,15px)}
+.logo img{max-width:100%;max-height:31px;margin:auto;filter:grayscale(1) brightness(2)}
+.brands:after{content:"";position:absolute;z-index:7;left:0;right:0;bottom:15%;height:1px;background:linear-gradient(90deg,transparent,#b67b273a,transparent)}
+
+/* ====================== 04 WORK ====================== */
+.work{--tex:url("assets/tex_work.jpg")}
+.work .inner{display:flex;flex-direction:column;justify-content:center}
+.work .work-wordmark{
+  position:absolute;
+  left:24px;
+  top:70px;
+  z-index:30;
+  font-size:26px;
+}
+.work .work-wordmark sup{font-size:9px}
+.work .work-number{
+  position:absolute;
+  right:24px;
+  top:68px;
+  z-index:30;
+  font-size:clamp(18px,1.8vw,28px);
+  line-height:1;
+}
+.work-title{width:min(760px,55vw);margin:0 0 22px}
+.work-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.work-card{position:relative;cursor:pointer;transition:.22s}
+.work-card .pic{position:relative;height:27vh;min-height:190px;border:1px solid rgba(244,240,230,.32);overflow:hidden;background:#080808}
+.work-card .pic img{width:100%;height:100%;object-fit:cover;filter:saturate(.75) contrast(1.14) brightness(.87);transition:.3s}
+.work-card .meta{padding:8px 2px 0;font-family:"IBM Plex Mono";text-transform:uppercase}
+.work-card strong{display:block;font-size:9px}.work-card span{display:block;font-size:7.5px;opacity:.78;margin-top:3px;line-height:1.25}
+.work-card:hover{transform:translateY(-7px)}
+.work-card:hover img{transform:scale(1.025);filter:saturate(.88) contrast(1.14) brightness(.96)}
+.work-card:hover .pic{outline:1px solid var(--acid)}
+.work-card.pending .pic{display:grid;place-items:center;font:600 11px "IBM Plex Mono";background:rgba(4,4,4,.78)}
+.work-card:nth-child(1){transform:translateY(5px)} .work-card:nth-child(3){transform:translateY(-3px)} .work-card:nth-child(5){transform:translateY(4px)}
+.work-card:nth-child(1):hover,.work-card:nth-child(3):hover,.work-card:nth-child(5):hover{transform:translateY(-7px)}
+
+/* V75 — screen 04: vertical packet loss + corrupted portfolio frames */
+#trabajos .inner{z-index:30}
+#trabajos .work-title,#trabajos .work-grid{position:relative;z-index:31}
+#trabajos .work-title{animation:workTitleBreak 5.8s steps(1,end) infinite}
+#trabajos .work-card .pic img{animation:workFrameBreak 6.4s steps(1,end) infinite}
+#trabajos .work-card:nth-child(2) .pic img{animation-delay:-1.35s}
+#trabajos .work-card:nth-child(3) .pic img{animation-delay:-2.7s}
+#trabajos .work-card:nth-child(4) .pic img{animation-delay:-4.05s}
+#trabajos .work-card .pic:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  background:linear-gradient(90deg,transparent 0 18%,#c8ff002b 18% 21%,transparent 21% 63%,#00eaff26 63% 67%,transparent 67%);
+  display:none;
+}
+
+#trabajos .work-vstripe,
+#trabajos .work-data-block{
+  position:absolute;
+  pointer-events:none;
+  opacity:0;
+  z-index:6;
+  mix-blend-mode:screen;
+}
+#trabajos .work-vstripe{
+  top:9%;
+  height:82%;
+  width:5px;
+  background:linear-gradient(180deg,transparent 0 7%,#c8ff00c4 12% 32%,#fff8 39% 45%,#00eaffb5 53% 74%,#ff008b9c 81% 93%,transparent 98%);
+  filter:contrast(1.6) saturate(1.5);
+}
+#trabajos .work-vstripe.v1{left:18%;animation:workVerticalA 3.85s steps(1,end) infinite}
+#trabajos .work-vstripe.v2{left:51%;width:9px;animation:workVerticalB 5.2s steps(1,end) -1.4s infinite}
+#trabajos .work-vstripe.v3{left:83%;width:3px;animation:workVerticalA 4.45s steps(1,end) -2.7s infinite}
+
+#trabajos .work-data-block{filter:contrast(1.5) saturate(1.7)}
+#trabajos .work-data-block.b1{left:7%;top:37%;width:12%;height:7%;background:#c8ff0066;animation:workPacketA 4.1s steps(1,end) infinite}
+#trabajos .work-data-block.b2{left:34%;top:61%;width:16%;height:5%;background:linear-gradient(90deg,#00eaff70,#fff4);animation:workPacketB 5.05s steps(1,end) -1.8s infinite}
+#trabajos .work-data-block.b3{left:62%;top:31%;width:10%;height:10%;background:#ff008b62;animation:workPacketA 3.55s steps(1,end) -2.4s infinite}
+#trabajos .work-data-block.b4{left:77%;top:69%;width:17%;height:6%;background:linear-gradient(90deg,#fff5,#c8ff006b);animation:workPacketB 4.7s steps(1,end) -.9s infinite}
+
+@keyframes workTitleBreak{
+  0%,24%,28%,57%,61%,83%,87%,100%{transform:translate(0);filter:drop-shadow(1px 0 rgba(0,217,210,.27)) drop-shadow(-1px 0 rgba(255,0,107,.20))}
+  25%{transform:translateX(12px) skewX(-1deg);filter:drop-shadow(9px 0 #00eaff9c) drop-shadow(-10px 0 #ff008b90) contrast(1.4)}
+  26%{transform:translateX(-8px);filter:drop-shadow(-6px 0 #c8ff0090) contrast(1.65)}
+  27%{transform:translateX(2px)}
+  58%{transform:translateX(-9px);filter:drop-shadow(8px 0 #c8ff0088) drop-shadow(-6px 0 #00eaff80)}
+  59%{transform:translateX(6px) scaleX(1.01)}
+  60%{transform:translateX(0)}
+  84%{transform:translateY(3px);filter:drop-shadow(6px 0 #ff008b80)}
+  85%{transform:translate(-4px,-1px)}
+  86%{transform:translate(0)}
+}
+@keyframes workFrameBreak{
+  0%,34%,38%,69%,73%,92%,96%,100%{translate:0 0;clip-path:inset(0);filter:saturate(.75) contrast(1.14) brightness(.87)}
+  35%{translate:8px 0;clip-path:polygon(0 0,100% 0,100% 28%,94% 28%,94% 38%,100% 38%,100% 100%,0 100%);filter:saturate(1.65) contrast(1.35) brightness(.95)}
+  36%{translate:-11px 1px;clip-path:polygon(0 0,100% 0,100% 61%,91% 61%,91% 70%,100% 70%,100% 100%,0 100%);filter:saturate(.25) contrast(1.6) brightness(.78)}
+  37%{translate:3px 0;clip-path:inset(0)}
+  70%{translate:-7px 0;clip-path:inset(18% 0 36% 0);filter:saturate(1.8) contrast(1.4) brightness(.9)}
+  71%{translate:6px 0;clip-path:inset(55% 0 8% 0);filter:saturate(.4) contrast(1.55)}
+  72%{translate:0 0;clip-path:inset(0)}
+  93%{translate:5px -1px;clip-path:inset(0 0 72% 0);filter:saturate(1.5) contrast(1.4)}
+  94%{translate:-3px 1px;clip-path:inset(68% 0 0 0)}
+  95%{translate:0 0;clip-path:inset(0)}
+}
+@keyframes workFrameScan{
+  0%,20%,24%,50%,54%,78%,82%,100%{opacity:0;transform:translateX(-18%)}
+  21%{opacity:.75;transform:translateX(8%)}
+  22%{opacity:.35;transform:translateX(42%)}
+  23%{opacity:.08;transform:translateX(69%)}
+  51%{opacity:.62;transform:translateX(18%)}
+  52%{opacity:.28;transform:translateX(55%)}
+  53%{opacity:.06}
+  79%{opacity:.7;transform:translateX(34%)}
+  80%{opacity:.25;transform:translateX(76%)}
+  81%{opacity:.05}
+}
+@keyframes workVerticalA{
+  0%,19%,23%,48%,52%,76%,80%,100%{opacity:0;transform:translate(0) scaleY(1)}
+  20%{opacity:.82;transform:translate(18px,-3%) scaleY(.72)}
+  21%{opacity:.34;transform:translate(-11px,5%) scaleY(1.08)}
+  22%{opacity:.07}
+  49%{opacity:.66;transform:translate(-17px,8%) scaleY(.84)}
+  50%{opacity:.25;transform:translate(9px,-4%)}
+  51%{opacity:.05}
+  77%{opacity:.72;transform:translate(13px,3%) scaleY(.68)}
+  78%{opacity:.22;transform:translate(-7px,-5%)}
+  79%{opacity:.04}
+}
+@keyframes workVerticalB{
+  0%,29%,33%,62%,66%,88%,92%,100%{opacity:0;transform:translateX(0)}
+  30%{opacity:.68;transform:translateX(-19px)}
+  31%{opacity:.28;transform:translateX(14px)}
+  32%{opacity:.06}
+  63%{opacity:.78;transform:translateX(16px) scaleX(.65)}
+  64%{opacity:.3;transform:translateX(-10px) scaleX(1.25)}
+  65%{opacity:.06}
+  89%{opacity:.58;transform:translateX(-13px)}
+  90%{opacity:.2;transform:translateX(8px)}
+  91%{opacity:.04}
+}
+@keyframes workPacketA{
+  0%,16%,20%,44%,48%,73%,77%,94%,98%,100%{opacity:0;transform:translate(0) scaleX(1)}
+  17%{opacity:.72;transform:translate(16px,-6px) scaleX(.75)}
+  18%{opacity:.3;transform:translate(-9px,5px) scaleX(1.18)}
+  19%{opacity:.06}
+  45%{opacity:.58;transform:translate(-14px,7px)}
+  46%{opacity:.22;transform:translate(8px,-4px)}
+  47%{opacity:.05}
+  74%{opacity:.65;transform:translate(11px,4px) scaleX(.82)}
+  75%{opacity:.24;transform:translate(-6px,-5px)}
+  76%{opacity:.05}
+  95%{opacity:.52;transform:translate(-10px,3px)}
+  96%{opacity:.18;transform:translate(6px,-2px)}
+  97%{opacity:.04}
+}
+@keyframes workPacketB{
+  0%,27%,31%,59%,63%,85%,89%,100%{opacity:0;transform:translate(0)}
+  28%{opacity:.64;transform:translate(-17px,5px)}
+  29%{opacity:.25;transform:translate(12px,-7px)}
+  30%{opacity:.05}
+  60%{opacity:.7;transform:translate(15px,-4px) scaleY(.65)}
+  61%{opacity:.26;transform:translate(-9px,6px) scaleY(1.2)}
+  62%{opacity:.05}
+  86%{opacity:.55;transform:translate(-12px,-3px)}
+  87%{opacity:.19;transform:translate(7px,4px)}
+  88%{opacity:.04}
+}
+
+/* V76 — extra moving digital grain, concentrated around title and portfolio */
+#trabajos .work-noise{
+  position:absolute;
+  z-index:6;
+  left:2%;
+  right:2%;
+  top:18%;
+  bottom:12%;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  background-image:
+    repeating-conic-gradient(from 21deg at 37% 43%,#fff 0 2deg,transparent 2deg 8deg),
+    repeating-linear-gradient(87deg,#00eaff70 0 1px,transparent 1px 5px,#c8ff005c 5px 6px,transparent 6px 11px),
+    repeating-linear-gradient(2deg,#ff008b54 0 1px,transparent 1px 4px);
+  background-size:6px 6px,17px 7px,9px 13px;
+  filter:contrast(2.35) saturate(1.75);
+  clip-path:polygon(0 3%,46% 3%,46% 16%,82% 16%,82% 31%,100% 31%,100% 49%,69% 49%,69% 64%,93% 64%,93% 82%,54% 82%,54% 98%,0 98%);
+  animation:workNoiseDrift 2.75s steps(1,end) infinite;
+}
+@keyframes workNoiseDrift{
+  0%,13%,17%,34%,38%,55%,59%,77%,81%,94%,98%,100%{opacity:0;background-position:0 0,0 0,0 0;transform:translate(0)}
+  14%{opacity:.18;background-position:13px -7px,-11px 5px,7px -9px;transform:translate(4px,-2px)}
+  15%{opacity:.34;background-position:-19px 11px,16px -8px,-12px 6px;transform:translate(-7px,3px)}
+  16%{opacity:.09;background-position:8px 15px,-5px 9px,14px -4px;transform:translate(2px,0)}
+  35%{opacity:.27;background-position:21px -13px,-17px 8px,9px 12px;transform:translate(-5px,2px)}
+  36%{opacity:.14;background-position:-10px 6px,19px -11px,-15px 5px;transform:translate(8px,-1px)}
+  37%{opacity:.05}
+  56%{opacity:.38;background-position:-16px -18px,14px 7px,11px -13px;transform:translate(3px,3px)}
+  57%{opacity:.2;background-position:23px 9px,-20px -5px,-8px 10px;transform:translate(-6px,-2px)}
+  58%{opacity:.06}
+  78%{opacity:.31;background-position:18px 14px,-13px -9px,16px 7px;transform:translate(7px,1px)}
+  79%{opacity:.16;background-position:-21px -6px,17px 11px,-10px -12px;transform:translate(-3px,-3px)}
+  80%{opacity:.05}
+  95%{opacity:.25;background-position:-12px 17px,21px -6px,8px 14px;transform:translate(5px,2px)}
+  96%{opacity:.12;background-position:19px -9px,-14px 12px,-13px 4px;transform:translate(-4px,-1px)}
+  97%{opacity:.04}
+}
+
+@media (prefers-reduced-motion:reduce){
+  #trabajos .work-title,#trabajos .work-card .pic img,#trabajos .work-card .pic:after,
+  #trabajos .work-vstripe,#trabajos .work-data-block,#trabajos .work-noise{animation:none!important;}
+}
+
+/* ====================== 05 D1 ====================== */
+.d1{--tex:url("assets/tex_d1.jpg")}
+.d1 .inner{display:grid;grid-template-columns:37% 63%;align-items:center}
+.d1-copy{position:relative;z-index:15}
+.d1-title{width:min(560px,46vw);margin:16px 0}
+.d1-copy .body{position:relative;z-index:15;max-width:380px;font-size:13px}
+.d1-stage{height:76vh;position:relative}
+.d1-video{position:absolute;right:0;top:6%;width:74%;height:67%;z-index:9;border:1px solid rgba(244,240,230,.34);overflow:hidden}
+.d1-video video{width:100%;height:100%;object-fit:cover;filter:saturate(.77) contrast(1.11) brightness(.89)}
+.d1-stage .goldbar{width:40%;left:-13%;top:25%;transform:rotate(-12deg);z-index:5;animation:d1GoldPulse 7.4s steps(1,end) infinite}
+.d1-stage .headphones{width:32.13%;left:0;bottom:4%;transform:rotate(-4deg);z-index:7;animation:d1HeadphonePulse 8.2s steps(1,end) -2.1s infinite}
+.d1-video:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(3,3,3,.28),transparent 30%),repeating-linear-gradient(0deg,transparent 0 32px,rgba(0,217,210,.05) 33px,transparent 34px 75px)}
+.d1-code,.d1-register,.d1-packet{position:absolute;pointer-events:none;opacity:0;mix-blend-mode:screen}
+.d1-code{
+  z-index:6;left:-11%;top:17%;width:43%;height:58%;
+  background:repeating-linear-gradient(90deg,#f4f0e8aa 0 2px,transparent 2px 7px,#b77b2788 7px 10px,transparent 10px 16px);
+  clip-path:polygon(0 4%,52% 4%,52% 18%,88% 18%,88% 30%,39% 30%,39% 47%,100% 47%,100% 59%,63% 59%,63% 78%,23% 78%,23% 94%,0 94%);
+  animation:d1BarcodeScan 5.9s steps(1,end) infinite;
+}
+.d1-register{z-index:8;left:-15%;width:55%;filter:contrast(1.3) saturate(1.5)}
+.d1-register.r1{top:31%;height:10px;background:linear-gradient(90deg,transparent 0 5%,#00eaffa3 9% 39%,#ffd40087 43% 64%,#ff008b99 68% 90%,transparent 96%);animation:d1RegisterA 4.7s steps(1,end) infinite}
+.d1-register.r2{top:58%;height:15px;background:linear-gradient(90deg,transparent 0 8%,#ff008b8c 13% 42%,#f4f0e87d 47% 61%,#00eaff97 66% 92%,transparent 98%);animation:d1RegisterB 6.1s steps(1,end) -1.9s infinite}
+.d1-register.r3{top:76%;height:6px;background:linear-gradient(90deg,transparent 0 12%,#ffd4007c 18% 46%,#00eaff8c 51% 71%,#ff008b87 76% 94%,transparent 100%);animation:d1RegisterA 5.3s steps(1,end) -3.2s infinite}
+.d1-packet{z-index:8;filter:contrast(1.35) saturate(1.45)}
+.d1-packet.p1{left:-5%;top:22%;width:15%;height:8%;background:#00eaff4f;animation:d1PacketA 5.15s steps(1,end) infinite}
+.d1-packet.p2{left:12%;top:47%;width:19%;height:6%;background:#ff008b4a;animation:d1PacketB 6.4s steps(1,end) -2.3s infinite}
+.d1-packet.p3{left:3%;top:70%;width:24%;height:5%;background:linear-gradient(90deg,#ffd40048,#f4f0e84f);animation:d1PacketA 4.8s steps(1,end) -1.2s infinite}
+@keyframes d1GoldPulse{
+  0%,33%,35%,76%,78%,100%{translate:0 0}
+  33.4%{translate:-3px 1px} 33.8%{translate:3px -1px} 34.2%{translate:0 0}
+  76.4%{translate:2px 0} 76.8%{translate:-2px 1px} 77.2%{translate:0 0}
+}
+@keyframes d1HeadphonePulse{
+  0%,27%,29%,68%,70%,100%{translate:0 0}
+  27.3%{translate:3px 0} 27.65%{translate:-3px 1px} 28%{translate:1px -1px} 28.35%{translate:0 0}
+  68.3%{translate:-2px 0} 68.65%{translate:3px -1px} 69%{translate:0 0}
+}
+@keyframes d1BarcodeScan{
+  0%,18%,22%,51%,55%,84%,88%,100%{opacity:0;translate:0 0}
+  19%{opacity:.24;translate:7px -2px} 20%{opacity:.44;translate:-5px 3px} 21%{opacity:.09;translate:0 0}
+  52%{opacity:.38;translate:-8px 1px} 53%{opacity:.18;translate:5px -2px} 54%{opacity:.07}
+  85%{opacity:.41;translate:6px 2px} 86%{opacity:.19;translate:-4px -1px} 87%{opacity:.06}
+}
+@keyframes d1RegisterA{
+  0%,24%,28%,61%,65%,91%,95%,100%{opacity:0;translate:0 0}
+  25%{opacity:.78;translate:13px 0} 26%{opacity:.38;translate:-9px 1px} 27%{opacity:.09}
+  62%{opacity:.66;translate:-11px 0} 63%{opacity:.29;translate:7px -1px} 64%{opacity:.08}
+  92%{opacity:.6;translate:9px 0} 93%{opacity:.25;translate:-5px 1px} 94%{opacity:.07}
+}
+@keyframes d1RegisterB{
+  0%,36%,40%,72%,76%,100%{opacity:0;translate:0 0}
+  37%{opacity:.7;translate:-14px 1px} 38%{opacity:.34;translate:10px -1px} 39%{opacity:.08}
+  73%{opacity:.62;translate:12px 0} 74%{opacity:.28;translate:-7px 1px} 75%{opacity:.07}
+}
+@keyframes d1PacketA{
+  0%,29%,33%,67%,71%,100%{opacity:0;transform:translate(0) scaleX(1)}
+  30%{opacity:.62;transform:translate(12px,-4px) scaleX(.72)} 31%{opacity:.29;transform:translate(-7px,5px) scaleX(1.1)} 32%{opacity:.07}
+  68%{opacity:.55;transform:translate(-10px,4px) scaleX(.82)} 69%{opacity:.24;transform:translate(6px,-3px)} 70%{opacity:.07}
+}
+@keyframes d1PacketB{
+  0%,15%,19%,49%,53%,82%,86%,100%{opacity:0;transform:translate(0)}
+  16%{opacity:.58;transform:translate(-11px,4px)} 17%{opacity:.26;transform:translate(8px,-2px)} 18%{opacity:.07}
+  50%{opacity:.62;transform:translate(13px,-5px)} 51%{opacity:.28;transform:translate(-7px,3px)} 52%{opacity:.07}
+  83%{opacity:.52;transform:translate(-9px,-3px)} 84%{opacity:.23;transform:translate(5px,4px)} 85%{opacity:.06}
+}
+@media (prefers-reduced-motion:reduce){
+  .d1-stage .goldbar,.d1-stage .headphones,.d1-code,.d1-register,.d1-packet{animation:none!important}
+}
+
+/* ====================== 06 SERVICES ====================== */
+.services{--tex:url("assets/tex_services.jpg")}
+.services .inner{display:grid;grid-template-columns:47% 53%;align-items:center}
+.services-copy{position:relative;z-index:15}
+.services-title{width:min(580px,47vw);margin:13px 0 18px}
+.service-line{position:relative;z-index:15;font:500 11px/1.58 "IBM Plex Mono";text-transform:uppercase;max-width:470px}
+.service-art{height:78vh;position:relative;isolation:isolate}
+.service-art .cassette1{width:45.825%;left:-26%;top:29.6%;transform:rotate(8deg);transform-origin:100% 100%;animation:none}
+.service-art .cassette2{width:41.925%;left:14%;bottom:8%;transform:rotate(-10deg);animation:none}
+.service-art .lobster{width:75%;left:28%;right:auto;top:18%;transform:rotate(-10deg);animation:none}
+.services .artbed{opacity:.34;filter:contrast(1.75) brightness(.56) saturate(1.3)}
+.services .texture{opacity:.68;filter:contrast(1.75) brightness(.52) saturate(1.2)}
+.services .glitch-lines{opacity:1;filter:saturate(2) contrast(1.45);animation-duration:5.3s}
+.services .glitch-blocks{opacity:1;filter:saturate(2.15) contrast(1.55);animation-duration:4.7s}
+.services .signal-tear{height:20px;opacity:.48;filter:blur(.2px) saturate(2);animation-duration:4.2s}
+.services .grain{opacity:.23}
+.svc-bg-pixel,.svc-bg-macro,.svc-bg-sync{position:absolute;pointer-events:none;opacity:0;mix-blend-mode:screen}
+.svc-bg-pixel{z-index:4;inset:8% -3% 5% -3%;transform-origin:center bottom;clip-path:polygon(2% 4%,7% 4%,7% 78%,11% 78%,11% 18%,16% 18%,16% 94%,21% 94%,21% 37%,26% 37%,26% 84%,31% 84%,31% 7%,36% 7%,36% 66%,42% 66%,42% 27%,48% 27%,48% 97%,54% 97%,54% 43%,60% 43%,60% 13%,66% 13%,66% 81%,72% 81%,72% 31%,78% 31%,78% 91%,84% 91%,84% 10%,90% 10%,90% 72%,96% 72%,96% 100%,2% 100%);background:repeating-linear-gradient(90deg,transparent 0 10px,#00eaff8c 10px 13px,transparent 13px 23px,#ff008b78 23px 26px,transparent 26px 36px,#d2943466 36px 39px);filter:blur(.25px) contrast(1.65);animation:svcPixelSort 5.2s steps(1,end) -.8s infinite}
+.svc-bg-macro{z-index:5;inset:9% -6% 7% -6%;background:repeating-linear-gradient(90deg,#00eaff76 0 32px,transparent 32px 69px,#ff008b68 69px 96px,transparent 96px 139px),repeating-linear-gradient(0deg,transparent 0 24px,#f4f0e862 24px 34px,transparent 34px 59px);clip-path:polygon(1% 7%,23% 7%,23% 18%,1% 18%,1% 7%,36% 3%,59% 3%,59% 15%,36% 15%,36% 3%,68% 28%,99% 28%,99% 44%,68% 44%,68% 28%,5% 53%,33% 53%,33% 68%,5% 68%,5% 53%,42% 72%,70% 72%,70% 85%,42% 85%,42% 72%,76% 87%,100% 87%,100% 99%,76% 99%);filter:contrast(1.8) saturate(1.55);animation:svcMacroDrift 5.8s steps(1,end) -3.1s infinite}
+.svc-bg-sync{z-index:6;left:-8%;right:-8%;top:10%;height:78%;background:repeating-linear-gradient(0deg,transparent 0 46px,rgba(244,240,232,.24) 46px 49px,transparent 49px 101px,rgba(0,234,255,.27) 101px 106px,transparent 106px 151px,rgba(255,0,139,.23) 151px 155px);clip-path:polygon(0 7%,100% 7%,100% 18%,0 18%,0 39%,100% 39%,100% 48%,0 48%,0 69%,100% 69%,100% 78%,0 78%,0 91%,100% 91%,100% 97%,0 97%);filter:contrast(1.5);animation:svcBgSync 6.6s steps(1,end) -2.4s infinite}
+.svc-dropout,.svc-tape-head,.svc-spool{position:absolute;pointer-events:none;opacity:0;mix-blend-mode:screen}
+.svc-dropout{z-index:8;left:-29%;width:111%;filter:contrast(1.35) saturate(1.55)}
+.svc-dropout.t1{top:32%;height:9px;background:linear-gradient(90deg,transparent 0 4%,#00eaff8a 8% 29%,#f4f0e875 34% 50%,#ff008b82 56% 79%,#ffd40068 84% 94%,transparent 100%);animation:svcTapeDropA 4.9s steps(1,end) infinite}
+.svc-dropout.t2{top:55%;height:16px;background:linear-gradient(90deg,transparent 0 9%,#ff008b75 14% 37%,#ffd40062 43% 57%,#00eaff80 63% 88%,transparent 96%);animation:svcTapeDropB 6.2s steps(1,end) -2.2s infinite}
+.svc-dropout.t3{top:75%;height:6px;background:linear-gradient(90deg,transparent 0 13%,#f4f0e866 18% 34%,#00eaff70 40% 65%,#ff008b70 71% 91%,transparent 98%);animation:svcTapeDropA 5.55s steps(1,end) -3.4s infinite}
+.svc-tape-head{z-index:7;top:13%;bottom:8%;width:3px;background:#f4f0e899;box-shadow:-4px 0 #00eaff75,4px 0 #ff008b70,8px 0 #ffd40048;animation:svcHeadScan 6.8s steps(1,end) infinite}
+.svc-spool{z-index:8;width:11%;aspect-ratio:1;border-radius:50%;border:2px solid #f4f0e866;background:repeating-conic-gradient(#00eaff70 0 9deg,transparent 9deg 24deg,#ff008b62 24deg 31deg,transparent 31deg 45deg);filter:blur(.2px);animation:svcSpoolFlash 7.1s steps(1,end) infinite}
+.svc-spool.s1{left:16%;top:58%}
+.svc-spool.s2{left:32%;top:62%;animation-delay:-2.8s}
+@keyframes svcCassetteA{
+  0%,31%,33%,73%,75%,100%{translate:0 0}
+  31.35%{translate:-3px 1px} 31.7%{translate:3px -1px} 32.05%{translate:0 0}
+  73.35%{translate:2px 0} 73.7%{translate:-2px 1px} 74.05%{translate:0 0}
+}
+@keyframes svcCassetteB{
+  0%,22%,24%,64%,66%,100%{translate:0 0}
+  22.3%{translate:3px 0} 22.6%{translate:-3px 1px} 22.9%{translate:1px -1px} 23.2%{translate:0 0}
+  64.3%{translate:-2px 0} 64.6%{translate:2px -1px} 64.9%{translate:0 0}
+}
+@keyframes svcLobsterBreak{
+  0%,42%,44%,86%,88%,100%{translate:0 0}
+  42.4%{translate:3px -1px} 42.8%{translate:-2px 1px} 43.2%{translate:0 0}
+  86.4%{translate:-3px 0} 86.8%{translate:2px 1px} 87.2%{translate:0 0}
+}
+@keyframes svcTapeDropA{
+  0%,18%,22%,52%,56%,83%,87%,100%{opacity:0;translate:0 0}
+  19%{opacity:.72;translate:16px 0} 20%{opacity:.31;translate:-11px 1px} 21%{opacity:.06}
+  53%{opacity:.58;translate:-14px 0} 54%{opacity:.24;translate:9px -1px} 55%{opacity:.05}
+  84%{opacity:.63;translate:12px 0} 85%{opacity:.27;translate:-7px 1px} 86%{opacity:.05}
+}
+@keyframes svcTapeDropB{
+  0%,29%,33%,68%,72%,100%{opacity:0;translate:0 0}
+  30%{opacity:.66;translate:-17px 1px} 31%{opacity:.28;translate:12px -1px} 32%{opacity:.06}
+  69%{opacity:.6;translate:14px 0} 70%{opacity:.25;translate:-9px 1px} 71%{opacity:.05}
+}
+@keyframes svcHeadScan{
+  0%,14%,18%,48%,52%,82%,86%,100%{opacity:0;left:5%}
+  15%{opacity:.45;left:5%} 16%{opacity:.28;left:68%} 17%{opacity:.06;left:81%}
+  49%{opacity:.36;left:72%} 50%{opacity:.22;left:19%} 51%{opacity:.05;left:8%}
+  83%{opacity:.4;left:12%} 84%{opacity:.24;left:76%} 85%{opacity:.05;left:88%}
+}
+@keyframes svcSpoolFlash{
+  0%,37%,41%,77%,81%,100%{opacity:0;rotate:0deg;scale:.9}
+  38%{opacity:.42;rotate:45deg;scale:1} 39%{opacity:.2;rotate:105deg;scale:1.08} 40%{opacity:.05;rotate:150deg;scale:.95}
+  78%{opacity:.36;rotate:210deg;scale:1.05} 79%{opacity:.16;rotate:275deg;scale:.94} 80%{opacity:.04;rotate:320deg;scale:1}
+}
+@keyframes svcPixelSort{
+  0%,24%,28%,57%,61%,88%,92%,100%{opacity:0;scale:1 1;translate:0 0}
+  25%{opacity:.62;scale:1 1.36;translate:-14px 7px} 26%{opacity:.36;scale:1 .68;translate:19px -6px} 27%{opacity:.06}
+  58%{opacity:.55;scale:1 1.48;translate:16px 5px} 59%{opacity:.3;scale:1 .61;translate:-18px -5px} 60%{opacity:.05}
+  89%{opacity:.48;scale:1 1.31;translate:-12px 3px} 90%{opacity:.24;scale:1 .73;translate:13px 0} 91%{opacity:.04}
+}
+@keyframes svcMacroDrift{
+  0%,18%,22%,49%,53%,79%,83%,100%{opacity:0;translate:0 0}
+  19%{opacity:.54;translate:30px -6px} 20%{opacity:.31;translate:-21px 8px} 21%{opacity:.05}
+  50%{opacity:.6;translate:-34px 5px} 51%{opacity:.28;translate:20px -7px} 52%{opacity:.04}
+  80%{opacity:.48;translate:25px 6px} 81%{opacity:.23;translate:-16px -5px} 82%{opacity:.04}
+}
+@keyframes svcBgSync{
+  0%,27%,32%,62%,67%,91%,95%,100%{opacity:0;translate:0 0;scale:1 1}
+  28%{opacity:.62;translate:22px -8px;scale:1 1.18} 29%{opacity:.35;translate:-18px 12px;scale:1 .82} 31%{opacity:.06}
+  63%{opacity:.55;translate:-25px 9px;scale:1 1.28} 65%{opacity:.28;translate:14px -11px;scale:1 .76} 66%{opacity:.05}
+  92%{opacity:.48;translate:17px 5px;scale:1 1.15} 94%{opacity:.05}
+}
+@media (prefers-reduced-motion:reduce){
+  .svc-dropout,.svc-tape-head,.svc-spool,.svc-bg-pixel,.svc-bg-macro,.svc-bg-sync{animation:none!important}
+}
+
+/* ====================== 07 METHOD ====================== */
+.method{--tex:url("assets/tex_method.jpg")}
+.method .glitch-lines{opacity:1;filter:saturate(3.2) contrast(1.55);animation-duration:6.1s}
+.method .glitch-blocks{opacity:1;filter:saturate(3.5) contrast(1.6);animation-duration:5.4s}
+.method-data-grid,.method-vector-tear,.method-thrust-noise,.method-noise-storm{position:absolute;pointer-events:none;opacity:0;mix-blend-mode:screen}
+.method-data-grid{z-index:4;inset:10% 3% 9% 42%;background:repeating-linear-gradient(90deg,transparent 0 37px,rgba(0,234,255,.34) 37px 39px,transparent 39px 81px),repeating-linear-gradient(0deg,transparent 0 31px,rgba(255,0,139,.24) 31px 33px,transparent 33px 68px);clip-path:polygon(0 3%,100% 3%,100% 16%,14% 16%,14% 28%,91% 28%,91% 43%,4% 43%,4% 57%,100% 57%,100% 71%,19% 71%,19% 84%,95% 84%,95% 97%,0 97%);filter:saturate(2.5) contrast(1.25);animation:methodGridFault 7.2s steps(1,end) -2.1s infinite}
+.method-vector-tear{z-index:5;right:-8%;top:11%;width:67%;height:76%;background:repeating-linear-gradient(164deg,transparent 0 24px,rgba(224,151,35,.62) 24px 29px,transparent 29px 56px,rgba(255,0,139,.46) 56px 60px,transparent 60px 91px,rgba(0,234,255,.52) 91px 95px);clip-path:polygon(5% 4%,100% 4%,100% 14%,22% 14%,22% 34%,94% 34%,94% 43%,0 43%,0 63%,82% 63%,82% 72%,12% 72%,12% 91%,100% 91%,100% 99%,5% 99%);filter:saturate(2.8) contrast(1.3);animation:methodVectorBreak 6.4s steps(1,end) -4.3s infinite}
+.method-thrust-noise{z-index:6;left:43%;right:-5%;bottom:5%;height:29%;background:radial-gradient(ellipse at 28% 100%,rgba(255,0,139,.52),transparent 47%),radial-gradient(ellipse at 72% 100%,rgba(0,234,255,.55),transparent 48%),repeating-linear-gradient(90deg,transparent 0 17px,rgba(230,157,38,.38) 17px 20px,transparent 20px 39px);clip-path:polygon(0 28%,17% 28%,17% 7%,30% 7%,30% 53%,44% 53%,44% 19%,57% 19%,57% 69%,70% 69%,70% 4%,82% 4%,82% 45%,100% 45%,100% 100%,0 100%);filter:blur(.3px) saturate(3) contrast(1.5);animation:methodThrustFault 5.8s steps(1,end) -1.6s infinite}
+.method-noise-storm{z-index:7;inset:5% 0 4% 38%;background-image:radial-gradient(rgba(0,234,255,.8) .7px,transparent .9px),radial-gradient(rgba(255,0,139,.7) .8px,transparent 1px),radial-gradient(rgba(232,158,39,.68) .65px,transparent .9px);background-size:4px 4px,7px 7px,11px 11px;background-position:0 0,2px 3px,5px 1px;clip-path:polygon(0 4%,100% 4%,100% 23%,12% 23%,12% 37%,94% 37%,94% 58%,3% 58%,3% 71%,100% 71%,100% 96%,0 96%);filter:saturate(3.4) contrast(1.9);animation:methodNoiseStorm 3.9s steps(1,end) -1.2s infinite}
+.method .inner{display:grid;grid-template-columns:46% 54%;align-items:center}
+.method-title{width:min(330px,27vw);margin:16px 0 22px}
+.method-copy-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(155px,.85fr);gap:28px;align-items:start;max-width:650px}
+.method .body{max-width:430px;font-size:13px;margin:0}
+.method-list{font:500 11px/1.86 "IBM Plex Mono";text-transform:uppercase;margin:0}
+.method-art{height:77vh;position:relative;isolation:isolate}
+.method-art .gold{filter:sepia(.18) saturate(.86) contrast(1.24) brightness(.62) drop-shadow(0 20px 34px rgba(0,0,0,.94))}
+.method-art .rocket-a{width:57%;left:5%;top:18%;transform:rotate(-72deg);transform-origin:center;z-index:5}
+.method-art .rocket-b{width:45.9%;right:2%;top:18%;transform:rotate(-72deg);transform-origin:center;z-index:4}
+.method-art .method-ring{width:25%;left:43%;bottom:1%;transform:rotate(82deg);z-index:7}
+@keyframes methodGridFault{
+  0%,24%,29%,59%,64%,88%,93%,100%{opacity:0;translate:0 0}
+  25%{opacity:.46;translate:14px -5px} 27%{opacity:.22;translate:-9px 4px} 28%{opacity:.04}
+  60%{opacity:.39;translate:-17px 7px} 62%{opacity:.19;translate:11px -3px} 63%{opacity:.04}
+  89%{opacity:.34;translate:9px 3px} 91%{opacity:.15;translate:-6px -4px} 92%{opacity:.03}
+}
+@keyframes methodVectorBreak{
+  0%,31%,36%,67%,72%,100%{opacity:0;translate:0 0;scale:1 1}
+  32%{opacity:.51;translate:23px -6px;scale:1.05 1} 34%{opacity:.25;translate:-15px 5px;scale:.97 1.08} 35%{opacity:.04}
+  68%{opacity:.43;translate:-21px 4px;scale:1.04 .93} 70%{opacity:.2;translate:13px -5px} 71%{opacity:.03}
+}
+@keyframes methodThrustFault{
+  0%,18%,23%,48%,53%,78%,83%,100%{opacity:0;translate:0 0;scale:1 1}
+  19%{opacity:.5;translate:8px 5px;scale:1 1.16} 21%{opacity:.23;translate:-7px -3px;scale:1 .86} 22%{opacity:.04}
+  49%{opacity:.45;translate:-10px 6px;scale:1 1.24} 51%{opacity:.2;translate:9px -4px;scale:1 .81} 52%{opacity:.03}
+  79%{opacity:.38;translate:7px 3px;scale:1 1.12} 81%{opacity:.17;translate:-5px -2px} 82%{opacity:.03}
+}
+@keyframes methodNoiseStorm{
+  0%,16%,21%,43%,48%,69%,74%,91%,96%,100%{opacity:0;translate:0 0}
+  17%{opacity:.46;translate:-8px 5px} 19%{opacity:.28;translate:13px -4px} 20%{opacity:.05}
+  44%{opacity:.55;translate:11px 7px} 46%{opacity:.31;translate:-15px -6px} 47%{opacity:.05}
+  70%{opacity:.49;translate:-12px 3px} 72%{opacity:.26;translate:9px -5px} 73%{opacity:.04}
+  92%{opacity:.42;translate:7px 4px} 94%{opacity:.2;translate:-6px -3px} 95%{opacity:.03}
+}
+@media (prefers-reduced-motion:reduce){.method-data-grid,.method-vector-tear,.method-thrust-noise,.method-noise-storm{animation:none!important}}
+
+/* ====================== 08 ABOUT ====================== */
+.about{--tex:url("assets/tex_about.jpg")}
+.about .inner{display:grid;grid-template-columns:29% 71%;align-items:stretch;padding-right:0}
+.about-left{position:relative;z-index:10}
+.about-copy{font:400 13px/1.6 "IBM Plex Mono";max-width:235px;margin-top:48px}
+.about-photo{height:calc(100svh - 108px);position:relative;overflow:hidden;border-left:1px solid rgba(244,240,230,.32)}
+.about-photo img.base{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.70) contrast(1.14) brightness(.84)}
+.about-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030303ab 0,transparent 20%),linear-gradient(0deg,#0303037c,transparent 28%);mix-blend-mode:multiply}
+.about-photo .headphones{width:27%;right:-3%;top:4%;transform:rotate(-8deg)}
+.about-photo .capsule{width:9%;right:5%;bottom:5%;transform:rotate(24deg)}
+
+/* ====================== 09 AWARDS ====================== */
+.awards{--tex:url("assets/tex_awards.jpg")}
+.awards .glitch-lines{opacity:1;filter:saturate(3.4) contrast(1.75);animation-duration:3.8s}
+.awards .glitch-blocks{opacity:1;filter:saturate(3.6) contrast(1.8);animation-duration:3.2s}
+.awards .signal-tear{height:25px;opacity:.62;filter:saturate(3.5) contrast(1.65);animation-duration:3.6s}
+.awards .grain{opacity:.28}
+.awards .inner{display:grid;grid-template-columns:38% 62%;align-items:center}
+.awards-title{width:min(520px,40vw);margin:10px 0 6px}
+.awards-num{width:min(390px,30vw)}
+.awards-art{height:79vh;position:relative;overflow:hidden;isolation:isolate}
+.awards-art img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.66) contrast(1.17) brightness(.85)}
+.awards .awards-art .awards-base{filter:saturate(.72) contrast(1.18) brightness(.72)}
+.awards .awards-art .awards-echo{position:absolute;inset:0;z-index:2;opacity:0;filter:saturate(2.2) contrast(1.5) brightness(.62) hue-rotate(130deg);mix-blend-mode:screen;clip-path:polygon(0 4%,100% 4%,100% 15%,0 15%,0 28%,100% 28%,100% 40%,0 40%,0 55%,100% 55%,100% 66%,0 66%,0 81%,100% 81%,100% 94%,0 94%);animation:awardsFrameRupture 4.8s steps(1,end) -2.3s infinite}
+.awards-corrupt,.awards-noise,.awards-scanburst{position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen}
+.awards-corrupt{z-index:3;background:repeating-linear-gradient(90deg,#00eaff8c 0 37px,transparent 37px 78px,#ff008b7a 78px 113px,transparent 113px 159px,#d99a3b70 159px 184px,transparent 184px 223px);clip-path:polygon(0 7%,82% 7%,82% 16%,13% 16%,13% 31%,100% 31%,100% 43%,4% 43%,4% 58%,91% 58%,91% 72%,18% 72%,18% 86%,100% 86%,100% 98%,0 98%);filter:saturate(2.8) contrast(1.6);animation:awardsMacroCrash 3.9s steps(1,end) -.7s infinite}
+.awards-noise{z-index:4;background-image:radial-gradient(rgba(255,255,255,.82) .7px,transparent .9px),radial-gradient(rgba(0,234,255,.75) .8px,transparent 1px),radial-gradient(rgba(255,0,139,.66) .65px,transparent .9px);background-size:3px 3px,6px 6px,10px 10px;background-position:0 0,2px 4px,6px 1px;filter:contrast(2.1) saturate(2.6);animation:awardsNoiseAttack 2.7s steps(1,end) -1.4s infinite}
+.awards-scanburst{z-index:5;background:repeating-linear-gradient(0deg,transparent 0 6px,rgba(244,240,232,.24) 6px 8px,transparent 8px 15px,rgba(0,234,255,.18) 15px 17px,transparent 17px 25px);filter:contrast(1.7) saturate(2.4);animation:awardsScanBurst 4.2s steps(1,end) -3.1s infinite}
+.awards .awards-art:after{content:"";position:absolute;z-index:6;inset:0;background:linear-gradient(90deg,#030303ed 0 8%,rgba(3,3,3,.28) 45%,rgba(3,3,3,.18)),linear-gradient(0deg,#030303b8,transparent 44%);pointer-events:none}
+@keyframes awardsFrameRupture{0%,20%,25%,51%,56%,80%,85%,100%{opacity:0;translate:0 0}21%{opacity:.5;translate:21px -5px}23%{opacity:.25;translate:-14px 6px}24%{opacity:.04}52%{opacity:.46;translate:-24px 4px}54%{opacity:.22;translate:16px -5px}55%{opacity:.04}81%{opacity:.4;translate:18px 3px}83%{opacity:.18;translate:-10px -3px}84%{opacity:.03}}
+@keyframes awardsMacroCrash{0%,14%,19%,39%,44%,65%,70%,89%,94%,100%{opacity:0;translate:0 0;scale:1 1}15%{opacity:.66;translate:29px -6px;scale:1.05 1}17%{opacity:.31;translate:-19px 7px;scale:.96 1.14}18%{opacity:.05}40%{opacity:.59;translate:-31px 5px}42%{opacity:.27;translate:20px -6px}43%{opacity:.04}66%{opacity:.62;translate:24px 8px;scale:1.07 .86}68%{opacity:.29;translate:-16px -5px}69%{opacity:.04}90%{opacity:.52;translate:-22px 4px}92%{opacity:.23;translate:13px -3px}93%{opacity:.03}}
+@keyframes awardsNoiseAttack{0%,11%,17%,31%,37%,52%,58%,72%,78%,91%,97%,100%{opacity:0;background-position:0 0,2px 4px,6px 1px}12%{opacity:.52;background-position:9px -7px,-5px 12px,14px 6px}15%{opacity:.24}32%{opacity:.63;background-position:-11px 8px,13px -6px,-7px 15px}35%{opacity:.28}53%{opacity:.55;background-position:15px 5px,-9px 14px,8px -12px}56%{opacity:.25}73%{opacity:.6;background-position:-8px -11px,16px 7px,-12px 4px}76%{opacity:.27}92%{opacity:.48;background-position:12px 9px,-6px -13px,15px 3px}95%{opacity:.21}}
+@keyframes awardsScanBurst{0%,33%,39%,68%,74%,100%{opacity:0;translate:0 0}34%{opacity:.48;translate:0 -18px}36%{opacity:.26;translate:0 24px}38%{opacity:.04}69%{opacity:.43;translate:0 21px}72%{opacity:.2;translate:0 -15px}73%{opacity:.03}}
+@media (prefers-reduced-motion:reduce){.awards-echo,.awards-corrupt,.awards-noise,.awards-scanburst{animation:none!important}}
+.awards-action{margin-top:15px}
+
+/* ====================== FINAL ====================== */
+.contact{--tex:url("assets/tex_contact.jpg")}
+.contact .inner{display:grid;grid-template-columns:50% 50%;align-items:center}
+.contact-left{z-index:10}
+.final-title{width:min(365px,28vw);margin:17px 0 28px}
+.contact-copy{font:400 13px/1.55 "IBM Plex Mono";max-width:480px;margin-top:19px}
+.contact-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:27px;font:500 8.5px "IBM Plex Mono";text-transform:uppercase}
+.contact-links a{border-bottom:1px solid rgba(244,240,230,.42);padding-bottom:4px}
+.moon-wrap{position:absolute;z-index:4;right:-2vw;top:0;width:51vw;height:100%;display:flex;align-items:center;justify-content:flex-end;overflow:hidden}
+.moon{width:min(58vw,900px);height:min(58vw,900px);border-radius:50%;position:relative;transform:translateX(34%);
+  background:
+    radial-gradient(circle at 29% 31%,rgba(196,187,164,.96) 0 3%,transparent 3.2%),
+    radial-gradient(circle at 37% 23%,rgba(59,55,48,.65) 0 6%,transparent 6.4%),
+    radial-gradient(circle at 33% 52%,rgba(54,49,43,.72) 0 7%,transparent 7.4%),
+    radial-gradient(circle at 53% 61%,rgba(41,38,33,.78) 0 10%,transparent 10.5%),
+    radial-gradient(circle at 47% 34%,rgba(101,94,81,.52) 0 10%,transparent 10.6%),
+    radial-gradient(circle at 32% 44%,#9f967f 0,#5a554a 31%,#2b2924 55%,#11100e 74%,#030303 91%);
+  box-shadow:inset 45px -20px 70px rgba(0,0,0,.7),inset -22px 7px 28px rgba(219,207,174,.15),-18px 0 46px rgba(207,190,149,.08);
+}
+.moon:before{content:"";position:absolute;inset:0;border-radius:50%;opacity:.34;background-image:radial-gradient(#d4cbb5 .55px,transparent .7px);background-size:4px 4px;mix-blend-mode:soft-light}
+.footer{position:absolute;z-index:30;left:0;right:0;bottom:0;height:45px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-top:1px solid rgba(244,240,230,.24);background:#020202;font:500 8px "IBM Plex Mono";text-transform:uppercase}
+
+/* ---------- MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center;padding:4vw}
+.modal.open{display:flex}
+.modalbox{width:min(1200px,94vw);position:relative}
+.modal video{width:100%;max-height:82vh;background:#000;display:block;border:1px solid #ffffff2f}
+.modal-title{font:600 9px "IBM Plex Mono";text-transform:uppercase;margin-bottom:8px}
+.close{position:absolute;right:0;top:-42px;width:34px;height:34px;border:1px solid #fff;border-radius:50%;background:#030303;color:#fff;font-size:20px;cursor:pointer}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:900px){
+  .inner{padding:68px 18px 34px;width:100%}
+  .navlinks{display:none}
+  .hero .navlinks{display:flex;gap:0}
+  .hero .navlinks a{display:none}
+  .hero .inner,.news .inner,.brands .inner,.d1 .inner,.services .inner,.method .inner,.about .inner,.awards .inner,.contact .inner{grid-template-columns:1fr}
+  .hero-photo{width:100%;height:53%;top:auto;bottom:0;opacity:.60;clip-path:none}
+  .hero-copy{align-self:start;padding-top:66px}
+  .hero-title{width:92vw}
+  .hero-services{white-space:normal;max-width:90vw}
+  .news-stage,.brand-art,.d1-stage,.service-art,.method-art,.awards-art{height:50vh;min-height:340px}
+  .news-title,.brands-title,.work-title,.d1-title,.services-title,.method-title,.awards-title,.final-title{width:min(88vw,520px)}
+  .logo-grid{grid-template-columns:repeat(3,1fr)}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .about-photo{height:55vh;border-left:0;border-top:1px solid #ffffff30}
+  .moon-wrap{width:90vw;right:-36vw;opacity:.72}
+  .footer{font-size:6.5px}
+}
+@media(max-width:560px){
+  .method-copy-grid{grid-template-columns:1fr;gap:16px}
+  .work-grid{grid-template-columns:1fr}
+  .work-card .pic{height:40vh}
+}
+
+/* ===== V09 — NY SIGNAL PASS: scale, signal corruption, moon depth ===== */
+.master-title{transform:scale(1.055);transform-origin:left center}
+.hero-title{transform:scale(1.07);transform-origin:left center}
+.awards-num{transform:scale(1.08);transform-origin:left center}
+.body{letter-spacing:.005em}
+.about-copy,.contact-copy{font-size:13px}
+.method-list{font-size:11px}
+.service-line{font-size:11px}
+.work-card strong{font-size:11px}.work-card span{font-size:9px}
+
+/* layered broadcast / datamosh language — intermittent rather than constant RGB cliché */
+.screen .glitch-lines{opacity:.95;animation:signalShift 11s steps(1,end) infinite}
+.screen .glitch-blocks{animation:blockDrop 8.6s steps(1,end) infinite}
+.screen:nth-of-type(even) .glitch-lines{animation-delay:-4.3s}
+.screen:nth-of-type(3n) .glitch-blocks{animation-delay:-2.7s}
+.screen:after{content:"";position:absolute;z-index:17;left:-2%;right:-2%;top:38%;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent 0 8%,rgba(0,217,210,.75) 8.2% 18%,transparent 18.2% 48%,rgba(255,0,107,.55) 48.2% 51%,transparent 51.2%);opacity:.12;animation:trackingError 13s steps(1,end) infinite}
+@keyframes signalShift{
+  0%,74%,100%{transform:translate(0,0);filter:none}
+  75%{transform:translateX(7px);filter:contrast(1.6)}
+  76%{transform:translateX(-11px) scaleY(1.8)}
+  77%{transform:translateX(3px);opacity:.55}
+  78%{transform:none;opacity:1}
+  91%{transform:translateX(16px)} 92%{transform:none}
+}
+@keyframes blockDrop{
+  0%,63%,100%{transform:none;opacity:.7}
+  64%{transform:translate(19px,-2px);opacity:1}
+  65%{transform:translate(-8px,3px) scaleX(1.03)}
+  66%{transform:none;opacity:.55}
+  86%{transform:translateX(-14px);opacity:.9} 87%{transform:none}
+}
+@keyframes trackingError{
+  0%,82%,100%{top:38%;opacity:.10;transform:none}
+  83%{top:22%;opacity:.42;transform:translateX(22px) scaleY(5)}
+  84%{top:64%;opacity:.28;transform:translateX(-13px) scaleY(2)}
+  85%{top:38%;opacity:.10;transform:none}
+}
+/* tiny signal fragments around the frame */
+.inner:before{content:"";position:absolute;z-index:16;left:0;right:0;top:29%;height:8px;pointer-events:none;background:linear-gradient(90deg,transparent 0 12%,rgba(177,121,36,.35) 12.1% 15.5%,transparent 15.7% 57%,rgba(0,217,210,.28) 57.1% 59%,transparent 59.2% 88%,rgba(255,0,107,.25) 88.1% 90%,transparent 90.2%);opacity:.48;mix-blend-mode:screen}
+
+/* awards image: cleaner, brighter, more dimensional while preserving the surreal composition */
+.awards-art{box-shadow:0 24px 80px rgba(0,0,0,.62);border:1px solid rgba(244,240,230,.15)}
+.awards-art img{filter:saturate(.78) contrast(1.10) brightness(.98)}
+.awards-art:after{background:linear-gradient(90deg,#030303c7 0 5%,transparent 34%),linear-gradient(0deg,#03030372,transparent 31%)}
+
+/* final moon: large photographic-feeling celestial body, crater layers + mineral surface */
+.moon-wrap{width:55vw;right:-1vw}
+.moon{width:min(62vw,980px);height:min(62vw,980px);transform:translateX(31%);overflow:hidden;
+ background:
+ radial-gradient(ellipse at 22% 28%,rgba(226,217,194,.23) 0 1.1%,transparent 1.4%),
+ radial-gradient(ellipse at 36% 20%,rgba(24,22,19,.52) 0 3.2%,rgba(130,121,103,.18) 3.4% 4.3%,transparent 4.7%),
+ radial-gradient(ellipse at 26% 43%,rgba(32,29,25,.65) 0 4.8%,rgba(163,151,128,.13) 5% 6%,transparent 6.4%),
+ radial-gradient(ellipse at 47% 31%,rgba(46,42,36,.57) 0 7%,rgba(180,168,143,.10) 7.2% 8%,transparent 8.4%),
+ radial-gradient(ellipse at 42% 61%,rgba(28,26,23,.72) 0 9.4%,rgba(142,131,112,.13) 9.7% 11%,transparent 11.5%),
+ radial-gradient(ellipse at 61% 49%,rgba(26,24,21,.58) 0 5.2%,transparent 5.7%),
+ radial-gradient(ellipse at 30% 66%,rgba(58,53,45,.45) 0 7.2%,transparent 7.8%),
+ radial-gradient(circle at 28% 42%,#b8ae96 0,#756e5f 20%,#4b463d 39%,#292620 58%,#11100e 75%,#030303 93%);
+ box-shadow:inset 80px -30px 110px rgba(0,0,0,.82),inset -32px 10px 40px rgba(229,215,181,.16),-25px 0 80px rgba(197,180,140,.10)}
+.moon:before{opacity:.58;background-image:radial-gradient(rgba(232,220,191,.42) .55px,transparent .75px),radial-gradient(rgba(15,14,12,.72) .7px,transparent .9px);background-size:4px 4px,7px 7px;background-position:0 0,2px 3px;mix-blend-mode:soft-light}
+.moon:after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 15% 48%,transparent 0 63%,rgba(0,0,0,.25) 72%,rgba(0,0,0,.9) 94%),linear-gradient(108deg,rgba(226,211,177,.12),transparent 30%);mix-blend-mode:screen}
+.contact .texture{opacity:.58}
+
+@media(max-width:900px){
+  .master-title{transform:scale(1.025)}
+  .hero-title{transform:scale(1.035)}
+  .body,.about-copy,.contact-copy{font-size:12px}
+  .moon{width:105vw;height:105vw}
+}
+
+
+/* =========================================================
+   V12 — PANTALLAZO 02
+   Re-diagramado sobre V10 siguiendo el storyboard aprobado.
+   ========================================================= */
+.news .inner{
+  grid-template-columns:35% 65%;
+  padding-top:72px;
+}
+.news-copy{
+  padding-left:0;
+  align-self:center;
+  transform:translateY(-1.5vh);
+}
+.news-copy > .wordmark{
+  position:absolute;
+  top:-51vh;
+  left:0;
+  font:400 22px/1 Michroma,sans-serif;
+  letter-spacing:.06em;
+}
+.news-title{
+  width:min(420px,31vw);
+  margin:20px 0 17px;
+}
+.news-copy .body{
+  max-width:420px;
+  font-size:12px;
+  line-height:1.45;
+  letter-spacing:.025em;
+}
+.news-stage{
+  height:82vh;
+  position:relative;
+  align-self:center;
+}
+
+/* Gold collage: lobster + LAIKA cassette + tilted headphones + capsule */
+.news-stage .lobster{
+  width:34%;
+  left:4%;
+  top:10%;
+  transform:rotate(-17deg);
+}
+.news-stage .cassette{
+  width:29%;
+  left:31%;
+  top:20%;
+  transform:rotate(18deg);
+}
+.news-stage .headphones{
+  width:36%;
+  left:28%;
+  top:39%;
+  transform:rotate(-13deg);
+}
+.news-stage .capsule{
+  width:12%;
+  left:57%;
+  top:65%;
+  transform:rotate(29deg);
+}
+
+/* Larger video architecture like the supplied reference */
+.news-video{
+  border:1px solid rgba(244,240,230,.58);
+  box-shadow:0 18px 55px rgba(0,0,0,.88);
+}
+.news-video.a{
+  right:0;
+  top:2%;
+  width:49%;
+  height:42%;
+}
+.news-video.b{
+  right:29%;
+  top:48%;
+  width:31%;
+  height:29%;
+}
+.news-video.c{
+  right:0;
+  top:48%;
+  width:27%;
+  height:29%;
+}
+.news-video video{
+  filter:saturate(.74) contrast(1.18) brightness(.87);
+}
+.news-tag{
+  left:3%;
+  bottom:1.5%;
+  font-size:8.5px;
+}
+
+/* Keep section number away from the LAIKA 03 wordmark */
+.news .inner > .mono[style*="top:20px"]{
+  top:20px !important;
+  right:24px !important;
+}
+
+/* Slightly denser corruption on this screen, matching V10 language */
+.news .glitch-lines{opacity:.92;filter:saturate(1.5) contrast(1.18)}
+.news .glitch-blocks{opacity:.84;filter:saturate(1.6)}
+.news .signal-tear{opacity:.31;filter:saturate(1.65) contrast(1.18)}
+
+@media(max-width:900px){
+  .news .inner{grid-template-columns:1fr;padding-top:68px}
+  .news-copy > .wordmark{position:static;margin-bottom:30px}
+  .news-copy{transform:none}
+  .news-title{width:min(86vw,480px)}
+  .news-copy .body{font-size:11px}
+  .news-stage{height:58vh;min-height:390px}
+  .news-video.a{width:49%;height:34%}
+  .news-video.b{width:29%;height:25%}
+  .news-video.c{width:27%;height:25%}
+}
+
+
+.news-stage .cassette-laika{
+  position:absolute;
+  z-index:7;
+  left:39.1%;
+  top:29.2%;
+  transform:rotate(18deg);
+  font:500 clamp(8px,.72vw,12px)/1 Michroma,sans-serif;
+  letter-spacing:.12em;
+  color:rgba(244,240,230,.72);
+  text-shadow:1px 0 rgba(0,217,210,.25),-1px 0 rgba(255,0,107,.18);
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+
+
+/* =========================================================
+   V13 — PANTALLAZO 02 / composition refinement
+   ========================================================= */
+.news .news-copy > .wordmark{display:none!important}
+.news-wordmark{
+  position:absolute;
+  z-index:42;
+  top:18px;
+  left:max(24px,calc((100vw - min(1520px,96vw))/2 + 24px));
+  font:400 22px/1 Michroma,sans-serif;
+  letter-spacing:.06em;
+}
+
+/* Give each gold object its own air, angle and depth. */
+.news-stage .lobster{
+  width:30%;
+  left:2%;
+  top:10%;
+  transform:rotate(-24deg) perspective(900px) rotateY(-8deg);
+  transform-origin:center;
+}
+.news-stage .cassette{
+  width:25%;
+  left:33%;
+  top:17%;
+  transform:rotate(20deg) perspective(900px) rotateY(12deg);
+  transform-origin:center;
+}
+.news-stage .headphones{
+  width:31%;
+  left:28%;
+  top:45%;
+  transform:rotate(-18deg) perspective(900px) rotateX(5deg) rotateY(-8deg);
+  transform-origin:center;
+}
+.news-stage .capsule{
+  width:10%;
+  left:59%;
+  top:67%;
+  transform:rotate(34deg) perspective(900px) rotateY(15deg);
+  transform-origin:center;
+}
+
+/* Reposition the LAIKA imprint to stay visually attached to the cassette. */
+.news-stage .cassette-laika{
+  left:39.3%;
+  top:25.8%;
+  transform:rotate(20deg) perspective(900px) rotateY(12deg);
+  font-size:clamp(7px,.66vw,11px);
+}
+
+/* More breathing room between collage and moving image architecture. */
+.news-video.a{right:0;top:2%;width:46%;height:41%}
+.news-video.b{right:29%;top:50%;width:29%;height:27%}
+.news-video.c{right:0;top:50%;width:26%;height:27%}
+
+@media(max-width:900px){
+  .news-wordmark{left:18px;top:18px}
+}
+
+
+/* =========================================================
+   V16 — PANTALLAZO 02 / selected independent objects
+   3/4 lobster + rear 3/4 headphones + resting cassette.
+   ========================================================= */
+.news-stage .cassette-laika{display:none!important}
+
+/* The collage is deliberately separated: no object touches another. */
+.news-stage .lobster{
+  width:35% !important;
+  left:-3% !important;
+  top:8% !important;
+  transform:rotate(-7deg) !important;
+  transform-origin:center !important;
+  filter:drop-shadow(18px 24px 25px rgba(0,0,0,.70)) !important;
+}
+.news-stage .cassette{
+  width:26% !important;
+  left:34% !important;
+  top:15% !important;
+  transform:rotate(8deg) !important;
+  transform-origin:center !important;
+  filter:drop-shadow(16px 21px 22px rgba(0,0,0,.68)) !important;
+}
+.news-stage .headphones{
+  width:31% !important;
+  left:28% !important;
+  top:46% !important;
+  transform:rotate(-11deg) !important;
+  transform-origin:center !important;
+  filter:drop-shadow(17px 22px 24px rgba(0,0,0,.70)) !important;
+}
+.news-stage .capsule{
+  width:10% !important;
+  left:60% !important;
+  top:67% !important;
+  transform:rotate(31deg) !important;
+}
+
+/* Keep the three video windows open and clearly distinct from the object collage. */
+.news-video.a{right:0!important;top:2%!important;width:46%!important;height:41%!important}
+.news-video.b{right:29%!important;top:50%!important;width:29%!important;height:27%!important}
+.news-video.c{right:0!important;top:50%!important;width:26%!important;height:27%!important}
+
+
+/* V17 — clean edges + storyboard-scale collage */
+.news-stage .lobster{
+  width:44% !important;
+  left:-7% !important;
+  top:4% !important;
+  transform:rotate(-7deg) !important;
+}
+.news-stage .cassette{
+  width:32% !important;
+  left:31% !important;
+  top:13% !important;
+  transform:rotate(9deg) !important;
+}
+.news-stage .headphones{
+  width:39% !important;
+  left:25% !important;
+  top:43% !important;
+  transform:rotate(-10deg) !important;
+}
+.news-stage .capsule{
+  width:12% !important;
+  left:59% !important;
+  top:67% !important;
+  transform:rotate(31deg) !important;
+}
+.news-stage .lobster,
+.news-stage .cassette,
+.news-stage .headphones{
+  image-rendering:auto;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+
+
+/* V18 — CLEAN CUTOUT PASS
+   No CSS drop shadows, no glow, no dark halo around gold assets. */
+.news-stage .lobster,
+.news-stage .cassette,
+.news-stage .headphones,
+.news-stage .capsule{
+  filter:none !important;
+  box-shadow:none !important;
+  text-shadow:none !important;
+  image-rendering:auto !important;
+  mix-blend-mode:normal !important;
+}
+.news-stage .lobster,
+.news-stage .cassette,
+.news-stage .headphones{
+  -webkit-filter:none !important;
+  opacity:1 !important;
+}
+
+
+/* =========================================================
+   V19 — PANTALLAZO 02
+   Four final Canva-transparent assets. No masks, no recuts,
+   no artificial shadows. Proportions rebalanced to storyboard.
+   ========================================================= */
+.news-stage .cassette-laika{display:none!important}
+
+.news-stage .lobster{
+  width:43% !important;
+  left:-4% !important;
+  top:7% !important;
+  transform:rotate(-7deg) !important;
+}
+.news-stage .cassette{
+  width:29% !important;
+  left:34% !important;
+  top:15% !important;
+  transform:rotate(7deg) !important;
+}
+.news-stage .headphones{
+  width:35% !important;
+  left:29% !important;
+  top:45% !important;
+  transform:rotate(-8deg) !important;
+}
+.news-stage .capsule{
+  width:12.5% !important;
+  left:59% !important;
+  top:66% !important;
+  transform:rotate(23deg) !important;
+}
+.news-stage .lobster,
+.news-stage .cassette,
+.news-stage .headphones,
+.news-stage .capsule{
+  height:auto !important;
+  filter:none !important;
+  -webkit-filter:none !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  image-rendering:auto !important;
+  mix-blend-mode:normal !important;
+}
+
+
+/* =========================================================
+   V20 — PANTALLAZO 02 / CANVA ORIGINALS DIRECTLY
+   No re-cut, no CSS shadow. Larger composition.
+   Capsule moved to the opposite side of the headphones.
+   ========================================================= */
+.news-stage .cassette-laika{display:none!important}
+
+.news-stage .lobster{
+  width:48% !important;
+  left:-8% !important;
+  top:3% !important;
+  transform:rotate(-7deg) !important;
+}
+.news-stage .cassette{
+  width:33% !important;
+  left:32% !important;
+  top:12% !important;
+  transform:rotate(8deg) !important;
+}
+.news-stage .headphones{
+  width:41% !important;
+  left:28% !important;
+  top:43% !important;
+  transform:rotate(-9deg) !important;
+}
+.news-stage .capsule{
+  width:18% !important;
+  left:13% !important;
+  top:61% !important;
+  transform:rotate(-31deg) !important;
+}
+
+.news-stage .lobster,
+.news-stage .cassette,
+.news-stage .headphones,
+.news-stage .capsule{
+  height:auto !important;
+  filter:none !important;
+  -webkit-filter:none !important;
+  box-shadow:none !important;
+  opacity:1 !important;
+  image-rendering:auto !important;
+  mix-blend-mode:normal !important;
+}
+
+
+/* V21 — SCALE PASS: same approved assets, larger presence */
+.news-stage .lobster{
+  width:60% !important;
+  left:-15% !important;
+  top:-2% !important;
+}
+.news-stage .cassette{
+  width:41% !important;
+  left:29% !important;
+  top:8% !important;
+}
+.news-stage .headphones{
+  width:52% !important;
+  left:24% !important;
+  top:38% !important;
+}
+.news-stage .capsule{
+  width:24% !important;
+  left:8% !important;
+  top:58% !important;
+}
+
+
+/* V23 — PANTALLAZO 02 / ICONS x2 */
+.news-stage .lobster{
+  width:120% !important;
+  left:-42% !important;
+  top:-18% !important;
+}
+.news-stage .cassette{
+  width:82% !important;
+  left:18% !important;
+  top:-5% !important;
+}
+.news-stage .headphones{
+  width:104% !important;
+  left:10% !important;
+  top:25% !important;
+}
+.news-stage .capsule{
+  width:48% !important;
+  left:-2% !important;
+  top:55% !important;
+}
+
+
+/* V25 — SAFE CORRECTION FROM V23
+   Preserve V23 sizes + video geometry exactly.
+   Only move icon cluster left and layer videos in front. */
+.news-stage .lobster{
+  width:120% !important;
+  left:-50% !important;
+  top:-18% !important;
+  z-index:4 !important;
+}
+.news-stage .cassette{
+  width:82% !important;
+  left:10% !important;
+  top:-5% !important;
+  z-index:5 !important;
+}
+.news-stage .headphones{
+  width:104% !important;
+  left:2% !important;
+  top:25% !important;
+  z-index:6 !important;
+}
+.news-stage .capsule{
+  width:48% !important;
+  left:-10% !important;
+  top:55% !important;
+  z-index:7 !important;
+}
+.news-stage .news-video{
+  z-index:50 !important;
+}
+.news-stage .news-tag{
+  z-index:51 !important;
+}
+
+
+/* V26 — Pantallazo 02 composition refinement.
+   Approved icon scale preserved; only horizontal balance/layering adjusted. */
+.news-stage .lobster{
+  width:120% !important;
+  left:-54% !important;
+  top:-18% !important;
+  z-index:4 !important;
+}
+.news-stage .cassette{
+  width:82% !important;
+  left:6% !important;
+  top:-5% !important;
+  z-index:5 !important;
+}
+.news-stage .headphones{
+  width:104% !important;
+  left:-2% !important;
+  top:25% !important;
+  z-index:6 !important;
+}
+.news-stage .capsule{
+  width:48% !important;
+  left:-14% !important;
+  top:55% !important;
+  z-index:7 !important;
+}
+.news-stage .news-video{
+  z-index:60 !important;
+}
+.news-stage .news-tag{
+  z-index:61 !important;
+}
+
+
+/* V28 — only lobster size/position changed */
+.news-stage .lobster{
+  width:55% !important;
+  left:-18% !important;
+  top:7% !important;
+}
+
+</style>
+
+<style id="v10-hero-pirate-signal">
+/* V10 — ONLY SCREEN 01: larger supporting typography + saturated pirate-signal glitch */
+.hero .navlinks{gap:32px;font-size:12px;font-weight:600;letter-spacing:.075em}
+.hero .hero-kicker{font-size:14px;line-height:1.12;font-weight:600;width:145px;letter-spacing:.075em}
+.hero .hero-services{font-size:12px;line-height:1.45;font-weight:600;letter-spacing:.025em}
+.hero .hero-explore{margin-top:23px;font-size:12px;font-weight:600;letter-spacing:.06em}
+.hero .hero-explore .circle{width:44px;height:44px;font-size:17px}
+.hero .topnav{top:22px}
+
+/* Stronger corrupted-signal field. Intentionally ugly/beautiful, not generic RGB glow. */
+.hero .artbed{opacity:.31;filter:contrast(1.75) brightness(.52) saturate(1.55)}
+.hero .texture{opacity:.68;filter:contrast(1.8) brightness(.44) saturate(1.42)}
+.hero .grain{opacity:.24;animation:heroNoise .16s steps(2,end) infinite}
+.hero .scan{opacity:.34;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.035) 3px,rgba(0,217,210,.055) 4px,transparent 5px 8px);animation:scanDrift 5s linear infinite}
+.hero .glitch-lines{opacity:1;mix-blend-mode:screen;animation:heroSignalLines 3.8s steps(1,end) infinite}
+.hero .glitch-blocks{opacity:1;mix-blend-mode:screen;animation:heroBlocks 4.7s steps(1,end) infinite}
+.hero .signal-tear{height:18px;opacity:.48;mix-blend-mode:screen;animation:heroTear 2.9s steps(1,end) infinite}
+.hero:before{content:"";position:absolute;z-index:13;inset:0;pointer-events:none;opacity:0;background:
+ linear-gradient(90deg,transparent 0 4%,rgba(0,255,239,.28) 4.1% 21%,transparent 21.1% 49%,rgba(255,0,116,.34) 49.1% 67%,transparent 67.1%),
+ linear-gradient(90deg,rgba(198,255,0,.18),transparent 36%,rgba(255,0,116,.20));
+ mix-blend-mode:screen;animation:pirateFlash 6.2s steps(1,end) infinite}
+.hero:after{content:"SIGNAL LOST / LAIKA_03 / UNAUTHORIZED AUDIO TRANSMISSION / 03:03:03";position:absolute;z-index:24;left:0;right:0;top:61%;height:26px;padding-left:5vw;display:flex;align-items:center;overflow:hidden;white-space:nowrap;background:rgba(0,0,0,.88);border-top:1px solid rgba(0,255,239,.8);border-bottom:1px solid rgba(255,0,116,.75);color:#d8ff00;font:700 9px/1 "IBM Plex Mono";letter-spacing:.14em;opacity:0;transform:translateX(-3%);pointer-events:none;animation:pirateBand 7.4s steps(1,end) infinite}
+
+.hero .hero-photo{animation:photoHack 6.4s steps(1,end) infinite}
+.hero .hero-photo img{animation:photoChromatic 5.1s steps(1,end) infinite}
+.hero .hero-title{animation:titleHack 4.8s steps(1,end) infinite}
+.hero .wordmark{position:relative;animation:microHack 7.1s steps(1,end) infinite}
+.hero .hero-services,.hero .hero-kicker,.hero .navlinks{position:relative;z-index:26;text-shadow:1px 0 rgba(0,217,210,.30),-1px 0 rgba(255,0,107,.22)}
+
+.hero-glitch-title,.hero-glitch-photo{position:absolute;pointer-events:none;z-index:18;opacity:0;mix-blend-mode:screen}
+.hero-glitch-title{left:24px;top:50%;width:min(710px,47vw);transform:translateY(-42%);filter:saturate(1.8)}
+.hero-glitch-photo{right:0;top:0;width:55.5%;height:100%;object-fit:cover;object-position:52% 49%;filter:contrast(1.35) saturate(1.8)}
+.hero-glitch-title.cyan{filter:sepia(1) saturate(12) hue-rotate(122deg) brightness(1.5);animation:ghostCyan 4.1s steps(1,end) infinite}
+.hero-glitch-title.mag{filter:sepia(1) saturate(14) hue-rotate(285deg) brightness(1.35);animation:ghostMag 5.3s steps(1,end) infinite}
+.hero-glitch-photo.cyan{filter:saturate(2) contrast(1.45) hue-rotate(125deg);animation:photoGhostCyan 5.8s steps(1,end) infinite}
+.hero-glitch-photo.mag{filter:saturate(2.2) contrast(1.5) hue-rotate(300deg);animation:photoGhostMag 7.2s steps(1,end) infinite}
+
+@keyframes heroNoise{0%{transform:translate(0)}25%{transform:translate(1px,-1px)}50%{transform:translate(-1px,1px)}75%{transform:translate(1px,1px)}100%{transform:translate(0)}}
+@keyframes scanDrift{to{background-position:0 80px}}
+@keyframes pirateFlash{0%,83%,87%,92%,100%{opacity:0}84%{opacity:.85}85%{opacity:.15}86%{opacity:.58}93%{opacity:.38}}
+@keyframes pirateBand{0%,72%,75%,88%,91%,100%{opacity:0}73%{opacity:.92;transform:translateX(-3%)}74%{opacity:.32;transform:translateX(2%)}89%{opacity:.78;top:27%;transform:translateX(-1%)}90%{opacity:.2}}
+@keyframes heroSignalLines{0%,62%,66%,100%{transform:translateX(0)}63%{transform:translateX(19px) scaleY(1.8)}64%{transform:translateX(-13px) scaleY(.65)}65%{transform:translateX(5px)}78%{background-position:18px 21%,-9px 78%,31px 44%}}
+@keyframes heroBlocks{0%,47%,51%,100%{transform:none}48%{transform:translateX(-28px);filter:saturate(2.4)}49%{transform:translateX(35px) scaleY(1.4)}50%{transform:translateX(-7px)}}
+@keyframes heroTear{0%,41%,44%,73%,76%,100%{transform:translateX(0) scaleY(1);opacity:.34}42%{transform:translateX(42px) scaleY(3.8);opacity:.82}43%{transform:translateX(-26px) scaleY(.6);opacity:.55}74%{top:35%;transform:translateX(-17px) scaleY(2.2);opacity:.72}75%{top:72%;transform:translateX(11px)}}
+@keyframes photoHack{0%,58%,62%,81%,84%,100%{clip-path:polygon(7% 0,100% 0,100% 100%,0 100%);transform:none}59%{clip-path:polygon(7% 0,100% 0,100% 28%,94% 28%,94% 32%,100% 32%,100% 100%,0 100%);transform:translateX(9px)}60%{transform:translateX(-15px)}61%{transform:translateX(3px)}82%{transform:skewX(-1.3deg) translateX(7px)}83%{transform:translateX(-4px)}}
+@keyframes photoChromatic{0%,69%,73%,100%{filter:saturate(.70) contrast(1.12) brightness(.76)}70%{filter:saturate(2.4) contrast(1.45) brightness(.9) hue-rotate(12deg)}71%{filter:saturate(.15) contrast(1.8) brightness(.62)}72%{filter:saturate(1.6) contrast(1.3) brightness(.83)}}
+@keyframes titleHack{0%,33%,37%,74%,78%,100%{transform:none}34%{transform:translateX(12px) skewX(-2deg);filter:drop-shadow(6px 0 #00d9d2) drop-shadow(-7px 0 #ff006b)}35%{transform:translateX(-8px);filter:contrast(1.7)}36%{transform:translateX(3px)}75%{transform:translateY(2px) scaleX(1.006);filter:drop-shadow(3px 0 #c8ff00)}76%{transform:translateX(-4px)}77%{transform:none}}
+@keyframes microHack{0%,89%,93%,100%{transform:none}90%{transform:translateX(5px)}91%{transform:translateX(-3px)}92%{transform:none}}
+@keyframes ghostCyan{0%,34%,38%,100%{opacity:0;clip-path:inset(0 0 100% 0)}35%{opacity:.75;clip-path:inset(12% 0 67% 0);transform:translate(14px,-2px)}36%{opacity:.45;clip-path:inset(58% 0 20% 0);transform:translate(-9px,1px)}37%{opacity:.18}}
+@keyframes ghostMag{0%,75%,79%,100%{opacity:0;clip-path:inset(100% 0 0 0)}76%{opacity:.68;clip-path:inset(36% 0 42% 0);transform:translate(-16px,0)}77%{opacity:.34;clip-path:inset(68% 0 8% 0);transform:translate(8px,2px)}78%{opacity:.12}}
+@keyframes photoGhostCyan{0%,51%,54%,100%{opacity:0;clip-path:inset(100% 0 0 0)}52%{opacity:.24;clip-path:inset(24% 0 58% 0);transform:translateX(24px)}53%{opacity:.13;clip-path:inset(62% 0 17% 0);transform:translateX(-13px)}}
+@keyframes photoGhostMag{0%,86%,89%,100%{opacity:0;clip-path:inset(0 0 100% 0)}87%{opacity:.22;clip-path:inset(43% 0 37% 0);transform:translateX(-22px)}88%{opacity:.10;clip-path:inset(17% 0 66% 0);transform:translateX(12px)}}
+
+@media(max-width:900px){
+ .hero .hero-kicker{font-size:12px}.hero .hero-services{font-size:10px}.hero .hero-explore{font-size:10px}
+ .hero-glitch-title{left:18px;width:92vw}.hero-glitch-photo{width:100%;height:53%;top:auto;bottom:0}
+}
+@media(prefers-reduced-motion:reduce){.hero *{animation:none!important}.hero:before,.hero:after,.hero-glitch-title,.hero-glitch-photo{display:none!important}}
+</style>
+<script id="v10-hero-pirate-signal-js">
+document.addEventListener('DOMContentLoaded',()=>{
+ const hero=document.querySelector('.hero'); if(!hero) return;
+ const title=hero.querySelector('.hero-title');
+ const photo=hero.querySelector('.hero-photo img');
+ if(title){['cyan','mag'].forEach(c=>{const x=title.cloneNode(true);x.className='hero-glitch-title '+c;x.removeAttribute('alt');hero.appendChild(x)})}
+ if(photo){['cyan','mag'].forEach(c=>{const x=photo.cloneNode(true);x.className='hero-glitch-photo '+c;x.removeAttribute('alt');hero.appendChild(x)})}
+});
+</script>
+
+
+<style id="V32_CANONICAL_SCREEN02">
+#ahora .news-stage .lobster{width:55%!important;left:-18%!important;top:7%!important;z-index:4!important;}
+#ahora .news-stage .cassette{width:41%!important;left:6%!important;top:-5%!important;transform:rotate(8deg)!important;z-index:5!important;}
+#ahora .news-stage .headphones{width:52%!important;left:-2%!important;top:25%!important;transform:rotate(-9deg)!important;z-index:6!important;}
+#ahora .news-stage .capsule{width:24%!important;left:-14%!important;top:55%!important;transform:rotate(-31deg)!important;z-index:7!important;}
+#ahora .news-stage .news-video{z-index:60!important;}
+#ahora .news-stage .news-tag{z-index:61!important;}
+</style>
+
+<style id="V33_SCREEN02_CLEAN_DISTRIBUTION">
+/* Keep lobster size. Spread objects instead of stacking them. */
+#ahora .news-stage .lobster{
+  width:55%!important; left:-20%!important; top:10%!important;
+  transform:rotate(-7deg)!important; z-index:4!important;
+}
+#ahora .news-stage .cassette{
+  width:41%!important; left:22%!important; top:2%!important;
+  transform:rotate(8deg)!important; z-index:5!important;
+}
+#ahora .news-stage .headphones{
+  width:26%!important; left:31%!important; top:48%!important;
+  transform:rotate(-9deg)!important; z-index:6!important;
+}
+#ahora .news-stage .capsule{
+  width:24%!important; left:2%!important; top:65%!important;
+  transform:rotate(-31deg)!important; z-index:7!important;
+}
+#ahora .news-stage .news-video{z-index:60!important;}
+#ahora .news-stage .news-tag{z-index:61!important;}
+</style>
+
+
+<style id="V34_FINAL_ICON_SCALE">
+#ahora .news-stage .cassette{width:30.75%!important;}
+#ahora .news-stage .headphones{width:33.8%!important;}
+</style>
+
+
+<style id="V35_SCREEN02_TWEAK">
+#ahora .news-stage .cassette{width:33.825%!important;}
+#ahora .news-stage .lobster{left:-16%!important;}
+</style>
+
+
+<style id="V36_SCREEN02_POSITION_CLEANUP">
+#ahora .news-stage .headphones{left:25%!important;top:42%!important;}
+/* prevent any stray/legacy cassette fragments in Pantallazo 2 */
+#ahora .news-stage .cassette-laika{display:none!important;}
+#ahora .news-stage{overflow:visible!important;}
+</style>
+
+
+<style id="V37_LOBSTER_TAIL_FIX">
+#ahora .news-stage .lobster{left:-8%!important;}
+</style>
+
+
+<style id="V38_LOBSTER_FULL_TAIL">
+#ahora .news-stage .lobster{top:1%!important;}
+</style>
+
+<style id="V104_SCREEN02_ICON_SCALE_POSITION">
+/* Pantallazo 02 — ambos más abajo; cassette +10% frente a V103 */
+#ahora .news-stage .lobster{width:46.75%!important;top:8%!important;}
+#ahora .news-stage .cassette{width:31.626375%!important;top:6%!important;}
+</style>
+
+
+<style id="V40_SCREEN02_TYPE_GLITCH">
+/* Pantallazo 02 — label scale */
+#ahora .news-tag{
+  font-size:clamp(11px,.72vw,15px)!important;
+  line-height:1.25!important;
+  letter-spacing:.055em!important;
+}
+
+/* Pantallazo 02 — controlled pirate-signal glitch, matching screen 01 language */
+#ahora{position:relative; isolation:isolate;}
+#ahora::before{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:80;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);
+  opacity:.32; mix-blend-mode:screen;
+}
+#ahora::after{
+  content:""; position:absolute; left:0; right:0; top:0; height:2px;
+  pointer-events:none; z-index:82;
+  background:linear-gradient(90deg,transparent 0 8%,rgba(0,238,255,.72) 8% 21%,transparent 21% 54%,rgba(255,0,137,.62) 54% 68%,transparent 68%);
+  box-shadow:0 0 8px rgba(255,255,255,.18);
+  opacity:0;
+  animation:v40SignalTear 8.4s steps(1,end) infinite;
+}
+#ahora .now-title,
+#ahora .news-copy{
+  position:relative;
+  animation:v40TypeJolt 9.2s steps(1,end) infinite;
+}
+#ahora .now-title::before{
+  content:attr(data-text);
+  position:absolute; inset:0; pointer-events:none;
+  color:inherit; opacity:0;
+  text-shadow:-2px 0 rgba(0,238,255,.72),2px 0 rgba(255,0,137,.68);
+  clip-path:inset(43% 0 39% 0);
+  animation:v40TitleSlice 7.8s steps(1,end) infinite;
+}
+#ahora .news-video{
+  animation:v40VideoRupture 10.6s steps(1,end) infinite;
+}
+#ahora .news-stage::after{
+  content:""; position:absolute; left:-3%; width:106%; height:7px; top:38%;
+  pointer-events:none; z-index:79; opacity:0;
+  background:linear-gradient(90deg,transparent,rgba(0,238,255,.22) 12%,rgba(255,255,255,.30) 42%,rgba(255,0,137,.20) 68%,transparent);
+  animation:v40DataBand 11.3s steps(1,end) infinite;
+}
+@keyframes v40SignalTear{
+  0%,17%,18.5%,46%,47.4%,72%,73.2%,100%{opacity:0;transform:translateY(8vh)}
+  17.2%{opacity:.9;transform:translateY(24vh)}
+  17.5%{opacity:.55;transform:translateY(63vh)}
+  46.4%{opacity:.8;transform:translateY(48vh)}
+  72.4%{opacity:.7;transform:translateY(78vh)}
+}
+@keyframes v40TypeJolt{
+  0%,29%,30%,64%,65%,100%{transform:translate(0,0)}
+  29.2%{transform:translate(-2px,0)}
+  29.5%{transform:translate(2px,1px)}
+  64.3%{transform:translate(1px,-1px)}
+}
+@keyframes v40TitleSlice{
+  0%,38%,39.2%,81%,82%,100%{opacity:0;transform:translateX(0)}
+  38.3%{opacity:.72;transform:translateX(5px)}
+  38.6%{opacity:.5;transform:translateX(-4px)}
+  81.3%{opacity:.62;transform:translateX(3px)}
+}
+@keyframes v40VideoRupture{
+  0%,51%,52%,87%,88%,100%{filter:none;transform:translate(0,0)}
+  51.2%{filter:contrast(1.22) saturate(1.18);transform:translate(2px,0)}
+  51.5%{filter:contrast(1.1);transform:translate(-1px,1px)}
+  87.3%{filter:brightness(1.12);transform:translate(1px,0)}
+}
+@keyframes v40DataBand{
+  0%,22%,23%,58%,59%,91%,92%,100%{opacity:0;transform:translateY(0)}
+  22.3%{opacity:.75;transform:translateY(16vh)}
+  22.6%{opacity:.38;transform:translateY(-9vh)}
+  58.4%{opacity:.55;transform:translateY(31vh)}
+  91.4%{opacity:.45;transform:translateY(-21vh)}
+}
+@media (prefers-reduced-motion:reduce){
+  #ahora::after,#ahora .now-title,#ahora .news-copy,#ahora .news-video,#ahora .news-stage::after,#ahora .now-title::before{animation:none!important;}
+}
+</style>
+
+
+<style id="V41_SCREEN02_HEAVY_GLITCH">
+#ahora::before{
+  opacity:.58!important;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.045) 0 1px,transparent 1px 3px),
+    linear-gradient(90deg,transparent 0 9%,rgba(0,238,255,.07) 9% 12%,transparent 12% 61%,rgba(255,0,137,.07) 61% 65%,transparent 65%)!important;
+}
+#ahora::after{
+  height:5px!important;
+  opacity:0;
+  animation:v41SignalTear 5.2s steps(1,end) infinite!important;
+}
+#ahora .now-title{
+  animation:v41TitleJolt 5.7s steps(1,end) infinite!important;
+}
+#ahora .now-title::before{
+  text-shadow:-5px 0 rgba(0,238,255,.92),5px 0 rgba(255,0,137,.88)!important;
+  clip-path:inset(28% 0 48% 0)!important;
+  animation:v41TitleSlice 4.8s steps(1,end) infinite!important;
+}
+#ahora .news-copy,#ahora .news-tag{
+  animation:v41CopyJolt 6.1s steps(1,end) infinite!important;
+}
+#ahora .news-video{
+  animation:v41VideoBreak 6.8s steps(1,end) infinite!important;
+}
+#ahora .news-stage::after{
+  height:14px!important;
+  opacity:0;
+  box-shadow:0 10px 0 rgba(255,0,137,.12),0 -7px 0 rgba(0,238,255,.13);
+  animation:v41DataBand 5.9s steps(1,end) infinite!important;
+}
+#ahora .news-stage::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:78;opacity:0;
+  background:
+    linear-gradient(90deg,transparent 0 4%,rgba(0,238,255,.18) 4% 18%,transparent 18% 31%,rgba(255,255,255,.15) 31% 47%,transparent 47% 72%,rgba(255,0,137,.16) 72% 91%,transparent 91%),
+    repeating-linear-gradient(90deg,transparent 0 22px,rgba(255,255,255,.07) 22px 24px);
+  clip-path:polygon(0 18%,100% 18%,100% 24%,0 24%,0 53%,100% 53%,100% 59%,0 59%,0 81%,100% 81%,100% 86%,0 86%);
+  animation:v41PacketLoss 7.1s steps(1,end) infinite;
+}
+@keyframes v41SignalTear{
+  0%,11%,14%,31%,34%,52%,55%,73%,76%,91%,94%,100%{opacity:0;transform:translateY(0)}
+  11.4%{opacity:1;transform:translateY(18vh) scaleX(.72)}
+  12.2%{opacity:.9;transform:translateY(62vh) scaleX(1)}
+  31.5%{opacity:1;transform:translateY(42vh) scaleX(.88)}
+  52.6%{opacity:.95;transform:translateY(77vh)}
+  73.4%{opacity:1;transform:translateY(29vh) scaleX(.58)}
+  91.6%{opacity:.9;transform:translateY(55vh)}
+}
+@keyframes v41TitleJolt{
+  0%,18%,21%,43%,46%,69%,72%,88%,91%,100%{transform:translate(0,0);filter:none}
+  18.4%{transform:translate(-7px,1px);filter:contrast(1.25)}
+  19.1%{transform:translate(6px,-2px)}
+  43.5%{transform:translate(4px,1px)}
+  69.4%{transform:translate(-5px,-1px)}
+  88.5%{transform:translate(8px,0)}
+}
+@keyframes v41TitleSlice{
+  0%,23%,27%,48%,52%,76%,80%,100%{opacity:0;transform:translateX(0)}
+  23.5%{opacity:.95;transform:translateX(12px)}
+  24.4%{opacity:.75;transform:translateX(-10px)}
+  48.6%{opacity:.9;transform:translateX(-8px)}
+  76.7%{opacity:1;transform:translateX(9px)}
+}
+@keyframes v41CopyJolt{
+  0%,37%,40%,66%,69%,100%{transform:translate(0,0)}
+  37.5%{transform:translate(4px,-1px)}
+  38.2%{transform:translate(-3px,1px)}
+  66.5%{transform:translate(-4px,0)}
+}
+@keyframes v41VideoBreak{
+  0%,15%,18%,39%,42%,63%,66%,84%,87%,100%{filter:none;transform:translate(0,0)}
+  15.5%{filter:contrast(1.55) saturate(1.55) hue-rotate(8deg);transform:translate(7px,0)}
+  16.3%{filter:contrast(1.25) brightness(1.25);transform:translate(-5px,2px)}
+  39.6%{filter:brightness(1.45) contrast(1.3);transform:translate(4px,-1px)}
+  63.7%{filter:saturate(1.7) contrast(1.4);transform:translate(-6px,0)}
+  84.5%{filter:brightness(.72) contrast(1.6);transform:translate(5px,1px)}
+}
+@keyframes v41DataBand{
+  0%,20%,24%,45%,49%,70%,74%,93%,96%,100%{opacity:0;transform:translateY(0)}
+  20.5%{opacity:1;transform:translateY(27vh) skewX(-12deg)}
+  21.5%{opacity:.72;transform:translateY(-11vh)}
+  45.7%{opacity:.9;transform:translateY(38vh)}
+  70.8%{opacity:1;transform:translateY(-24vh) scaleX(.76)}
+  93.6%{opacity:.8;transform:translateY(16vh)}
+}
+@keyframes v41PacketLoss{
+  0%,27%,31%,57%,61%,82%,86%,100%{opacity:0;transform:translateX(0)}
+  27.5%{opacity:.85;transform:translateX(14px)}
+  28.6%{opacity:.55;transform:translateX(-9px)}
+  57.7%{opacity:.78;transform:translateX(-13px)}
+  82.8%{opacity:.9;transform:translateX(10px)}
+}
+</style>
+
+
+<style id="V42_SCREEN02_MAX_GLITCH_NOISE">
+#ahora{overflow:hidden!important;}
+
+/* Fine animated static/noise texture */
+#ahora .news-stage .v42-noise{
+  position:absolute; inset:-18%; z-index:77; pointer-events:none;
+  opacity:.18; mix-blend-mode:screen;
+  background-image:
+    repeating-radial-gradient(circle at 13% 27%,rgba(255,255,255,.55) 0 1px,transparent 1px 3px),
+    repeating-linear-gradient(117deg,transparent 0 5px,rgba(0,238,255,.16) 5px 6px,transparent 6px 11px),
+    repeating-linear-gradient(63deg,transparent 0 7px,rgba(255,0,137,.13) 7px 8px,transparent 8px 15px);
+  background-size:7px 7px,19px 17px,23px 21px;
+  animation:v42Noise .18s steps(2,end) infinite;
+}
+
+/* Broad white-noise/signal-loss flash */
+#ahora .news-stage .v42-static{
+  position:absolute; left:-8%; width:116%; height:24%; top:34%;
+  z-index:81; pointer-events:none; opacity:0;
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.48) 0 1px,rgba(0,0,0,.08) 1px 2px,transparent 2px 4px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.12) 0 2px,transparent 2px 5px);
+  mix-blend-mode:screen;
+  filter:contrast(1.8);
+  animation:v42StaticBurst 6.3s steps(1,end) infinite;
+}
+
+/* More violent signal tear than V41 */
+#ahora::after{
+  height:9px!important;
+  animation:v42SignalTear 3.9s steps(1,end) infinite!important;
+  box-shadow:
+    0 3px 0 rgba(255,255,255,.28),
+    0 10px 0 rgba(0,238,255,.22),
+    0 -8px 0 rgba(255,0,137,.24)!important;
+}
+#ahora .now-title{
+  animation:v42TitleJolt 4.1s steps(1,end) infinite!important;
+}
+#ahora .now-title::before{
+  text-shadow:-9px 0 rgba(0,238,255,1),9px 0 rgba(255,0,137,.95)!important;
+  animation:v42TitleSlice 3.7s steps(1,end) infinite!important;
+}
+#ahora .news-video{
+  animation:v42VideoBreak 5.1s steps(1,end) infinite!important;
+}
+#ahora .news-stage::after{
+  height:20px!important;
+  animation:v42DataBand 4.6s steps(1,end) infinite!important;
+}
+#ahora .news-stage::before{
+  animation:v42PacketLoss 4.9s steps(1,end) infinite!important;
+}
+@keyframes v42Noise{
+  0%{transform:translate(0,0)}
+  25%{transform:translate(-3%,2%)}
+  50%{transform:translate(2%,-4%)}
+  75%{transform:translate(4%,3%)}
+  100%{transform:translate(-2%,-1%)}
+}
+@keyframes v42StaticBurst{
+  0%,12%,15%,37%,40%,61%,64%,82%,85%,100%{opacity:0;transform:translate(0,0) scaleY(.35)}
+  12.3%{opacity:.82;transform:translate(2%,15vh) scaleY(.85)}
+  13.0%{opacity:.45;transform:translate(-3%,-9vh) scaleY(.25)}
+  37.5%{opacity:.62;transform:translate(-1%,31vh) scaleY(.48)}
+  61.5%{opacity:.92;transform:translate(4%,-18vh) scaleY(.7)}
+  82.6%{opacity:.58;transform:translate(-4%,9vh) scaleY(.32)}
+}
+@keyframes v42SignalTear{
+  0%,9%,12%,25%,28%,44%,47%,60%,63%,77%,80%,93%,96%,100%{opacity:0;transform:translateY(0)}
+  9.4%{opacity:1;transform:translateY(13vh) scaleX(.52)}
+  10.2%{opacity:.9;transform:translateY(68vh) scaleX(1.15)}
+  25.6%{opacity:1;transform:translateY(38vh) scaleX(.78)}
+  44.5%{opacity:1;transform:translateY(81vh)}
+  60.7%{opacity:.95;transform:translateY(25vh) scaleX(.44)}
+  77.5%{opacity:1;transform:translateY(54vh) scaleX(1.2)}
+  93.6%{opacity:.9;transform:translateY(71vh)}
+}
+@keyframes v42TitleJolt{
+  0%,14%,18%,34%,38%,56%,60%,74%,78%,91%,95%,100%{transform:translate(0,0);filter:none}
+  14.5%{transform:translate(-12px,2px);filter:contrast(1.5)}
+  15.4%{transform:translate(10px,-3px)}
+  34.6%{transform:translate(8px,1px)}
+  56.5%{transform:translate(-10px,-2px);filter:brightness(1.25)}
+  74.5%{transform:translate(13px,0)}
+  91.5%{transform:translate(-7px,2px)}
+}
+@keyframes v42TitleSlice{
+  0%,18%,23%,42%,47%,67%,72%,87%,92%,100%{opacity:0;transform:translateX(0)}
+  18.5%{opacity:1;transform:translateX(18px)}
+  19.5%{opacity:.85;transform:translateX(-15px)}
+  42.6%{opacity:1;transform:translateX(-12px)}
+  67.7%{opacity:1;transform:translateX(15px)}
+  87.7%{opacity:.9;transform:translateX(-17px)}
+}
+@keyframes v42VideoBreak{
+  0%,13%,17%,32%,36%,52%,56%,71%,75%,88%,92%,100%{filter:none;transform:translate(0,0)}
+  13.5%{filter:contrast(1.9) saturate(1.8) hue-rotate(12deg);transform:translate(11px,0)}
+  14.5%{filter:brightness(1.55) contrast(1.4);transform:translate(-9px,3px)}
+  32.7%{filter:saturate(2) contrast(1.6);transform:translate(7px,-2px)}
+  52.7%{filter:brightness(.55) contrast(2);transform:translate(-10px,0)}
+  71.8%{filter:brightness(1.7) contrast(1.7);transform:translate(9px,2px)}
+  88.8%{filter:saturate(.4) contrast(1.8);transform:translate(-7px,-1px)}
+}
+@keyframes v42DataBand{
+  0%,17%,21%,38%,42%,59%,63%,79%,83%,95%,98%,100%{opacity:0;transform:translateY(0)}
+  17.5%{opacity:1;transform:translateY(34vh) skewX(-18deg)}
+  18.5%{opacity:.75;transform:translateY(-17vh)}
+  38.7%{opacity:1;transform:translateY(45vh) scaleX(.68)}
+  59.7%{opacity:1;transform:translateY(-29vh)}
+  79.7%{opacity:.9;transform:translateY(22vh) scaleX(1.15)}
+  95.8%{opacity:.85;transform:translateY(-12vh)}
+}
+@keyframes v42PacketLoss{
+  0%,21%,26%,46%,51%,69%,74%,89%,94%,100%{opacity:0;transform:translateX(0)}
+  21.5%{opacity:1;transform:translateX(22px)}
+  22.7%{opacity:.65;transform:translateX(-17px)}
+  46.8%{opacity:.95;transform:translateX(-20px)}
+  69.8%{opacity:1;transform:translateX(18px)}
+  89.8%{opacity:.85;transform:translateX(-14px)}
+}
+</style>
+
+
+<style id="V43_REMOVE_NOISE_ONLY">
+#ahora .news-stage .v42-noise,
+#ahora .news-stage .v42-static{
+  display:none!important;
+}
+</style>
+
+
+<style id="V44_PANTALLAZO03_APPROVED_ART">
+/* PANTALLAZO 03 — artwork approved by Carlos. Pantallazos 01/02 untouched. */
+#marcas.brands-v44{
+  position:relative;
+  background:#030303;
+  overflow:hidden;
+  isolation:isolate;
+}
+#marcas .p03-master{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  z-index:1;
+  display:block;
+}
+#marcas .p03-scan{
+  position:absolute; inset:0; z-index:5; pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.035) 4px,transparent 5px 8px);
+  mix-blend-mode:screen;
+  opacity:.34;
+  animation:p03Scan 5s linear infinite;
+}
+#marcas .p03-chroma{
+  position:absolute; inset:-1% -2%; z-index:6; pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0 12%,rgba(0,235,255,.10) 12% 15%,transparent 15% 72%,rgba(255,0,123,.09) 72% 75%,transparent 75%);
+  mix-blend-mode:screen;
+  opacity:0;
+  animation:p03Chroma 5.6s steps(1,end) infinite;
+}
+#marcas .p03-tear{
+  position:absolute; left:-3%; width:106%; z-index:8; pointer-events:none;
+  background:linear-gradient(90deg,transparent 0 5%,rgba(0,238,255,.72) 8% 24%,rgba(255,255,255,.34) 37% 54%,rgba(255,0,137,.62) 68% 88%,transparent 94%);
+  mix-blend-mode:screen;
+  opacity:0;
+}
+#marcas .p03-tear-a{height:8px;top:28%;animation:p03TearA 4.4s steps(1,end) infinite;}
+#marcas .p03-tear-b{height:18px;top:67%;animation:p03TearB 6.1s steps(1,end) infinite;}
+#marcas .p03-flash{
+  position:absolute; inset:0; z-index:9; pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,238,255,.12),transparent 28%,transparent 70%,rgba(255,0,137,.11));
+  opacity:0;
+  animation:p03Flash 7.3s steps(1,end) infinite;
+}
+@keyframes p03Scan{
+  from{transform:translateY(-8px)} to{transform:translateY(8px)}
+}
+@keyframes p03Chroma{
+  0%,16%,20%,43%,47%,71%,75%,100%{opacity:0;transform:translateX(0)}
+  16.5%{opacity:1;transform:translateX(8px)}
+  17.5%{opacity:.7;transform:translateX(-6px)}
+  43.7%{opacity:.9;transform:translateX(-10px)}
+  71.7%{opacity:.85;transform:translateX(7px)}
+}
+@keyframes p03TearA{
+  0%,13%,17%,36%,40%,58%,62%,81%,85%,100%{opacity:0;transform:translate(0,0) scaleX(1)}
+  13.5%{opacity:1;transform:translate(14px,22vh) scaleX(.72)}
+  14.5%{opacity:.75;transform:translate(-9px,49vh) scaleX(1.12)}
+  36.7%{opacity:.9;transform:translate(8px,9vh) scaleX(.58)}
+  58.8%{opacity:1;transform:translate(-12px,38vh)}
+  81.7%{opacity:.85;transform:translate(11px,57vh) scaleX(.84)}
+}
+@keyframes p03TearB{
+  0%,22%,26%,49%,53%,74%,78%,94%,97%,100%{opacity:0;transform:translateX(0)}
+  22.5%{opacity:.72;transform:translateX(-18px)}
+  23.5%{opacity:.42;transform:translateX(12px)}
+  49.8%{opacity:.65;transform:translateX(16px)}
+  74.8%{opacity:.78;transform:translateX(-14px)}
+  94.8%{opacity:.55;transform:translateX(9px)}
+}
+@keyframes p03Flash{
+  0%,31%,33%,66%,68%,89%,91%,100%{opacity:0}
+  31.5%{opacity:.65}
+  66.5%{opacity:.48}
+  89.5%{opacity:.58}
+}
+@media(max-width:760px){
+  #marcas .p03-master{object-fit:contain;background:#030303;}
+}
+@media(prefers-reduced-motion:reduce){
+  #marcas .p03-scan,#marcas .p03-chroma,#marcas .p03-tear,#marcas .p03-flash{animation:none!important;}
+}
+</style>
+
+<style id="V45_P03_ELEMENTS">
+#marcas.brands-v45{--tex:url("assets/tex_brands.jpg");overflow:hidden!important;isolation:isolate}
+#marcas .p03-layout{display:grid;grid-template-columns:37% 63%;align-items:center}
+#marcas .p03-left{height:82vh;position:relative;z-index:12}
+#marcas .p03-right{height:82vh;position:relative;z-index:14;padding:3vh 2.6vw 0 2.2vw}
+#marcas .p03-left .wordmark{position:absolute;left:0;top:0;z-index:30}
+#marcas .p03-headphones,#marcas .p03-ring,#marcas .p03-capsule{position:absolute;height:auto;filter:drop-shadow(0 12px 18px #0009)}
+#marcas .p03-headphones{width:46%;left:0;top:14%;transform:rotate(-8deg);z-index:18}
+#marcas .p03-ring{width:27%;left:23%;top:59%;transform:rotate(-14deg);z-index:24}
+#marcas .p03-capsule{width:16%;left:52%;top:13%;transform:rotate(32deg);z-index:21}
+#marcas .p03-tv-wrap{position:absolute;width:53%;left:8%;top:38%;z-index:20}
+#marcas .p03-tv{position:relative;width:100%;display:block;z-index:3;filter:drop-shadow(0 15px 20px #0009)}
+#marcas .p03-eye{position:absolute;z-index:4;left:14%;top:35%;width:58%;height:44%;overflow:hidden;border-radius:13%/18%;filter:grayscale(1) contrast(1.75) brightness(.72);mix-blend-mode:screen}
+#marcas .p03-eye img{width:100%;height:100%;object-fit:cover;object-position:center 48%;transform:scale(1.25)}
+#marcas .p03-eye:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff2 4px,transparent 5px 7px);animation:pEye 3s linear infinite}
+#marcas .p03-num{position:absolute;right:0;top:0;font-size:clamp(18px,2vw,34px)}
+#marcas .p03-title{width:min(610px,47vw);margin:4.5vh 0 4vh}
+#marcas .p03-logos{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4.5vh 2vw;align-items:center}
+#marcas .lg{color:#fff;text-align:center;font:800 clamp(14px,1.4vw,24px) Arial,sans-serif;line-height:.95;white-space:nowrap}
+#marcas .lg small{font-size:.48em;letter-spacing:.05em}.lg.big{font-size:clamp(18px,1.9vw,34px)!important}
+#marcas .lg.coca,#marcas .lg.ford{font-family:Georgia,serif;font-style:italic}.lg.coca{font-size:clamp(18px,1.8vw,31px)!important}
+#marcas .lg.alp,#marcas .lg.ford{border:2px solid #fff;border-radius:50%;padding:.28em .4em}.lg.d1{font-size:clamp(24px,2.5vw,43px)!important}
+#marcas .lg.tigo img{max-width:74px;max-height:38px;margin:auto;filter:grayscale(1) brightness(5)}
+#marcas .p03-tear{position:absolute;left:-4%;width:108%;z-index:80;pointer-events:none;opacity:0;mix-blend-mode:screen}
+#marcas .p03-tear.a{height:9px;top:22%;background:linear-gradient(90deg,transparent 7%,#00eaff 10% 26%,#fff8 42% 56%,#ff008b 72% 90%,transparent 94%);animation:tA 4.1s steps(1,end) infinite}
+#marcas .p03-tear.b{height:17px;top:69%;background:linear-gradient(90deg,transparent 14%,#ff008ba6 18% 35%,#fff5 47% 63%,#00eaffb8 72% 91%,transparent 95%);animation:tB 5.3s steps(1,end) infinite}
+#marcas .p03-burst{position:absolute;inset:0;z-index:79;pointer-events:none;opacity:0;background:linear-gradient(90deg,#00eaff1f,transparent 23% 72%,#ff008b1f);mix-blend-mode:screen;animation:burst 6.2s steps(1,end) infinite}
+#marcas .p03-title{animation:titleJ 5.4s steps(1,end) infinite}
+@keyframes pEye{from{transform:translateY(-7px)}to{transform:translateY(7px)}}
+@keyframes tA{0%,14%,18%,39%,43%,65%,69%,88%,92%,100%{opacity:0;transform:translate(0)}14.5%{opacity:1;transform:translate(13px,34vh)}15.5%{opacity:.7;transform:translate(-10px,57vh)}39.6%{opacity:.9;transform:translate(8px,14vh)}65.6%{opacity:1;transform:translate(-12px,46vh)}88.6%{opacity:.85;transform:translate(10px,61vh)}}
+@keyframes tB{0%,23%,27%,51%,55%,76%,80%,95%,98%,100%{opacity:0;transform:translateX(0)}23.5%{opacity:.75;transform:translateX(-19px)}24.4%{opacity:.42;transform:translateX(13px)}51.7%{opacity:.7;transform:translateX(17px)}76.8%{opacity:.82;transform:translateX(-15px)}95.7%{opacity:.58;transform:translateX(10px)}}
+@keyframes burst{0%,29%,32%,61%,64%,86%,89%,100%{opacity:0}29.5%,61.6%,86.6%{opacity:1}}
+@keyframes titleJ{0%,20%,24%,48%,52%,73%,77%,92%,96%,100%{transform:translate(0)}20.5%{transform:translate(-8px,1px)}21.4%{transform:translate(7px,-2px)}48.6%{transform:translate(5px,1px)}73.6%{transform:translate(-7px,-1px)}92.7%{transform:translate(9px)}}
+</style>
+
+<style id="V46_P03_REFINEMENT">
+/* Larger gold collage */
+#marcas .p03-headphones{width:60%!important;left:-5%!important;top:9%!important;}
+#marcas .p03-tv-wrap{width:67%!important;left:7%!important;top:31%!important;}
+#marcas .p03-ring{width:37%!important;left:20%!important;top:61%!important;}
+#marcas .p03-capsule{width:21%!important;left:54%!important;top:14%!important;}
+
+/* Selected eye concept fills the ENTIRE visible CRT glass */
+#marcas .p03-eye{
+  left:13.2%!important; top:26.8%!important;
+  width:64.8%!important; height:52.8%!important;
+  border-radius:14% / 18%!important;
+  background:#050505!important;
+}
+#marcas .p03-eye img{
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;object-position:center!important;
+  transform:scale(1.10)!important;
+  display:block!important;
+}
+
+/* Real logo marks as independent white image assets */
+#marcas .p03-logos{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:4.2vh 2.1vw!important;
+  align-items:center!important;
+}
+#marcas .p03-brand{height:58px;display:flex;align-items:center;justify-content:center;min-width:0}
+#marcas .p03-brand img{
+  display:block;max-width:100%;max-height:50px;width:auto;height:auto;
+  object-fit:contain;filter:none!important;
+}
+#marcas .p03-brand-d1 img{max-height:55px}
+#marcas .p03-brand-coca img{max-width:145px}
+#marcas .p03-brand-pepsico img{max-width:150px}
+#marcas .p03-brand-bancolombia img{max-width:155px}
+#marcas .p03-brand-tigo img{max-height:48px}
+</style>
+
+
+<style id="V47_P03_GEOMETRY_FIX">
+#marcas.brands-v45{
+  position:relative!important;
+  height:100svh!important;
+  min-height:640px!important;
+  max-height:100svh!important;
+  overflow:hidden!important;
+}
+#marcas .p03-layout{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:0!important;
+  display:block!important;
+  z-index:12!important;
+}
+#marcas .p03-left{
+  position:absolute!important;
+  left:3.1vw!important;
+  top:4.5vh!important;
+  width:35.5vw!important;
+  height:91vh!important;
+  z-index:12!important;
+}
+#marcas .p03-right{
+  position:absolute!important;
+  left:38.5vw!important;
+  right:3.2vw!important;
+  top:4.5vh!important;
+  height:91vh!important;
+  padding:0!important;
+  z-index:14!important;
+}
+#marcas .p03-left .wordmark{
+  left:0!important;top:0!important;
+}
+
+/* Larger objects, but kept fully inside the viewport */
+#marcas .p03-headphones{
+  width:66%!important;
+  left:-1%!important;
+  top:10%!important;
+  transform:rotate(-8deg)!important;
+}
+#marcas .p03-tv-wrap{
+  width:74%!important;
+  left:4%!important;
+  top:35%!important;
+}
+#marcas .p03-ring{
+  width:41%!important;
+  left:24%!important;
+  top:63%!important;
+  transform:rotate(-14deg)!important;
+}
+#marcas .p03-capsule{
+  width:24%!important;
+  left:59%!important;
+  top:12%!important;
+  transform:rotate(32deg)!important;
+}
+
+/* Eye fills the complete visible glass */
+#marcas .p03-eye{
+  left:12.5%!important;
+  top:25.5%!important;
+  width:66.5%!important;
+  height:55.5%!important;
+  border-radius:15% / 19%!important;
+}
+#marcas .p03-eye img{
+  width:100%!important;height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:scale(1.18)!important;
+}
+
+/* Heading + number */
+#marcas .p03-num{
+  right:0!important;top:0!important;
+}
+#marcas .p03-title{
+  display:block!important;
+  width:47vw!important;
+  max-width:690px!important;
+  height:auto!important;
+  margin:4.2vh 0 5.2vh 0!important;
+}
+
+/* Exact 3-row logo architecture: 5 / 5 / 6 */
+#marcas .p03-logos{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(30,minmax(0,1fr))!important;
+  grid-auto-rows:9.3vh!important;
+  column-gap:.55vw!important;
+  row-gap:2.2vh!important;
+  align-items:center!important;
+}
+#marcas .p03-brand{
+  height:9.3vh!important;
+  min-height:58px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:.5vh .55vw!important;
+}
+#marcas .p03-brand:nth-child(-n+10){grid-column:span 6!important;}
+#marcas .p03-brand:nth-child(n+11){grid-column:span 5!important;}
+#marcas .p03-brand img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:92%!important;
+  max-height:6.2vh!important;
+  object-fit:contain!important;
+}
+/* allow wide wordmarks a little more breathing room */
+#marcas .p03-brand-coca img,
+#marcas .p03-brand-pepsico img,
+#marcas .p03-brand-bancolombia img{max-width:98%!important;}
+#marcas .p03-brand-d1 img,
+#marcas .p03-brand-bavaria img,
+#marcas .p03-brand-toyota img{max-height:7vh!important;}
+
+@media(max-width:900px){
+  #marcas.brands-v45{height:auto!important;max-height:none!important;min-height:100svh!important;overflow:hidden!important}
+  #marcas .p03-layout{position:relative!important;min-height:1100px!important}
+  #marcas .p03-left{left:4vw!important;top:3vh!important;width:92vw!important;height:48vh!important}
+  #marcas .p03-right{left:4vw!important;right:4vw!important;top:52vh!important;height:auto!important}
+  #marcas .p03-title{width:82vw!important}
+}
+</style>
+
+
+<style id="V48_P03_TV_EYE_FIX">
+/* ONLY Pantallazo 03: separate TV from the other icons */
+#marcas .p03-tv-wrap{
+  left:-6%!important;
+  top:35%!important;
+}
+
+/* Eye must sit ABOVE the TV image and fill the complete CRT glass */
+#marcas .p03-eye{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:absolute!important;
+  z-index:12!important;
+  left:12.2%!important;
+  top:25.2%!important;
+  width:67.5%!important;
+  height:56.5%!important;
+  overflow:hidden!important;
+  border-radius:15% / 19%!important;
+  background:#050505!important;
+  mix-blend-mode:normal!important;
+  filter:grayscale(1) contrast(1.65) brightness(.88)!important;
+}
+#marcas .p03-eye img{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center 50%!important;
+  transform:scale(1.22)!important;
+  filter:none!important;
+}
+#marcas .p03-tv{
+  position:relative!important;
+  z-index:10!important;
+  pointer-events:none!important;
+}
+/* scanlines remain over the eye, not over the whole TV */
+#marcas .p03-eye:after{
+  z-index:13!important;
+  pointer-events:none!important;
+}
+</style>
+
+
+<style id="V49_TV_LEFT_EYE_IN_SCREEN">
+#marcas .p03-tv-wrap{
+  left:-16%!important;
+  top:35%!important;
+}
+
+/* Eye is the screen content */
+#marcas .p03-eye{
+  position:absolute!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:9!important;
+  left:13.0%!important;
+  top:25.8%!important;
+  width:66.2%!important;
+  height:55.2%!important;
+  overflow:hidden!important;
+  border-radius:15% / 19%!important;
+  background:#050505!important;
+  mix-blend-mode:normal!important;
+  filter:grayscale(1) contrast(1.7) brightness(.9)!important;
+}
+#marcas .p03-eye img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center!important;
+  transform:scale(1.26)!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+#marcas .p03-tv{
+  position:relative!important;
+  z-index:10!important;
+}
+/* CRT scanlines over eye only */
+#marcas .p03-eye:after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:11!important;
+  display:block!important;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.14) 4px,transparent 5px 7px)!important;
+  pointer-events:none!important;
+}
+</style>
+
+
+<style id="V50_TV_100_PERCENT_RIGHT">
+#marcas .p03-tv-wrap{
+  left:58%!important;
+}
+</style>
+
+
+<style id="V51_P03_THREE_FIXES">
+/* 1 — TV: 20% of its own width to the left */
+#marcas .p03-tv-wrap{
+  left:43.2%!important;
+}
+
+/* 2 — Capsule: +30% */
+#marcas .p03-capsule{
+  width:31.2%!important;
+}
+
+/* 3 — Brand marks: show complete logos, never crop them */
+#marcas .p03-logos{
+  overflow:visible!important;
+  grid-auto-rows:minmax(68px,9.8vh)!important;
+  row-gap:1.5vh!important;
+}
+#marcas .p03-brand{
+  height:minmax(68px,9.8vh)!important;
+  min-height:68px!important;
+  overflow:visible!important;
+  padding:.3vh .35vw!important;
+}
+#marcas .p03-brand img{
+  width:auto!important;
+  height:auto!important;
+  max-width:96%!important;
+  max-height:7.4vh!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  overflow:visible!important;
+}
+#marcas .p03-brand-coca img,
+#marcas .p03-brand-pepsico img,
+#marcas .p03-brand-bancolombia img,
+#marcas .p03-brand-chevrolet img{
+  max-width:100%!important;
+}
+</style>
+
+
+<style id="V52_P03_ICON_CLEANUP">
+/* Audífonos -30% */
+#marcas .p03-headphones{
+  width:46.2%!important;
+}
+
+/* Anillo -30% */
+#marcas .p03-ring{
+  width:28.7%!important;
+}
+
+/* Clean the area directly beneath the capsule: no legacy decorative fragment */
+#marcas .p03-capsule{
+  z-index:35!important;
+}
+#marcas .p03-capsule::before,
+#marcas .p03-capsule::after{
+  display:none!important;
+  content:none!important;
+}
+</style>
+
+
+<style id="V53_P03_CAPSULE_DEDUP_HEADPHONES">
+/* Audífonos +30% from V52: 46.2% -> 60.06% */
+#marcas .p03-headphones{
+  width:60.06%!important;
+}
+
+/* There must be one single capsule layer, with no generated fragments */
+#marcas .p03-capsule{
+  width:31.2%!important;
+  z-index:35!important;
+  overflow:visible!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+}
+</style>
+
+
+<style id="V55_P03_CAPSULE_TV">
+/* Pastilla +15% y ligera rotación hacia la izquierda */
+#marcas .p03-capsule{
+  width:35.88%!important;
+  transform:rotate(-8deg)!important;
+  transform-origin:center center!important;
+}
+
+/* TV 10% de su propio ancho hacia la izquierda */
+#marcas .p03-tv-wrap{
+  left:35.8%!important;
+}
+</style>
+
+
+<style id="V56_EYE_IN_TV">
+#marcas .p03-tv-wrap{
+  isolation:isolate!important;
+}
+
+/* Ojo contenido exclusivamente dentro del cristal CRT */
+#marcas .p03-eye{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:absolute!important;
+  z-index:9!important;
+  left:13.3%!important;
+  top:26.0%!important;
+  width:65.5%!important;
+  height:54.5%!important;
+  overflow:hidden!important;
+  border-radius:14% / 18%!important;
+  background:#020202!important;
+  clip-path:inset(0 round 14% 14% 16% 16%)!important;
+  filter:grayscale(1) contrast(1.72) brightness(.92)!important;
+}
+#marcas .p03-eye img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  max-height:none!important;
+  object-fit:cover!important;
+  object-position:center 48%!important;
+  transform:scale(1.24)!important;
+}
+
+/* Marco del televisor siempre por encima del ojo */
+#marcas .p03-tv{
+  position:relative!important;
+  z-index:10!important;
+}
+
+/* Líneas CRT solo dentro de la pantalla */
+#marcas .p03-eye:after{
+  content:""!important;
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:11!important;
+  pointer-events:none!important;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0) 0 3px,
+      rgba(255,255,255,.12) 4px,
+      rgba(0,0,0,0) 5px 7px
+    )!important;
+}
+</style>
+
+
+<style id="V60_APPROVED_TV_REPLACEMENT">
+/* Nuevo TV ya trae el ojo integrado: desactivar únicamente el ojo separado de V56 */
+#marcas .p03-eye{
+  display:none!important;
+}
+</style>
+
+
+<style id="V62_LOGOS_FINAL_CLEAN">
+#marcas .p03-right{
+  z-index:70!important;
+  overflow:visible!important;
+}
+#marcas .p03-logos{
+  position:relative!important;
+  z-index:80!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+  grid-auto-rows:minmax(66px,9.4vh)!important;
+  row-gap:1.25vh!important;
+}
+#marcas .p03-brand{
+  position:relative!important;
+  z-index:81!important;
+  overflow:visible!important;
+  min-width:0!important;
+  min-height:66px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:.45vh .55vw!important;
+  background:transparent!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+}
+#marcas .p03-brand img{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:88%!important;
+  max-height:6.6vh!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  clip-path:none!important;
+  mask:none!important;
+  -webkit-mask:none!important;
+  filter:grayscale(1) brightness(0) invert(1)!important;
+  opacity:1!important;
+}
+
+/* Marks that need slightly different optical scale */
+#marcas .p03-brand-d1 img{max-height:6.9vh!important;max-width:72%!important;}
+#marcas .p03-brand-coca img{max-width:94%!important;}
+#marcas .p03-brand-pepsico img{max-width:92%!important;}
+#marcas .p03-brand-bavaria img{max-height:7.2vh!important;max-width:72%!important;}
+#marcas .p03-brand-alpina img{max-height:7.0vh!important;max-width:76%!important;}
+#marcas .p03-brand-nutresa img{max-width:94%!important;}
+#marcas .p03-brand-exito img{max-height:6.9vh!important;max-width:70%!important;}
+#marcas .p03-brand-homecenter img{max-width:94%!important;}
+#marcas .p03-brand-makro img{max-width:92%!important;}
+#marcas .p03-brand-toyota img{max-width:88%!important;}
+#marcas .p03-brand-chevrolet img{max-width:88%!important;}
+#marcas .p03-brand-ford img{max-width:90%!important;}
+#marcas .p03-brand-bancolombia img{max-width:96%!important;}
+#marcas .p03-brand-bbva img{max-width:88%!important;}
+#marcas .p03-brand-claro img{max-width:88%!important;}
+#marcas .p03-brand-tigo img{max-height:6.7vh!important;max-width:76%!important;}
+
+/* Glitch remains in the background; it can no longer slice through the logos */
+#marcas .p03-tear,
+#marcas .p03-burst,
+#marcas .glitch-blocks,
+#marcas .glitch-lines,
+#marcas .scan,
+#marcas .grain{
+  pointer-events:none!important;
+}
+#marcas .p03-tear,
+#marcas .p03-burst{
+  z-index:45!important;
+}
+
+/* V70 — denser signal damage over the golden objects, logos stay clean */
+#marcas .glitch-lines{
+  z-index:42!important;
+  opacity:1!important;
+  mix-blend-mode:screen!important;
+  animation:signalShift 4.8s steps(1,end) infinite!important;
+}
+#marcas .glitch-blocks{
+  z-index:43!important;
+  opacity:.95!important;
+  mix-blend-mode:screen!important;
+  animation:blockDrop 3.9s steps(1,end) infinite!important;
+}
+#marcas .p03-tear.a{animation-duration:2.85s!important;}
+#marcas .p03-tear.b{animation-duration:3.65s!important;}
+#marcas .p03-burst{animation-duration:4.15s!important;}
+
+#marcas .p03-headphones{animation:p03GoldSubtleHeadphones 10.8s steps(1,end) infinite;}
+#marcas .p03-tv-wrap{animation:p03GoldSubtleTv 12.6s steps(1,end) -3.1s infinite;}
+#marcas .p03-ring,#marcas .p03-capsule{animation:none!important;translate:0 0!important;}
+
+#marcas .p03-icon-glitch{
+  position:absolute;
+  left:-7%;
+  width:88%;
+  z-index:46;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  background:linear-gradient(90deg,transparent 0 5%,#00eaffbb 10% 31%,#fff8 38% 52%,#ff008baa 61% 82%,transparent 94%);
+  filter:contrast(1.35) saturate(1.7);
+}
+#marcas .p03-icon-glitch.g1{height:7px;top:21%;animation:p03ObjectBandA 3.35s steps(1,end) infinite;}
+#marcas .p03-icon-glitch.g2{height:13px;top:49%;animation:p03ObjectBandB 4.1s steps(1,end) infinite;}
+#marcas .p03-icon-glitch.g3{height:5px;top:72%;animation:p03ObjectBandC 2.95s steps(1,end) infinite;}
+
+@keyframes p03GoldHackA{
+  0%,19%,23%,48%,52%,77%,81%,100%{translate:0 0;filter:drop-shadow(0 12px 18px #0009)}
+  20%{translate:10px -1px;filter:drop-shadow(7px 0 #00eaff99) drop-shadow(-8px 0 #ff008b99) contrast(1.35)}
+  21%{translate:-7px 2px;filter:drop-shadow(-5px 0 #00eaff88) drop-shadow(6px 0 #ff008b88) saturate(1.65)}
+  22%{translate:3px 0}
+  49%{translate:-5px -2px;filter:drop-shadow(6px 0 #00eaff88) contrast(1.45)}
+  50%{translate:7px 1px;filter:drop-shadow(-6px 0 #ff008b88)}
+  51%{translate:0 0}
+  78%{translate:8px 0;filter:drop-shadow(8px 0 #00eaff80) drop-shadow(-5px 0 #ff008b80)}
+  79%{translate:-4px 1px}
+  80%{translate:0 0}
+}
+@keyframes p03GoldHackB{
+  0%,31%,35%,64%,68%,89%,93%,100%{translate:0 0;filter:none}
+  32%{translate:-9px 1px;filter:drop-shadow(9px 0 #00eaff8c) drop-shadow(-7px 0 #ff008b8c)}
+  33%{translate:11px -2px;filter:contrast(1.35) saturate(1.55)}
+  34%{translate:-3px 0}
+  65%{translate:7px 0;filter:drop-shadow(-8px 0 #ff008b80)}
+  66%{translate:-5px 2px;filter:drop-shadow(7px 0 #00eaff80)}
+  67%{translate:0 0}
+  90%{translate:-8px -1px;filter:contrast(1.5)}
+  91%{translate:5px 1px}
+  92%{translate:0 0}
+}
+@keyframes p03GoldHackC{
+  0%,12%,16%,42%,46%,71%,75%,100%{translate:0 0;filter:drop-shadow(0 12px 18px #0009)}
+  13%{translate:8px -2px;filter:drop-shadow(7px 0 #00eaff99) drop-shadow(-7px 0 #ff008b99)}
+  14%{translate:-6px 1px;filter:contrast(1.55)}
+  15%{translate:2px 0}
+  43%{translate:-8px 0;filter:drop-shadow(-6px 0 #ff008b8c)}
+  44%{translate:6px 2px;filter:drop-shadow(6px 0 #00eaff8c)}
+  45%{translate:0 0}
+  72%{translate:5px -1px;filter:saturate(1.8) contrast(1.35)}
+  73%{translate:-3px 1px}
+  74%{translate:0 0}
+}
+@keyframes p03GoldHackD{
+  0%,25%,29%,55%,59%,82%,86%,100%{translate:0 0;filter:drop-shadow(0 12px 18px #0009)}
+  26%{translate:-7px 1px;filter:drop-shadow(8px 0 #00eaff99) drop-shadow(-6px 0 #ff008b99)}
+  27%{translate:9px -2px;filter:contrast(1.5)}
+  28%{translate:0 0}
+  56%{translate:6px 1px;filter:drop-shadow(-7px 0 #ff008b88)}
+  57%{translate:-4px 0;filter:drop-shadow(6px 0 #00eaff88)}
+  58%{translate:0 0}
+  83%{translate:-6px -1px;filter:saturate(1.7) contrast(1.4)}
+  84%{translate:4px 1px}
+  85%{translate:0 0}
+}
+@keyframes p03GoldSubtleHeadphones{
+  0%,41.9%,43.5%,78.9%,80.5%,100%{translate:0 0;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(0 12px 18px #0009)}
+  42%{translate:3px -1px;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(3px 0 #00eaff80) drop-shadow(-3px 0 #ff008b78) drop-shadow(0 2px #ffd40066) drop-shadow(0 12px 18px #0009)}
+  42.35%{translate:-3px 1px;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(-3px 0 #00eaff70) drop-shadow(3px 0 #ff008b70) drop-shadow(0 -2px #ffd4005c) drop-shadow(0 12px 18px #0009)}
+  42.7%{translate:2px 0;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(2px 0 #00eaff60) drop-shadow(-2px 0 #ff008b60) drop-shadow(0 1px #ffd40055) drop-shadow(0 12px 18px #0009)}
+  43.05%{translate:0 0;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(0 12px 18px #0009)}
+  79%{translate:-3px 0;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(-3px 0 #00eaff75) drop-shadow(3px 0 #ff008b70) drop-shadow(0 -2px #ffd4005c) drop-shadow(0 12px 18px #0009)}
+  79.35%{translate:3px -1px;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(3px 0 #00eaff68) drop-shadow(-3px 0 #ff008b68) drop-shadow(0 2px #ffd40055) drop-shadow(0 12px 18px #0009)}
+  79.7%{translate:-1px 1px;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(-2px 0 #00eaff55) drop-shadow(2px 0 #ff008b55) drop-shadow(0 12px 18px #0009)}
+  80.05%{translate:0 0;filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(0 12px 18px #0009)}
+}
+@keyframes p03GoldSubtleTv{
+  0%,30.9%,32.5%,71.9%,73.5%,100%{translate:0 0;filter:none}
+  31%{translate:-3px 1px;filter:drop-shadow(-3px 0 #00eaff78) drop-shadow(3px 0 #ff008b70) drop-shadow(0 -2px #ffd4005c)}
+  31.3%{translate:3px -1px;filter:drop-shadow(3px 0 #00eaff70) drop-shadow(-3px 0 #ff008b68) drop-shadow(0 2px #ffd40055)}
+  31.6%{translate:-1px 0;filter:drop-shadow(-2px 0 #00eaff58) drop-shadow(2px 0 #ff008b58)}
+  31.9%{translate:0 0;filter:none}
+  72%{translate:3px 0;filter:drop-shadow(3px 0 #00eaff70) drop-shadow(-3px 0 #ff008b68) drop-shadow(0 2px #ffd40058)}
+  72.3%{translate:-3px 1px;filter:drop-shadow(-3px 0 #00eaff68) drop-shadow(3px 0 #ff008b60) drop-shadow(0 -2px #ffd40050)}
+  72.6%{translate:1px -1px;filter:drop-shadow(2px 0 #00eaff50) drop-shadow(-2px 0 #ff008b50)}
+  72.9%{translate:0 0;filter:none}
+}
+@keyframes p03ObjectBandA{
+  0%,18%,22%,47%,51%,76%,80%,100%{opacity:0;transform:translateX(0) scaleX(1)}
+  19%{opacity:.95;transform:translateX(18px) scaleX(.86)}
+  20%{opacity:.55;transform:translateX(-12px) scaleX(1.08)}
+  21%{opacity:.2;transform:translateX(5px)}
+  48%{opacity:.8;top:37%;transform:translateX(-16px)}
+  49%{opacity:.45;transform:translateX(12px)}
+  50%{opacity:.12}
+  77%{opacity:.88;top:63%;transform:translateX(14px)}
+  78%{opacity:.4;transform:translateX(-9px)}
+  79%{opacity:.1}
+}
+@keyframes p03ObjectBandB{
+  0%,27%,31%,58%,62%,87%,91%,100%{opacity:0;transform:translateX(0)}
+  28%{opacity:.78;transform:translateX(-22px) scaleY(1.3)}
+  29%{opacity:.42;transform:translateX(16px) scaleY(.55)}
+  30%{opacity:.14}
+  59%{opacity:.9;top:30%;transform:translateX(12px)}
+  60%{opacity:.5;transform:translateX(-15px)}
+  61%{opacity:.12}
+  88%{opacity:.74;top:75%;transform:translateX(-18px)}
+  89%{opacity:.35;transform:translateX(9px)}
+  90%{opacity:.1}
+}
+@keyframes p03ObjectBandC{
+  0%,34%,38%,67%,71%,92%,96%,100%{opacity:0;transform:translateX(0)}
+  35%{opacity:.9;transform:translateX(20px) scaleX(.8)}
+  36%{opacity:.5;transform:translateX(-14px) scaleX(1.1)}
+  37%{opacity:.12}
+  68%{opacity:.82;top:45%;transform:translateX(-11px)}
+  69%{opacity:.36;transform:translateX(13px)}
+  70%{opacity:.1}
+  93%{opacity:.75;top:15%;transform:translateX(16px)}
+  94%{opacity:.32;transform:translateX(-8px)}
+  95%{opacity:.08}
+}
+
+/* V71 — rectangular packet loss and moving noise over the golden objects */
+#marcas .p03-noise-field{
+  position:absolute;
+  left:-5%;
+  top:7%;
+  width:82%;
+  height:82%;
+  z-index:45;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  background-image:
+    repeating-conic-gradient(from 13deg at 31% 47%,#fff 0 3deg,transparent 3deg 11deg),
+    repeating-linear-gradient(91deg,#00eaff88 0 1px,transparent 1px 4px,#ff008b70 4px 5px,transparent 5px 9px);
+  background-size:7px 7px,13px 5px;
+  filter:contrast(2.2) saturate(1.7);
+  clip-path:polygon(3% 8%,58% 8%,58% 23%,94% 23%,94% 48%,69% 48%,69% 68%,100% 68%,100% 83%,48% 83%,48% 96%,4% 96%);
+  animation:p03NoiseMove 3.15s steps(1,end) infinite;
+}
+#marcas .p03-pixel{
+  position:absolute;
+  z-index:47;
+  pointer-events:none;
+  opacity:0;
+  mix-blend-mode:screen;
+  filter:contrast(1.5) saturate(1.8);
+}
+#marcas .p03-pixel.r1{left:2%;top:16%;width:23%;height:9%;background:#00eaff8c;animation:p03RectA 3.8s steps(1,end) infinite;}
+#marcas .p03-pixel.r2{left:31%;top:25%;width:17%;height:13%;background:#ff008b80;animation:p03RectB 4.45s steps(1,end) infinite;}
+#marcas .p03-pixel.r3{left:10%;top:45%;width:34%;height:7%;background:linear-gradient(90deg,#fff8,#00eaff80);animation:p03RectC 3.35s steps(1,end) infinite;}
+#marcas .p03-pixel.r4{left:42%;top:53%;width:21%;height:11%;background:linear-gradient(90deg,#ff008b7d,#fff5);animation:p03RectA 4.9s steps(1,end) -1.7s infinite;}
+#marcas .p03-pixel.r5{left:17%;top:69%;width:28%;height:8%;background:#00eaff75;animation:p03RectB 3.6s steps(1,end) -.8s infinite;}
+#marcas .p03-pixel.r6{left:49%;top:74%;width:15%;height:15%;background:#ff008b70;animation:p03RectC 4.2s steps(1,end) -2.1s infinite;}
+
+@keyframes p03NoiseMove{
+  0%,16%,20%,39%,43%,64%,68%,87%,91%,100%{opacity:0;background-position:0 0,0 0;transform:translate(0)}
+  17%{opacity:.22;background-position:11px -7px,-9px 4px;transform:translate(5px,-2px)}
+  18%{opacity:.42;background-position:-17px 9px,13px -6px;transform:translate(-7px,3px)}
+  19%{opacity:.12;background-position:6px 14px,-4px 8px;transform:translate(2px,0)}
+  40%{opacity:.34;background-position:19px -11px,-15px 7px;transform:translate(-4px,2px)}
+  41%{opacity:.18;background-position:-8px 5px,17px -9px;transform:translate(8px,-1px)}
+  42%{opacity:.08}
+  65%{opacity:.46;background-position:-14px -16px,12px 6px;transform:translate(3px,3px)}
+  66%{opacity:.25;background-position:21px 8px,-18px -4px;transform:translate(-6px,-2px)}
+  67%{opacity:.09}
+  88%{opacity:.38;background-position:16px 13px,-11px -7px;transform:translate(7px,1px)}
+  89%{opacity:.2;background-position:-19px -5px,15px 9px;transform:translate(-3px,-3px)}
+  90%{opacity:.07}
+}
+@keyframes p03RectA{
+  0%,21%,25%,53%,57%,82%,86%,100%{opacity:0;transform:translate(0) scaleX(1)}
+  22%{opacity:.7;transform:translate(14px,-4px) scaleX(.72)}
+  23%{opacity:.32;transform:translate(-9px,6px) scaleX(1.14)}
+  24%{opacity:.08}
+  54%{opacity:.56;transform:translate(-13px,9px) scaleX(.88)}
+  55%{opacity:.25;transform:translate(8px,-3px) scaleX(1.2)}
+  56%{opacity:.06}
+  83%{opacity:.62;transform:translate(11px,5px) scaleX(.8)}
+  84%{opacity:.28;transform:translate(-6px,-7px)}
+  85%{opacity:.07}
+}
+@keyframes p03RectB{
+  0%,12%,16%,44%,48%,72%,76%,93%,97%,100%{opacity:0;transform:translate(0) scaleY(1)}
+  13%{opacity:.58;transform:translate(-12px,5px) scaleY(.65)}
+  14%{opacity:.3;transform:translate(10px,-3px) scaleY(1.25)}
+  15%{opacity:.07}
+  45%{opacity:.68;transform:translate(15px,-7px) scaleY(.8)}
+  46%{opacity:.22;transform:translate(-8px,4px)}
+  47%{opacity:.05}
+  73%{opacity:.52;transform:translate(-14px,-2px) scaleY(1.18)}
+  74%{opacity:.2;transform:translate(6px,7px)}
+  75%{opacity:.05}
+  94%{opacity:.6;transform:translate(9px,-5px)}
+  95%{opacity:.24;transform:translate(-5px,3px)}
+  96%{opacity:.05}
+}
+@keyframes p03RectC{
+  0%,29%,33%,61%,65%,88%,92%,100%{opacity:0;transform:translate(0)}
+  30%{opacity:.66;transform:translate(17px,-6px)}
+  31%{opacity:.26;transform:translate(-11px,8px)}
+  32%{opacity:.06}
+  62%{opacity:.54;transform:translate(-15px,-4px)}
+  63%{opacity:.21;transform:translate(9px,6px)}
+  64%{opacity:.05}
+  89%{opacity:.7;transform:translate(12px,4px)}
+  90%{opacity:.25;transform:translate(-7px,-5px)}
+  91%{opacity:.05}
+}
+
+/* V79 — slightly deeper gold on screens 02 and 03 */
+#ahora .news-stage .gold{
+  filter:brightness(.82) saturate(.94) contrast(1.04)!important;
+}
+#marcas .p03-ring,
+#marcas .p03-capsule{
+  filter:brightness(.82) saturate(.94) contrast(1.04) drop-shadow(0 12px 18px #0009)!important;
+}
+#marcas .p03-tv{
+  filter:brightness(.82) saturate(.94) contrast(1.04)!important;
+}
+
+@media (prefers-reduced-motion:reduce){
+  #marcas .p03-headphones,#marcas .p03-tv-wrap,#marcas .p03-ring,#marcas .p03-capsule,
+  #marcas .p03-icon-glitch,#marcas .p03-noise-field,#marcas .p03-pixel{animation:none!important;}
+}
+</style>
+
+<style id="V106_DARK_GOLD_AND_PHOTOREAL_MOON">
+/* Pantallazo 03 — TV y anillo más oscuros */
+#marcas .p03-ring{
+  filter:brightness(.64) saturate(.88) contrast(1.12) drop-shadow(0 12px 20px #000b)!important;
+}
+#marcas .p03-tv{
+  filter:brightness(.64) saturate(.88) contrast(1.12) drop-shadow(0 15px 22px #000b)!important;
+}
+/* Pantallazo 10 — luna fotográfica hiperrealista */
+.contact .moon-wrap{width:58vw!important;right:-1vw!important;top:0!important;align-items:flex-start!important;justify-content:flex-end!important;overflow:hidden!important;}
+.contact .moon-photo{display:block;width:min(64vw,1020px);height:auto;flex:0 0 auto;transform:translate(30%,-12%);filter:brightness(.76) contrast(1.18) saturate(.72) drop-shadow(-25px 0 80px rgba(190,205,220,.1));}
+@media(max-width:900px){.contact .moon-wrap{width:92vw!important;right:-38vw!important;top:0!important;align-items:flex-start!important;opacity:.78}.contact .moon-photo{width:96vw;transform:translate(21%,-8%)}}
+</style>
+
+<style id="V108_CONTACT_DEEP_SPACE_SIGNAL">
+/* Pantallazo 10 — telemetría espacial / transmisión NASA degradada */
+#contacto .contact-orbit-grid,
+#contacto .contact-star-noise,
+#contacto .contact-data-rain,
+#contacto .contact-hud,
+#contacto .contact-uplink,
+#contacto .contact-space-tear{position:absolute;inset:0;pointer-events:none}
+#contacto .grain,#contacto .scan{z-index:5}
+#contacto .contact-orbit-grid{z-index:2;opacity:.3;background:
+  radial-gradient(circle at 83% 16%,transparent 0 8.8%,rgba(190,208,215,.24) 8.9% 9%,transparent 9.1% 16%,rgba(190,208,215,.15) 16.1% 16.25%,transparent 16.35%),
+  repeating-radial-gradient(circle at 83% 16%,transparent 0 77px,rgba(255,255,255,.045) 78px 79px),
+  linear-gradient(90deg,transparent 0 49.9%,rgba(132,212,226,.08) 50%,transparent 50.1%),
+  linear-gradient(0deg,transparent 0 49.9%,rgba(132,212,226,.07) 50%,transparent 50.1%);
+  background-size:auto,auto,84px 100%,100% 84px;mix-blend-mode:screen;animation:contactOrbitLock 8s steps(1,end) infinite}
+#contacto .contact-star-noise{z-index:3;opacity:.22;background-image:
+  radial-gradient(#fff .65px,transparent .9px),radial-gradient(#73dbe9 .55px,transparent .8px),radial-gradient(#d7a342 .6px,transparent .9px);
+  background-size:5px 5px,11px 13px,19px 17px;mix-blend-mode:screen;filter:contrast(1.8);animation:contactCosmicNoise 2.8s steps(1,end) infinite}
+#contacto .contact-data-rain{z-index:3;left:52%;width:48%;opacity:.18;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(144,218,229,.24) 19px 20px,transparent 21px 38px);clip-path:polygon(0 9%,100% 9%,100% 11%,18% 11%,18% 27%,91% 27%,91% 29%,5% 29%,5% 49%,100% 49%,100% 51%,32% 51%,32% 72%,88% 72%,88% 74%,0 74%);filter:blur(.2px);animation:contactDataRain 5.3s steps(1,end) infinite}
+#contacto .contact-hud{z-index:6;inset:74px 27px 64px 50%;border:1px solid rgba(181,214,220,.13);clip-path:polygon(0 0,14% 0,14% 1px,1px 1px,1px 13%,0 13%,0 100%,18% 100%,18% calc(100% - 1px),1px calc(100% - 1px),1px 86%,0 86%,100% 86%,100% 100%,82% 100%,82% calc(100% - 1px),calc(100% - 1px) calc(100% - 1px),calc(100% - 1px) 87%,100% 87%,100% 0,84% 0,84% 1px,calc(100% - 1px) 1px,calc(100% - 1px) 14%,100% 14%);opacity:.7}
+#contacto .contact-uplink{z-index:6;inset:auto 4.2vw 82px auto;width:255px;height:72px;color:rgba(196,220,224,.62);font:500 8px/1.55 "IBM Plex Mono";letter-spacing:.12em;text-transform:uppercase;text-align:right;white-space:pre;animation:contactUplinkBlink 4.9s steps(1,end) infinite}
+#contacto .contact-space-tear{z-index:7;left:48%;width:52%;height:20px;top:38%;opacity:0;background:repeating-linear-gradient(90deg,rgba(0,221,238,.44) 0 38px,transparent 38px 69px,rgba(255,0,111,.34) 69px 99px,transparent 99px 151px,rgba(218,161,51,.38) 151px 184px,transparent 184px 231px);mix-blend-mode:screen;filter:saturate(2.1) contrast(1.7);animation:contactSpaceTear 4.4s steps(1,end) infinite}
+#contacto .moon-wrap{isolation:isolate}
+#contacto .moon-photo{position:relative;z-index:2}
+#contacto .moon-echo{position:absolute;z-index:1;top:0;right:0;width:min(64vw,1020px);height:auto;transform:translate(30%,-12%);opacity:0;filter:brightness(.62) contrast(1.5) saturate(2.5) hue-rotate(145deg);mix-blend-mode:screen;clip-path:polygon(0 12%,100% 12%,100% 20%,0 20%,0 34%,100% 34%,100% 42%,0 42%,0 58%,100% 58%,100% 68%,0 68%,0 81%,100% 81%,100% 89%,0 89%);animation:contactMoonTelemetry 5.7s steps(1,end) infinite}
+@keyframes contactOrbitLock{0%,19%,23%,54%,58%,82%,86%,100%{translate:0 0;opacity:.3}20%{translate:7px -3px;opacity:.52}22%{translate:-4px 2px;opacity:.22}55%{translate:-8px 4px;opacity:.46}57%{translate:3px -2px;opacity:.26}83%{translate:5px 5px;opacity:.5}85%{translate:0 -3px;opacity:.25}}
+@keyframes contactCosmicNoise{0%,13%,18%,34%,39%,61%,66%,83%,88%,100%{opacity:.16;background-position:0 0,4px 3px,7px 2px}14%{opacity:.48;background-position:11px -8px,-7px 15px,17px -5px}17%{opacity:.24}35%{opacity:.58;background-position:-9px 12px,15px -6px,-13px 8px}38%{opacity:.21}62%{opacity:.44;background-position:14px 9px,-11px -8px,6px 17px}65%{opacity:.19}84%{opacity:.53;background-position:-13px -7px,8px 16px,19px 4px}87%{opacity:.2}}
+@keyframes contactDataRain{0%,24%,29%,49%,54%,74%,79%,100%{opacity:.12;translate:0 0}25%{opacity:.38;translate:-18px 5px}27%{opacity:.22;translate:12px -4px}28%{opacity:.08}50%{opacity:.42;translate:21px 7px}52%{opacity:.2;translate:-9px -5px}53%{opacity:.08}75%{opacity:.36;translate:-16px 4px}77%{opacity:.18;translate:8px -3px}78%{opacity:.07}}
+@keyframes contactUplinkBlink{0%,17%,20%,44%,47%,70%,73%,92%,95%,100%{opacity:.54}18%,45%,71%,93%{opacity:.06}19%,46%,72%,94%{opacity:.88}}
+@keyframes contactSpaceTear{0%,28%,33%,62%,67%,88%,93%,100%{opacity:0;translate:0 0;scale:1 1}29%{opacity:.68;translate:28px -5px;scale:1.08 1.4}31%{opacity:.3;translate:-17px 7px;scale:.94 .7}32%{opacity:.04}63%{opacity:.61;translate:-25px 4px;scale:1.05 1.8}65%{opacity:.25;translate:13px -6px}66%{opacity:.03}89%{opacity:.54;translate:18px 5px;scale:.96 1.3}91%{opacity:.21;translate:-11px -4px}92%{opacity:.03}}
+@keyframes contactMoonTelemetry{0%,21%,26%,52%,57%,78%,83%,100%{opacity:0;translate:0 0}22%{opacity:.48;translate:-18px 4px}24%{opacity:.22;translate:12px -5px}25%{opacity:.03}53%{opacity:.42;translate:21px 6px}55%{opacity:.18;translate:-13px -4px}56%{opacity:.03}79%{opacity:.38;translate:-16px 3px}81%{opacity:.16;translate:9px -3px}82%{opacity:.02}}
+@media(max-width:900px){#contacto .contact-hud{left:38%;opacity:.4}#contacto .contact-uplink{right:18px;bottom:62px;width:180px;opacity:.38;font-size:7px}#contacto .contact-data-rain,#contacto .contact-space-tear{left:35%;width:65%}#contacto .moon-echo{width:96vw;transform:translate(21%,-8%)}}
+@media(prefers-reduced-motion:reduce){#contacto .contact-orbit-grid,#contacto .contact-star-noise,#contacto .contact-data-rain,#contacto .contact-uplink,#contacto .contact-space-tear,#contacto .moon-echo{animation:none!important}}
+</style>
+
+<style id="V109_CONTACT_EPHEMERAL_NOISE">
+/* Pantallazo 10 — ruido efímero, polvo fotoquímico y microbloques de señal */
+#contacto .contact-star-noise{opacity:0!important;animation:contactCosmicNoiseV109 7.8s steps(1,end) infinite!important}
+#contacto .contact-data-rain{opacity:0!important;animation:contactDataRainV109 8.6s steps(1,end) -2.1s infinite!important}
+#contacto .grain{opacity:0!important;animation:contactBaseGrainV109 6.9s steps(1,end) -3.4s infinite!important}
+#contacto .contact-film-dust,#contacto .contact-pixel-bank{position:absolute;inset:0;pointer-events:none}
+#contacto .contact-film-dust{z-index:6;opacity:0;background-image:
+  radial-gradient(circle,rgba(245,240,224,.8) 0 .7px,transparent 1px),
+  radial-gradient(ellipse,rgba(245,240,224,.48) 0 .5px,transparent 1.2px),
+  radial-gradient(circle,rgba(115,220,231,.45) 0 .65px,transparent 1.1px),
+  linear-gradient(92deg,transparent 0 73%,rgba(255,255,255,.12) 73.05%,transparent 73.18%);
+  background-size:17px 19px,31px 27px,43px 37px,100% 100%;background-position:0 0,11px 7px,23px 13px,0 0;mix-blend-mode:screen;filter:contrast(1.8);animation:contactFilmDust 9.2s steps(1,end) -1.6s infinite}
+#contacto .contact-pixel-bank{z-index:7;opacity:0;animation:contactPixelBank 7.1s steps(1,end) -.9s infinite}
+#contacto .contact-pixel-bank i{position:absolute;display:block;background:rgba(191,217,220,.55);box-shadow:0 0 9px rgba(95,214,230,.16);mix-blend-mode:screen}
+#contacto .contact-pixel-bank i:nth-child(1){left:57%;top:17%;width:13px;height:5px}
+#contacto .contact-pixel-bank i:nth-child(2){left:66%;top:23%;width:29px;height:8px;background:rgba(0,218,235,.38)}
+#contacto .contact-pixel-bank i:nth-child(3){left:78%;top:31%;width:7px;height:15px;background:rgba(214,157,48,.5)}
+#contacto .contact-pixel-bank i:nth-child(4){left:91%;top:39%;width:19px;height:5px;background:rgba(255,0,108,.35)}
+#contacto .contact-pixel-bank i:nth-child(5){left:53%;top:48%;width:8px;height:8px}
+#contacto .contact-pixel-bank i:nth-child(6){left:71%;top:57%;width:38px;height:6px;background:rgba(214,157,48,.42)}
+#contacto .contact-pixel-bank i:nth-child(7){left:84%;top:65%;width:11px;height:19px;background:rgba(0,218,235,.34)}
+#contacto .contact-pixel-bank i:nth-child(8){left:94%;top:74%;width:25px;height:7px}
+#contacto .contact-pixel-bank i:nth-child(9){left:61%;top:79%;width:5px;height:12px;background:rgba(255,0,108,.36)}
+#contacto .contact-pixel-bank i:nth-child(10){left:76%;top:84%;width:17px;height:5px}
+#contacto .contact-pixel-bank i:nth-child(11){left:88%;top:12%;width:6px;height:6px;background:rgba(214,157,48,.5)}
+#contacto .contact-pixel-bank i:nth-child(12){left:97%;top:52%;width:9px;height:24px;background:rgba(0,218,235,.3)}
+@keyframes contactCosmicNoiseV109{0%,18%,23%,47%,53%,76%,82%,100%{opacity:0;background-position:0 0,4px 3px,7px 2px}19%{opacity:.52;background-position:12px -9px,-8px 16px,18px -6px}21%{opacity:.28;background-position:-7px 5px,11px -8px,-10px 9px}22%{opacity:.04}48%{opacity:.62;background-position:-12px 13px,16px -7px,-14px 9px}51%{opacity:.2}52%{opacity:.03}77%{opacity:.5;background-position:15px 10px,-12px -9px,7px 18px}80%{opacity:.18}81%{opacity:.02}}
+@keyframes contactDataRainV109{0%,28%,34%,61%,67%,88%,94%,100%{opacity:0;translate:0 0}29%{opacity:.38;translate:-20px 5px}32%{opacity:.18;translate:13px -4px}33%{opacity:.02}62%{opacity:.45;translate:23px 7px}65%{opacity:.16;translate:-10px -5px}66%{opacity:.02}89%{opacity:.32;translate:-17px 4px}92%{opacity:.12;translate:9px -3px}93%{opacity:.01}}
+@keyframes contactFilmDust{0%,15%,21%,42%,49%,69%,76%,91%,97%,100%{opacity:0;background-position:0 0,11px 7px,23px 13px,0 0}16%{opacity:.37;background-position:7px -11px,-13px 19px,31px -8px,0 0}18%{opacity:.18}20%{opacity:.02}43%{opacity:.46;background-position:-17px 14px,21px -9px,-12px 25px,9px 0}46%{opacity:.2}48%{opacity:.02}70%{opacity:.34;background-position:19px 8px,-16px -13px,8px 31px,-6px 0}74%{opacity:.13}75%{opacity:.01}92%{opacity:.41;background-position:-9px -18px,14px 22px,27px 4px,4px 0}95%{opacity:.16}96%{opacity:.01}}
+@keyframes contactPixelBank{0%,20%,25%,44%,49%,68%,73%,87%,92%,100%{opacity:0;translate:0 0}21%{opacity:.82;translate:11px -4px}23%{opacity:.32;translate:-6px 3px}24%{opacity:.03}45%{opacity:.72;translate:-14px 5px}47%{opacity:.25;translate:8px -2px}48%{opacity:.02}69%{opacity:.78;translate:9px 4px}71%{opacity:.28;translate:-5px -3px}72%{opacity:.02}88%{opacity:.64;translate:-8px 3px}90%{opacity:.22;translate:5px -2px}91%{opacity:.02}}
+@keyframes contactBaseGrainV109{0%,31%,38%,66%,73%,91%,97%,100%{opacity:0}32%{opacity:.19}35%{opacity:.1}37%{opacity:.02}67%{opacity:.24}70%{opacity:.12}72%{opacity:.02}92%{opacity:.16}95%{opacity:.07}96%{opacity:.01}}
+@media(max-width:900px){#contacto .contact-pixel-bank i:nth-child(n+9){display:none}}
+@media(prefers-reduced-motion:reduce){#contacto .grain,#contacto .contact-star-noise,#contacto .contact-data-rain,#contacto .contact-film-dust,#contacto .contact-pixel-bank{animation:none!important;opacity:0!important}}
+</style>
+
+<style id="V110_FINAL_TITLE_SCREEN01_GLITCH">
+/* Pantallazo 10 — eco del lenguaje glitch del pantallazo 01 sobre el título final */
+#contacto .contact-left{position:relative}
+#contacto .final-title{animation:finalTitleHack 6.1s steps(1,end) -.8s infinite;transform-origin:left center}
+#contacto .final-title-ghost{position:absolute;z-index:11;left:0;top:17px;width:min(365px,28vw);height:auto;pointer-events:none;opacity:0;mix-blend-mode:screen}
+#contacto .final-title-ghost.cyan{filter:sepia(1) saturate(12) hue-rotate(122deg) brightness(1.5);animation:finalGhostCyan 6.1s steps(1,end) -.8s infinite}
+#contacto .final-title-ghost.mag{filter:sepia(1) saturate(14) hue-rotate(285deg) brightness(1.35);animation:finalGhostMag 7.3s steps(1,end) -2.4s infinite}
+#contacto .contact-left:after{content:"ALLY SIGNAL / LAIKA_03 / AUDIO LINK";position:absolute;z-index:12;left:-2px;top:43%;width:min(430px,34vw);height:15px;display:flex;align-items:center;padding-left:8px;overflow:hidden;white-space:nowrap;color:#d8ff00;background:rgba(0,0,0,.9);border-top:1px solid rgba(0,217,210,.75);border-bottom:1px solid rgba(255,0,107,.65);font:700 7px/1 "IBM Plex Mono";letter-spacing:.14em;opacity:0;pointer-events:none;animation:finalPirateBand 8.2s steps(1,end) -1.9s infinite}
+@keyframes finalTitleHack{0%,27%,32%,59%,64%,84%,89%,100%{transform:none;filter:drop-shadow(1px 0 rgba(0,217,210,.27)) drop-shadow(-1px 0 rgba(255,0,107,.2))}28%{transform:translateX(10px) skewX(-1.8deg);filter:drop-shadow(7px 0 #00d9d2) drop-shadow(-8px 0 #ff006b)}30%{transform:translateX(-7px);filter:contrast(1.7)}31%{transform:translateX(2px)}60%{transform:translateY(2px) scaleX(1.008);filter:drop-shadow(4px 0 #c8ff00)}62%{transform:translateX(-5px)}63%{transform:none}85%{transform:translateX(6px);filter:drop-shadow(3px 0 #00d9d2) drop-shadow(-4px 0 #ff006b)}87%{transform:translateX(-3px)}88%{transform:none}}
+@keyframes finalGhostCyan{0%,27%,32%,59%,64%,100%{opacity:0;clip-path:inset(0 0 100% 0);translate:0 0}28%{opacity:.76;clip-path:inset(10% 0 66% 0);translate:15px -2px}30%{opacity:.4;clip-path:inset(58% 0 18% 0);translate:-9px 2px}31%{opacity:.06}60%{opacity:.58;clip-path:inset(34% 0 43% 0);translate:-12px 1px}62%{opacity:.26;clip-path:inset(71% 0 7% 0);translate:7px -1px}63%{opacity:.04}}
+@keyframes finalGhostMag{0%,43%,48%,76%,81%,100%{opacity:0;clip-path:inset(100% 0 0 0);translate:0 0}44%{opacity:.69;clip-path:inset(37% 0 39% 0);translate:-16px 0}46%{opacity:.32;clip-path:inset(67% 0 9% 0);translate:9px 2px}47%{opacity:.05}77%{opacity:.61;clip-path:inset(18% 0 59% 0);translate:13px -2px}79%{opacity:.24;clip-path:inset(52% 0 25% 0);translate:-8px 1px}80%{opacity:.03}}
+@keyframes finalPirateBand{0%,35%,39%,72%,76%,91%,95%,100%{opacity:0;translate:0 0}36%{opacity:.88;translate:-3% 0}37%{opacity:.32;translate:2% 0}38%{opacity:.03}73%{opacity:.72;top:25%;translate:-1% 0}74%{opacity:.2;translate:1% 0}75%{opacity:.02}92%{opacity:.61;top:61%;translate:2% 0}93%{opacity:.18;translate:-1% 0}94%{opacity:.02}}
+@media(max-width:900px){#contacto .final-title-ghost{width:min(365px,76vw)}#contacto .contact-left:after{width:82vw}}
+@media(prefers-reduced-motion:reduce){#contacto .final-title{animation:none!important}#contacto .final-title-ghost,#contacto .contact-left:after{display:none!important}}
+</style>
+
+<style id="V111_ABOUT_TITLE_AND_STUDIO_PHOTO">
+/* Pantallazo 08 — título principal homologado y nueva fotografía de estudio */
+#estudio .inner{grid-template-columns:35% 65%}
+#estudio .about-left{display:flex;flex-direction:column;justify-content:center;padding:0 30px 35px 0}
+#estudio .about-title{position:relative;z-index:12;margin:0 0 35px;color:#f4f0e8;font:400 clamp(42px,4.25vw,68px)/.92 "Michroma",sans-serif;letter-spacing:-.055em;text-transform:uppercase;filter:drop-shadow(2px 0 rgba(0,217,210,.3)) drop-shadow(-2px 0 rgba(255,0,107,.22));animation:aboutTitleSignal 7.6s steps(1,end) infinite}
+#estudio .about-title span{display:block}
+#estudio .about-copy{max-width:390px;margin:0;font-size:13px;line-height:1.62}
+#estudio .about-photo{height:calc(100svh - 108px)}
+#estudio .about-photo img.base{object-position:center center;filter:saturate(.7) contrast(1.16) brightness(.76)}
+#estudio .about-photo:after{background:linear-gradient(90deg,#030303cf 0,rgba(3,3,3,.36) 17%,transparent 38%),linear-gradient(0deg,#030303a6,transparent 34%)}
+@keyframes aboutTitleSignal{0%,42%,47%,79%,84%,100%{transform:none;filter:drop-shadow(2px 0 rgba(0,217,210,.3)) drop-shadow(-2px 0 rgba(255,0,107,.22))}43%{transform:translateX(7px);filter:drop-shadow(6px 0 #00d9d2) drop-shadow(-7px 0 #ff006b)}45%{transform:translateX(-4px);filter:contrast(1.55)}46%{transform:translateX(1px)}80%{transform:translateY(2px);filter:drop-shadow(4px 0 #c8ff00)}82%{transform:translateX(-3px)}83%{transform:none}}
+@media(max-width:900px){#estudio .inner{grid-template-columns:1fr;padding-top:75px}#estudio .about-left{padding:0 18px 26px}#estudio .about-title{font-size:clamp(38px,10vw,58px);margin-bottom:24px}#estudio .about-copy{max-width:560px}#estudio .about-photo{height:54svh;min-height:390px}}
+@media(prefers-reduced-motion:reduce){#estudio .about-title{animation:none!important}}
+</style>
+
+<style id="V115_P03_COPPER_TV_RING">
+/* Pantallazo 03 — TV y anillo más claros, en bronce cobrizo como los otros iconos */
+#marcas .p03-ring{
+  filter:sepia(.3) saturate(1.42) hue-rotate(-14deg) brightness(.9) contrast(1.08) drop-shadow(0 12px 20px #000a)!important;
+}
+#marcas .p03-tv{
+  filter:sepia(.3) saturate(1.42) hue-rotate(-14deg) brightness(.9) contrast(1.08) drop-shadow(0 15px 22px #000a)!important;
+}
+</style>
+<style id="V116_P07_COPPER_ROCKETS_RING">
+/* Pantallazo 07 — mismo acabado bronce cobrizo del TV y anillo del pantallazo 03 */
+#metodo .rocket-a,
+#metodo .rocket-b,
+#metodo .method-ring{
+  filter:sepia(.3) saturate(1.42) hue-rotate(-14deg) brightness(.9) contrast(1.08) drop-shadow(0 15px 22px #000a)!important;
+}
+</style>
+<style id="V117_ABOUT_TITLE_AND_GOLD_ICONS">
+/* Pantallazo 08 — título en el mismo alfabeto gráfico de los demás pantallazos */
+#estudio .about-title{
+  display:block;
+  width:min(430px,31vw);
+  max-width:100%;
+  height:auto;
+  margin:0 0 35px;
+  position:relative;
+  z-index:12;
+  filter:drop-shadow(2px 0 rgba(0,217,210,.3)) drop-shadow(-2px 0 rgba(255,0,107,.22));
+}
+/* Nuevos recortes optimizados en alta resolución */
+#estudio .about-photo .headphones{width:27%;right:-3%;top:4%;transform:rotate(-8deg)}
+#estudio .about-photo .capsule{width:12%;right:4%;bottom:5%;transform:rotate(24deg)}
+@media(max-width:900px){
+  #estudio .about-title{width:min(88vw,520px);margin-bottom:24px}
+}
+</style>
+<style id="V118_LAIKA03_DISPLAY_ABOUT_TITLE">
+/* Pantallazo 08 — título editable con la tipografía propia Laika 03 Display */
+@font-face{
+  font-family:"Laika 03 Display";
+  src:url("assets/Laika03Display-Regular.woff2") format("woff2"),
+      url("assets/Laika03Display-Regular.woff") format("woff"),
+      url("assets/Laika03Display-Regular.otf") format("opentype");
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+}
+#estudio .about-title{
+  width:max-content;
+  max-width:100%;
+  color:#f4f0e8;
+  font-family:"Laika 03 Display",sans-serif;
+  font-size:clamp(66px,6.2vw,98px);
+  font-weight:400;
+  line-height:.88;
+  letter-spacing:.005em;
+  text-transform:uppercase;
+  white-space:normal;
+}
+#estudio .about-title span{display:block}
+@media(max-width:900px){
+  #estudio .about-title{width:max-content;max-width:88vw;font-size:clamp(58px,15vw,92px);line-height:.88}
+}
+</style>
+<style id="V119_UNIFIED_GOLD_TONE_P03_P07">
+/*
+  Dorado unificado por medición con los iconos de referencia.
+  Se elimina el acabado cobrizo común de V115/V116 y se compensa
+  individualmente el matiz original de cada archivo.
+*/
+#marcas .p03-tv{
+  filter:saturate(1.40) hue-rotate(-10deg) brightness(.84) contrast(1.06)
+         drop-shadow(0 15px 22px #000a)!important;
+}
+#marcas .p03-ring{
+  filter:saturate(1.30) hue-rotate(-5deg) brightness(.84) contrast(1.06)
+         drop-shadow(0 12px 20px #000a)!important;
+}
+#metodo .rocket-a,
+#metodo .rocket-b{
+  filter:saturate(1.30) brightness(.84) contrast(1.06)
+         drop-shadow(0 15px 22px #000a)!important;
+}
+#metodo .method-ring{
+  filter:saturate(1.30) brightness(.84) contrast(1.06)
+         drop-shadow(0 15px 22px #000a)!important;
+}
+</style>
+<style id="V120_ABOUT_ICONS_SCALE_POSITION">
+/* Pantallazo 08 — iconos +50%, desplazados a la izquierda y separados en altura */
+#estudio .about-photo .headphones{
+  width:40.5%;
+  right:3%;
+  top:11%;
+  transform:rotate(-8deg);
+}
+#estudio .about-photo .capsule{
+  width:18%;
+  right:9%;
+  bottom:13%;
+  transform:rotate(24deg);
+}
+</style>
+<style id="V121_ABOUT_HQ_ICONS_RESCALE">
+/* Pantallazo 08 — assets HQ: audífonos -25% y cápsula +35% sobre V120 */
+#estudio .about-photo .headphones{width:30.4%}
+#estudio .about-photo .capsule{width:24.3%}
+</style>
+<style id="V122_MASTER_COPY">
+/* Textos maestros — Camino 1 aprobado, adaptados al layout del Camino 2 */
+.editable-display{font-family:"Laika 03 Display",sans-serif;font-weight:400;text-transform:uppercase;color:#f4f0e8;line-height:.86;letter-spacing:.005em;position:relative;z-index:12}
+.editable-display span{display:block}
+.hero-title-text{font-size:clamp(58px,5.35vw,91px);max-width:760px;margin:28px 0 18px}
+.hero-purpose{max-width:650px;font:400 clamp(10px,.78vw,13px)/1.55 "IBM Plex Mono";color:#efeae1;margin:0 0 19px}
+.news-heading{font-size:clamp(61px,5.7vw,94px);margin:18px 0 7px}
+.news-category{font:600 12px/1.2 "IBM Plex Mono";letter-spacing:.22em;color:var(--acid);margin:0 0 22px;text-transform:uppercase}
+.news-copy .body{font-size:10.5px!important;line-height:1.48!important;text-transform:none!important;max-width:430px!important}
+#marcas .p03-title-text{font-size:clamp(47px,4.4vw,73px);margin:2vh 0 1.4vh;max-width:690px}
+#marcas .p03-copy{max-width:680px;font:400 clamp(8px,.66vw,10.5px)/1.42 "IBM Plex Mono";margin:0 0 2.2vh;color:#efeae1}
+#marcas .p03-logos{grid-auto-rows:7.8vh!important}
+.work-intro{position:relative;z-index:31;max-width:800px;font:400 clamp(9px,.72vw,12px)/1.5 "IBM Plex Mono";margin:-11px 0 18px;color:#efeae1}
+.d1-copy .body{font-size:10.5px!important;line-height:1.45!important;max-width:450px!important}
+.service-list-copy{display:grid;grid-template-columns:1fr 1fr;gap:13px 24px;max-width:690px;margin-top:20px}
+.service-list-copy div{font:400 9px/1.35 "IBM Plex Mono";color:#efeae1}
+.service-list-copy strong{display:block;color:#fff;font-size:10px;margin-bottom:3px}
+.method-list{font-size:9px!important;line-height:1.32!important}
+.method-step{display:block;margin-bottom:5px}.method-step b{color:#fff}.method-step em{display:block;font-style:normal;color:#cfc9bf}
+.about-copy{font-size:10.5px!important;line-height:1.48!important;max-width:640px!important}
+.awards-copy{max-width:520px;font:400 11px/1.5 "IBM Plex Mono";color:#efeae1;margin:18px 0 0;position:relative;z-index:12}
+.awards-copy .mono{font-size:9px;text-transform:uppercase;margin-top:12px}
+.contact-copy{max-width:660px!important;font-size:10.5px!important;line-height:1.48!important}
+@media(max-width:900px){
+ .hero-title-text{font-size:clamp(51px,14vw,82px)}.hero-purpose{max-width:88vw}
+ .news-heading{font-size:clamp(54px,15vw,86px)}
+ #marcas .p03-title-text{font-size:clamp(46px,13vw,78px)}
+ .service-list-copy{grid-template-columns:1fr}.work-intro{max-width:88vw}
+}
+</style>
+<style id="V123_TYPOGRAPHY_AND_READABILITY">
+/* V123 — títulos 100% editables con Laika 03 Display y cuerpos legibles */
+.laika-display-title{
+  display:block!important;
+  width:auto!important;
+  max-width:min(920px,90vw)!important;
+  height:auto!important;
+  margin-top:0;
+  color:#f4f0e8;
+  font-family:"Laika 03 Display",sans-serif!important;
+  font-weight:400!important;
+  font-style:normal;
+  line-height:.88!important;
+  letter-spacing:.005em!important;
+  text-transform:uppercase;
+  white-space:normal;
+  position:relative;
+  z-index:32!important;
+}
+.laika-display-title span{display:block}
+
+/* Títulos ligeramente más pequeños, conservando la composición de cada pantalla */
+.hero-title-text{font-size:clamp(54px,4.85vw,82px)!important;max-width:720px!important}
+.news-heading{font-size:clamp(56px,5.15vw,84px)!important}
+#marcas .p03-title-text{font-size:clamp(43px,4vw,66px)!important;max-width:650px!important}
+#trabajos .work-title{font-size:clamp(46px,4.45vw,72px)!important;margin:0 0 22px!important}
+#d1 .d1-title{font-size:clamp(43px,4.1vw,68px)!important;max-width:700px!important;margin:0 0 24px!important}
+#servicios .services-title{font-size:clamp(42px,4vw,66px)!important;max-width:720px!important;margin:0 0 24px!important}
+#metodo .method-title{font-size:clamp(48px,4.6vw,75px)!important;margin:0 0 28px!important}
+#estudio .about-title{font-size:clamp(58px,5.55vw,86px)!important;margin:0 0 28px!important}
+#premios .awards-title{font-size:clamp(52px,4.9vw,80px)!important;margin:0 0 2px!important}
+#premios .awards-num{font-size:clamp(45px,4.25vw,70px)!important;margin:0 0 16px!important}
+#contacto .final-title{font-size:clamp(47px,4.45vw,73px)!important;max-width:660px!important;margin:0 0 24px!important}
+
+/* Cuerpos: aumento general y jerarquía uniforme */
+.hero-purpose,
+.news-copy .body,
+#marcas .p03-copy,
+.work-intro,
+.d1-copy .body,
+.method .body,
+.about-copy,
+.awards-copy,
+.contact-copy{
+  font-family:"IBM Plex Mono",monospace!important;
+  font-size:clamp(13.5px,.9vw,16px)!important;
+  line-height:1.55!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+}
+.hero-purpose{max-width:690px!important}
+.news-copy .body{max-width:470px!important}
+#marcas .p03-copy{max-width:720px!important;line-height:1.48!important}
+.work-intro{max-width:850px!important;margin-top:-4px!important}
+.d1-copy .body{max-width:500px!important;font-size:clamp(13px,.86vw,15px)!important;line-height:1.48!important}
+.service-list-copy{gap:15px 26px!important;max-width:730px!important}
+.service-list-copy div{font-size:clamp(12px,.77vw,14px)!important;line-height:1.42!important}
+.service-list-copy strong{font-size:clamp(12.5px,.8vw,14.5px)!important;margin-bottom:4px!important}
+.method-list{font-size:clamp(12px,.77vw,14px)!important;line-height:1.38!important}
+.method-step{margin-bottom:7px!important}
+#estudio .about-copy{max-width:500px!important;font-size:clamp(13px,.83vw,15px)!important;line-height:1.5!important}
+.awards-copy{max-width:570px!important}
+.awards-copy .mono{font-size:clamp(10.5px,.68vw,12px)!important;line-height:1.45!important}
+.contact-copy{max-width:700px!important}
+
+@media(max-width:900px){
+  .laika-display-title{max-width:88vw!important}
+  .hero-title-text{font-size:clamp(46px,12.5vw,72px)!important}
+  .news-heading{font-size:clamp(48px,13vw,76px)!important}
+  #marcas .p03-title-text{font-size:clamp(42px,11.5vw,68px)!important}
+  #trabajos .work-title,#d1 .d1-title,#servicios .services-title,
+  #metodo .method-title,#estudio .about-title,#premios .awards-title,
+  #contacto .final-title{font-size:clamp(42px,11vw,68px)!important}
+  .hero-purpose,.news-copy .body,#marcas .p03-copy,.work-intro,
+  .d1-copy .body,.method .body,.about-copy,.awards-copy,.contact-copy{
+    font-size:14px!important;
+  }
+  .service-list-copy div,.service-list-copy strong,.method-list{font-size:12px!important}
+}
+</style>
+<style id="V124_FINE_TUNING">
+/* Pantallazo 06 — el cassette inclinado se separa de los textos */
+#servicios .service-art .cassette1{left:-18%!important}
+
+/* Pantallazo 09 — cifra protagonista en la tipografía diseñada */
+#premios .awards-num{
+  font-family:"Laika 03 Display",sans-serif!important;
+  font-size:clamp(62px,6.2vw,102px)!important;
+  line-height:.82!important;
+  margin:2px 0 18px!important;
+}
+
+/* Segundo aumento controlado de legibilidad para los cuerpos */
+.hero-purpose,
+.news-copy .body,
+#marcas .p03-copy,
+.work-intro,
+.d1-copy .body,
+.method .body,
+.about-copy,
+.awards-copy,
+.contact-copy{
+  font-size:clamp(14.5px,.96vw,17px)!important;
+}
+.d1-copy .body{font-size:clamp(14px,.91vw,16px)!important;line-height:1.46!important}
+.service-list-copy div{font-size:clamp(13px,.82vw,15px)!important;line-height:1.4!important}
+.service-list-copy strong{font-size:clamp(13.5px,.86vw,15.5px)!important}
+.method-list{font-size:clamp(13px,.82vw,15px)!important;line-height:1.34!important}
+#estudio .about-copy{font-size:clamp(14px,.89vw,16px)!important;line-height:1.47!important}
+.awards-copy .mono{font-size:clamp(11.5px,.73vw,13px)!important}
+
+/* Pantallazo 10 — enlaces con la misma escala que el cuerpo */
+#contacto .contact-links{
+  font-family:"IBM Plex Mono",monospace!important;
+  font-size:clamp(14.5px,.96vw,17px)!important;
+  line-height:1.4!important;
+  gap:24px!important;
+}
+@media(max-width:900px){
+  #servicios .service-art .cassette1{left:-13%!important}
+  #premios .awards-num{font-size:clamp(58px,16vw,92px)!important}
+  .hero-purpose,.news-copy .body,#marcas .p03-copy,.work-intro,
+  .d1-copy .body,.method .body,.about-copy,.awards-copy,.contact-copy,
+  #contacto .contact-links{font-size:15px!important}
+  .service-list-copy div,.service-list-copy strong,.method-list{font-size:13px!important}
+}
+</style>
+<style id="V125_COMPOSITION_AND_LINE_BREAKS">
+/* Pantallazo 03 — composición dorada ligeramente más a la izquierda */
+#marcas .p03-headphones{left:-7%!important}
+#marcas .p03-tv-wrap{left:29.8%!important}
+#marcas .p03-ring{left:18%!important}
+#marcas .p03-capsule{left:53%!important}
+
+/* Pantallazo 05 — video más contenido e iconos fuera del bloque de texto */
+#d1 .d1-video{right:0!important;top:9%!important;width:68%!important;height:61%!important}
+#d1 .d1-stage .goldbar{left:0!important}
+#d1 .d1-stage .headphones{left:12%!important}
+
+@media(max-width:900px){
+  #marcas .p03-headphones{left:-4%!important}
+  #marcas .p03-tv-wrap{left:26%!important}
+  #marcas .p03-ring{left:16%!important}
+  #marcas .p03-capsule{left:50%!important}
+  #d1 .d1-video{width:66%!important;height:58%!important}
+}
+</style>
+<style id="V126_FINAL_BATCH">
+/* Pantallazo 01 — descriptor en una sola línea */
+#inicio .hero-kicker{
+  width:auto!important;
+  max-width:none!important;
+  white-space:nowrap!important;
+}
+
+/* Pantallazo 02 — REMIX con mayor presencia */
+#ahora .news-category{
+  font-size:clamp(19px,1.45vw,25px)!important;
+  line-height:1.08!important;
+  margin-bottom:24px!important;
+}
+
+/* Pantallazo 03 — bloque editorial apenas desplazado a la derecha */
+#marcas .p03-right{left:40vw!important;right:2vw!important}
+
+/* Pantallazo 05 — nuevo concepto de alianza */
+#d1 .d1-title{font-size:clamp(40px,3.7vw,61px)!important;line-height:.87!important}
+
+/* Pantallazo 08 — audífonos +20% */
+#estudio .about-photo .headphones{width:36.48%!important}
+
+/* Pantallazo 09 — números v1.1 más grandes y deliberadamente irregulares */
+#premios .awards-num{
+  font-family:"Laika 03 Display",sans-serif!important;
+  font-synthesis:none!important;
+  font-kerning:none!important;
+  font-size:clamp(84px,8.2vw,136px)!important;
+  line-height:.76!important;
+  letter-spacing:-.055em!important;
+  white-space:nowrap!important;
+  margin:5px 0 22px!important;
+}
+#premios .awards-num .digit{display:inline-block!important;transform-origin:center bottom}
+#premios .awards-num .d2{transform:translateY(2px) rotate(-1.3deg) scaleY(1.035)}
+#premios .awards-num .d6{transform:translateY(-2px) rotate(.8deg) scaleX(.97)}
+#premios .awards-num .d3{transform:translateY(1px) rotate(-.45deg) scaleY(1.02)}
+#premios .awards-art .awards-base{
+  filter:saturate(.78) contrast(1.12) brightness(.84)!important;
+}
+#premios .awards-art:after{
+  background:linear-gradient(90deg,#030303a8 0 5%,transparent 34%),linear-gradient(0deg,#03030352,transparent 31%)!important;
+}
+
+@media(max-width:900px){
+  #inicio .hero-kicker{font-size:11px!important;letter-spacing:.04em!important}
+  #ahora .news-category{font-size:19px!important}
+  #marcas .p03-right{left:5vw!important;right:3vw!important}
+  #d1 .d1-title{font-size:clamp(38px,10vw,58px)!important}
+  #premios .awards-num{font-size:clamp(78px,21vw,120px)!important}
+}
+</style>
+<style id="V127_FINAL_SPACING">
+/* Ajustes finales de aire y jerarquía */
+#inicio .hero-kicker{transform:translateY(-10px)!important}
+#ahora .news-category{font-size:clamp(17px,1.25vw,22px)!important}
+@media(max-width:900px){
+  #inicio .hero-kicker{transform:translateY(-7px)!important}
+  #ahora .news-category{font-size:17px!important}
+}
+</style>
+</head>
+<body>
+
+<section class="screen hero" id="inicio">
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:72%"></div><div class="grain"></div><div class="scan"></div>
+  <nav class="topnav">
+    <div class="wordmark">LAIKA<sup>03</sup></div>
+    <div class="navlinks"><a href="#trabajos">TRABAJOS</a><a href="#servicios">SERVICIOS</a><a href="#estudio">ESTUDIO</a><a href="#premios">PREMIOS</a><a href="#contacto">CONTACTO</a><span>ES · 01</span></div>
+  </nav>
+  <div class="hero-photo"><img src="assets/hero_carlos_keyboard_tattoo_v120.png" alt="Carlos Calvo y una productora creando música con teclados y sintetizadores"></div>
+  <div class="inner">
+    <div class="hero-copy">
+      <div class="hero-kicker">ESTUDIO CREATIVO DE AUDIO</div>
+      <div class="editable-display laika-display-title hero-title-text chrome-shift" role="heading" aria-level="1"><span>HACEMOS QUE LAS MARCAS</span><span>SUENEN A LO QUE SON</span></div>
+      <p class="hero-purpose">No hacemos música solamente para acompañar una pieza. Creamos música y universos sonoros con una razón: ayudar a cada marca a expresar quién es, diferenciarse y conectar de verdad con las personas.<br><br>Escuchamos su esencia, entendemos sus desafíos y los transformamos en una identidad sonora propia, reconocible y capaz de vivir en cada punto de contacto.</p>
+      <div class="action hero-explore openvideo" data-video="assets/reel.mp4" data-title="LAIKA 03 — REEL 02:19"><span class="circle">↓</span>EXPLORA</div>
+    </div>
+  </div>
+</section>
+
+<section class="screen news" id="ahora">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div>
+  <div class="mono screen-number">02</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:84%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div class="news-copy">
+      <div class="wordmark">LAIKA<sup>03</sup></div>
+      <div class="editable-display laika-display-title news-heading chrome-shift" role="heading" aria-level="1"><span>AHORA EN</span><span>LAIKA</span></div>
+      <div class="news-category">REMIX</div>
+      <p class="body">Un remix no es solamente una nueva versión. Es descubrir todo lo que una canción todavía puede ser: reinterpretarla, transformarla y llevarla a nuevos sonidos, nuevas pistas y nuevas audiencias.<br><br>Estamos trabajando junto a <b>Reebok</b> en el remix<br>de una canción que millones de personas ya conocen, llevándola a un territorio completamente diferente.<br><br><b>Electrónica, pista de baile y una edición especial en vinilo.</b><br><br>Muy pronto podremos contar quién es. Y, sobre todo, dejar que la escuchen como nunca antes.</p>
+    </div>
+    <div class="news-stage"><div class="v42-noise"></div><div class="v42-static"></div>
+      <img class="gold lobster" src="assets/lobster_gold_hires_v27.png" alt="">
+      <img class="gold cassette" src="assets/cassette_user_clean.png" alt=""><div class="cassette-laika" aria-hidden="true">LAIKA</div>
+      <img class="gold headphones" src="assets/headphones_hires_clean_v36.png" alt="">
+      <img class="gold capsule" src="assets/capsule_user_clean.png" alt="">
+      <div class="news-video a"><video src="assets/pant02_video_01.mp4" autoplay muted loop playsinline></video></div>
+      <div class="news-video b"><video src="assets/pant02_video_02.mp4" autoplay muted loop playsinline></video></div>
+      <div class="news-video c"><video src="assets/pant02_video_03.mp4" autoplay muted loop playsinline></video></div>
+      <div class="news-tag">PRENSANDO UNA NUEVA VIDA PARA UNA CANCIÓN QUE TODOS CONOCEN. · VINILO</div>
+    </div>
+  </div>
+</section>
+
+
+<section class="screen brands brands-v45" id="marcas">
+<div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">03</div>
+<div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="grain"></div><div class="scan"></div>
+<div class="inner p03-layout">
+ <div class="p03-left">
+  <img class="p03-headphones" src="assets/headphones_hires_clean_v36.png" alt="">
+  <div class="p03-tv-wrap"><div class="p03-eye"><img src="assets/eye_glitch_fullscreen_v48.jpg" alt=""></div><img class="p03-tv" src="assets/tv_gold_eye_final_v61.png" alt=""></div>
+  <img class="p03-ring" src="assets/ring_gold_hires_v45.png" alt="">
+  <img class="p03-capsule" src="assets/capsule_hires_clean_v54.png" alt="">
+  <div class="p03-icon-glitch g1"></div><div class="p03-icon-glitch g2"></div><div class="p03-icon-glitch g3"></div>
+  <div class="p03-noise-field"></div>
+  <div class="p03-pixel r1"></div><div class="p03-pixel r2"></div><div class="p03-pixel r3"></div>
+  <div class="p03-pixel r4"></div><div class="p03-pixel r5"></div><div class="p03-pixel r6"></div>
+ </div>
+ <div class="p03-right">
+  <div class="editable-display laika-display-title p03-title-text chrome-shift" role="heading" aria-level="1"><span>MARCAS QUE CONFIARON</span><span>EN SONAR DIFERENTE</span></div>
+  <p class="p03-copy">Cada una de estas marcas nos permitió proponer nuevos caminos, desafiar lo esperado y aportar algo especial a sus piezas.<br><br>Esa confianza se convirtió en música, identidades y universos sonoros capaces de conectar con las personas y producir grandes resultados.<br><br>Porque no basta con sonar bien. Hay que sonar propio, ser diferente y construir algo que nadie más pueda confundir.</p>
+  <div class="p03-logos"><div class="p03-brand p03-brand-d1">
+  <img src="assets/logo_d1_white_v46.png" alt="D1">
+</div><div class="p03-brand p03-brand-coca">
+  <img src="assets/logo_coca_white_v46.png" alt="Coca-Cola">
+</div><div class="p03-brand p03-brand-pepsico">
+  <img src="assets/logo_pepsico_white_v46.png" alt="PepsiCo">
+</div><div class="p03-brand p03-brand-bavaria">
+  <img src="assets/logo_bavaria_white_v46.png" alt="Bavaria">
+</div><div class="p03-brand p03-brand-alpina">
+  <img src="assets/logo_alpina_white_v46.png" alt="Alpina">
+</div><div class="p03-brand p03-brand-nutresa">
+  <img src="assets/logo_nutresa_white_v46.png" alt="Grupo Nutresa">
+</div><div class="p03-brand p03-brand-exito">
+  <img src="assets/logo_exito_white_v46.png" alt="Éxito">
+</div><div class="p03-brand p03-brand-homecenter">
+  <img src="assets/logo_homecenter_white_v46.png" alt="Homecenter">
+</div><div class="p03-brand p03-brand-makro">
+  <img src="assets/logo_makro_white_v46.png" alt="Makro">
+</div><div class="p03-brand p03-brand-toyota">
+  <img src="assets/logo_toyota_white_v46.png" alt="Toyota">
+</div><div class="p03-brand p03-brand-chevrolet">
+  <img src="assets/logo_chevrolet_white_v46.png" alt="Chevrolet">
+</div><div class="p03-brand p03-brand-ford">
+  <img src="assets/logo_ford_white_v46.png" alt="Ford">
+</div><div class="p03-brand p03-brand-bancolombia">
+  <img src="assets/logo_bancolombia_white_v46.png" alt="Bancolombia">
+</div><div class="p03-brand p03-brand-bbva">
+  <img src="assets/logo_bbva_white_v46.png" alt="BBVA">
+</div><div class="p03-brand p03-brand-claro">
+  <img src="assets/logo_claro_white_v46.png" alt="Claro">
+</div><div class="p03-brand p03-brand-tigo">
+  <img src="assets/logo_tigo_white_v46.png" alt="Tigo">
+</div></div></div></div><div class="p03-tear a"></div><div class="p03-tear b"></div><div class="p03-burst"></div>
+</section>
+
+<section class="screen work" id="trabajos">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">04</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:66%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="work-noise"></div>
+  <div class="work-vstripe v1"></div><div class="work-vstripe v2"></div><div class="work-vstripe v3"></div>
+  <div class="work-data-block b1"></div><div class="work-data-block b2"></div><div class="work-data-block b3"></div><div class="work-data-block b4"></div>
+  <div class="inner">
+    <div class="master-title laika-display-title work-title chrome-shift" role="heading" aria-level="1"><span>PIEZAS</span><span>DESTACADAS</span></div>
+    <p class="work-intro">Estas son algunas de las piezas que más nos ha emocionado crear: proyectos en los que encontramos una idea especial y la convertimos en música, sonido y emoción.<br><br>Una selección para que escuches lo que hicimos y puedas imaginar lo que podríamos crear juntos.</p>
+    <div class="work-grid">
+      <article class="work-card openvideo" data-video="assets/conmebol.mp4" data-title="CONMEBOL — Música original · Himno"><div class="pic"><img src="assets/conmebol.jpg" alt=""></div><div class="meta"><strong>CONMEBOL</strong><span>MÚSICA ORIGINAL · HIMNO</span></div></article>
+      <article class="work-card openvideo" data-video="assets/festival.mp4" data-title="FESTIVAL CYPHER — Música original"><div class="pic"><img src="assets/festival.jpg" alt=""></div><div class="meta"><strong>FESTIVAL CYPHER</strong><span>MÚSICA ORIGINAL</span></div></article>
+      <article class="work-card openvideo" data-video="assets/ajinomen.mp4" data-title="AJINOMEN"><div class="pic"><img src="assets/ajinomen.jpg" alt=""></div><div class="meta"><strong>AJINOMEN</strong><span>MÚSICA ORIGINAL · DISEÑO SONORO · LOCUCIÓN</span></div></article>
+      <article class="work-card openvideo" data-video="assets/manzana.mp4" data-title="MANZANA POSTOBÓN"><div class="pic"><img src="assets/manzana.jpg" alt=""></div><div class="meta"><strong>MANZANA POSTOBÓN</strong><span>MÚSICA ORIGINAL · DISEÑO SONORO · LOCUCIÓN</span></div></article>
+      <article class="work-card pending"><div class="pic">+ MÁS TRABAJOS</div><div class="meta"><strong>PORTAFOLIO</strong><span>PRÓXIMAMENTE</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="screen d1" id="d1">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">05</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:79%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div class="d1-copy">
+      <div class="master-title laika-display-title d1-title chrome-shift" role="heading" aria-level="1"><span>D1 × LAIKA</span><span>CONSTRUIMOS SONIDO</span><span>JUNTOS</span></div>
+      <p class="body">No somos solamente un proveedor. Somos memoria, criterio y continuidad sonora dentro del equipo.<br><br>Ser aliado de un equipo de mercadeo significa dejar de empezar desde cero en cada brief. Es conocer la marca, su historia, su tono, lo que ya funcionó y lo que está cambiando.<br><br>Durante años hemos acompañado a D1 creando música original, diseño sonoro y voces para distintos momentos. Esa continuidad permite responder más rápido, cuidar la coherencia y proponer antes de que todo esté escrito.<br><br>Un proveedor entrega una pieza. Un aliado ayuda a construir el sistema y sabe por qué cada pieza debe sonar como suena.<br><br><b>PUEDES LLAMARNOS PARA UNA PIEZA<br>O PODEMOS CONVERTIRNOS EN TU EQUIPO DE AUDIO.</b></p>
+    </div>
+    <div class="d1-stage">
+      <img class="gold goldbar" src="assets/goldbar.png" alt="">
+      <img class="gold headphones" src="assets/headphones_gold_screen05_v81.png" alt="">
+      <div class="d1-code" aria-hidden="true"></div>
+      <div class="d1-register r1" aria-hidden="true"></div><div class="d1-register r2" aria-hidden="true"></div><div class="d1-register r3" aria-hidden="true"></div>
+      <div class="d1-packet p1" aria-hidden="true"></div><div class="d1-packet p2" aria-hidden="true"></div><div class="d1-packet p3" aria-hidden="true"></div>
+      <div class="d1-video"><video src="assets/d1.mp4" autoplay muted loop playsinline></video></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen services" id="servicios">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">06</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:74%"></div><div class="svc-bg-pixel" aria-hidden="true"></div><div class="svc-bg-macro" aria-hidden="true"></div><div class="svc-bg-sync" aria-hidden="true"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div class="services-copy">
+      <div class="master-title laika-display-title services-title chrome-shift" role="heading" aria-level="1"><span>TODO LO QUE NECESITA</span><span>UNA IDEA PARA SONAR</span></div>
+      <div class="service-list-copy">
+        <div><strong>01 · IDENTIDAD SONORA</strong>Sistemas sonoros reconocibles y adaptables para marcas.</div>
+        <div><strong>02 · MÚSICA ORIGINAL</strong>Composición y producción para<br>marcas, contenidos y experiencias.</div>
+        <div><strong>03 · DISEÑO SONORO</strong>Construimos el mundo sonoro que cada historia necesita.</div>
+        <div><strong>04 · SUPERVISIÓN MUSICAL</strong>Curaduría, búsqueda y gestión musical.</div>
+        <div><strong>05 · VOCES</strong>Casting, dirección, grabación y producción.</div>
+        <div><strong>06 · PODCASTS Y CONTENIDO</strong>Concepto, producción y universo sonoro.</div>
+      </div>
+    </div>
+    <div class="service-art">
+      <img class="gold cassette1" src="assets/cassette_tilted_screen06_v90.png" alt="">
+      <img class="gold cassette2" src="assets/cassette_upright_screen06_v90.png" alt="">
+      <img class="gold lobster" src="assets/lobster_gold_screen06_v90.png" alt="">
+      <div class="svc-dropout t1" aria-hidden="true"></div><div class="svc-dropout t2" aria-hidden="true"></div><div class="svc-dropout t3" aria-hidden="true"></div>
+      <div class="svc-tape-head" aria-hidden="true"></div><div class="svc-spool s1" aria-hidden="true"></div><div class="svc-spool s2" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen method" id="metodo">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">07</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:85%"></div><div class="method-data-grid" aria-hidden="true"></div><div class="method-vector-tear" aria-hidden="true"></div><div class="method-thrust-noise" aria-hidden="true"></div><div class="method-noise-storm" aria-hidden="true"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div>
+      <div class="master-title laika-display-title method-title chrome-shift" role="heading" aria-level="1"><span>MÉTODO</span><span>LAIKA</span></div>
+      <div class="method-copy-grid">
+        <p class="body">Una identidad sonora no debería comenzar componiendo música. Debería comenzar entendiendo qué necesita decir una marca, dónde vive y cómo se relaciona con las personas. Por eso desarrollamos una metodología que nos permite convertir esa escucha en decisiones, sumar valor a tu marca y ayudarte a obtener resultados reales.</p>
+        <div class="method-list"><span class="method-step"><b>01 · ESCUCHAR</b><em>Entender el contexto antes de intervenir.</em></span><span class="method-step"><b>02 · INVESTIGAR</b><em>Marca, cultura, audiencia, competencia y entorno.</em></span><span class="method-step"><b>03 · INTERPRETAR</b><em>Convertir hallazgos en decisiones sonoras.</em></span><span class="method-step"><b>04 · DISEÑAR</b><em>Construir un sistema, no solamente una pieza.</em></span><span class="method-step"><b>05 · PROBAR</b><em>Escuchar qué funciona antes de cerrar.</em></span><span class="method-step"><b>06 · IMPLEMENTAR</b><em>Llevar el sistema a todos sus puntos de contacto.</em></span><span class="method-step"><b>07 · APRENDER</b><em>Observar, documentar y evolucionar.</em></span></div>
+      </div>
+    </div>
+    <div class="method-art">
+      <img class="gold rocket-a" src="assets/rocket_gold_screen08_v99.png" alt="">
+      <img class="gold rocket-b" src="assets/rocket_gold_screen08_v99.png" alt="">
+      <img class="gold method-ring" src="assets/ring.png" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="screen about" id="estudio">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">08</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:70%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div class="about-left">
+      <div class="master-title laika-display-title about-title chrome-shift" role="heading" aria-level="1"><span>QUIÉNES</span><span>SOMOS</span></div>
+      <p class="about-copy">Somos músicos. Productores. Creativos. Curiosos. Exploradores.<br><br>Antes de ser un estudio, somos músicos.<br><br>Llevamos más de 20 años componiendo, tocando, produciendo, grabando y explorando todas las formas en las que el sonido puede transformar una idea.<br><br>Hemos pasado miles de horas entre instrumentos, estudios, escenarios, voces, máquinas y canciones. Pero la experiencia nunca nos quitó la curiosidad. Todavía nos emociona encontrar un sonido inesperado, descubrir una melodía y sentir el momento exacto en el que una idea comienza a tener vida.<br><br>Esa mezcla de oficio, intuición y pasión es la que llevamos a cada proyecto.<br><br>Porque después de tantos años seguimos creyendo lo mismo: siempre existe una manera más emocionante, más auténtica y más humana de hacer sonar una idea.</p>
+    </div>
+    <div class="about-photo">
+      <img class="base" src="assets/about_studio_team_v111.png" alt="Equipo de Laika 03 trabajando en el estudio">
+      <img class="gold headphones" src="assets/about_headphones_hq_v121_2x.png" alt="">
+      <img class="gold capsule" src="assets/about_capsule_hq_v121.png" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="screen awards" id="premios">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">09</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:78%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="inner">
+    <div>
+      <div class="master-title laika-display-title awards-title chrome-shift" role="heading" aria-level="1"><span>PREMIOS</span></div>
+      <div class="master-title laika-display-title awards-num chrome-shift" aria-label="263"><span class="digit d2">2</span><span class="digit d6">6</span><span class="digit d3">3</span></div>
+      <div class="awards-copy">El reconocimiento importa. Pero más nos importa lo que demuestra: décadas resolviendo ideas con oficio, curiosidad y sonido.<div class="mono">CANNES LIONS / LIA / NEW YORK FESTIVALS / FIAP / EL DORADO / EFFIE</div></div>
+    </div>
+    <div class="awards-art"><img class="awards-base" src="assets/awards_hq.jpg" alt=""><img class="awards-echo" src="assets/awards_hq.jpg" alt="" aria-hidden="true"><div class="awards-corrupt" aria-hidden="true"></div><div class="awards-noise" aria-hidden="true"></div><div class="awards-scanburst" aria-hidden="true"></div></div>
+  </div>
+</section>
+
+<section class="screen contact" id="contacto">
+  <div class="wordmark screen-wordmark">LAIKA<sup>03</sup></div><div class="mono screen-number">10</div>
+  <div class="artbed"></div><div class="texture"></div><div class="glitch-blocks"></div><div class="glitch-lines"></div><div class="signal-tear" style="--y:83%"></div><div class="grain"></div><div class="scan"></div>
+  <div class="contact-orbit-grid" aria-hidden="true"></div><div class="contact-star-noise" aria-hidden="true"></div><div class="contact-data-rain" aria-hidden="true"></div><div class="contact-film-dust" aria-hidden="true"></div><div class="contact-pixel-bank" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="contact-hud" aria-hidden="true"></div><div class="contact-space-tear" aria-hidden="true"></div><div class="contact-uplink" aria-hidden="true">LAIKA-03 / DEEP SPACE AUDIO
+UPLINK 10.03 — SIGNAL LOCKED
+TELEMETRY 04:18:22 / BOG 4.7110°N
+CARRIER 48.000 kHz / 24 BIT</div>
+  <div class="inner">
+    <div class="contact-left">
+      <div class="master-title laika-display-title final-title chrome-shift" role="heading" aria-level="1"><span>QUEREMOS SER</span><span>TU ALIADO</span></div>
+      <div class="action"><a class="circle" href="mailto:AUDIO@LAIKA03.COM">→</a>HABLEMOS</div>
+      <p class="contact-copy"><b>CUANDO CONOCEMOS TU MARCA, DEJAMOS DE EMPEZAR DE CERO.</b><br><br>Entendemos tu historia, tu tono, lo que ya ha funcionado y hacia dónde quieres ir. Eso nos permite responder más rápido, cuidar tu identidad y proponer nuevas posibilidades antes de que todo esté escrito.<br><br>Porque un buen aliado no solamente ejecuta un brief. Lo entiende, lo cuestiona y ayuda a hacerlo mejor.</p>
+      <div class="contact-links"><a href="mailto:AUDIO@LAIKA03.COM">AUDIO@LAIKA03.COM</a><a href="https://www.instagram.com/laika_studio" target="_blank" rel="noopener">INSTAGRAM</a><a href="https://www.linkedin.com/in/carlos-eduardo-calvo-carrizosa-51526939" target="_blank" rel="noopener">LINKEDIN</a></div>
+    </div>
+    <div class="moon-wrap"><img class="moon-echo" src="assets/moon_hyperreal_screen10_v106.png" alt="" aria-hidden="true"><img class="moon-photo" src="assets/moon_hyperreal_screen10_v106.png" alt="Luna hiperrealista"></div>
+  </div>
+  <footer class="footer"><span>LAIKA<sup>03</sup></span><span>ESTUDIO CREATIVO DE AUDIO</span><span>BOGOTÁ, CO</span></footer>
+</section>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modalbox">
+    <div class="modal-title" id="modalTitle"></div>
+    <button class="close" id="close">×</button>
+    <video id="modalVideo" controls playsinline></video>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById('modal'),mv=document.getElementById('modalVideo'),mt=document.getElementById('modalTitle');
+function openVideo(src,title){
+  mv.src=src; mt.textContent=title||'';
+  modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden'; mv.play().catch(()=>{});
+}
+function closeVideo(){
+  mv.pause(); mv.removeAttribute('src'); mv.load();
+  modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.openvideo').forEach(el=>el.addEventListener('click',()=>openVideo(el.dataset.video,el.dataset.title)));
+document.getElementById('close').addEventListener('click',closeVideo);
+modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+</script>
+</body>
+</html>
